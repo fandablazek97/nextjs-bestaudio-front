@@ -1,14 +1,16 @@
-import ContactForm from "@components/contact/ContactForm";
-import Accordion from "@ui/Accordion";
-import Alert from "@ui/Alert";
-import Badge from "@ui/Badge";
-import Button from "@ui/Button";
-import Heading from "@ui/Heading";
-import Seo from "@ui/Seo";
-import SocialLinks from "@ui/SocialLinks";
-import Spinner from "@ui/Spinner";
-import Wrapper from "@ui/Wrapper";
 import type { NextPage } from "next";
+import Hero from "@components/home/Hero";
+import Seo from "@ui/Seo";
+import Wrapper from "@ui/Wrapper";
+import Aftermovie from "@components/home/Aftermovie";
+import WhyBetterSound from "@components/home/WhyBetterSound";
+import CarBrands from "@components/home/CarBrands";
+import HowItWorks from "@components/home/HowItWorks";
+import Heading from "@ui/Heading";
+import ScrollReveal from "@ui/ScrollReveal";
+import Testimonials from "@components/Testimonials";
+import Team from "@components/home/Team";
+import CallToActionWide from "@ui/CallToActionWide";
 
 // ToDo
 // ----------------------
@@ -47,141 +49,57 @@ const Home: NextPage = () => {
   return (
     <>
       <Seo
-        title="Ui framework"
-        description="Nextjs ui framework v2 made with typescript"
+        title="Děláme nejlepší zvuk v autě"
+        description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto impedit non ad?"
         noIndex={false}
         noFollow={false}
       />
+
       {/* Hero section */}
-      <Wrapper paddedContent="lg" size="sm">
-        <Heading as={"h1"} size="2xl">
-          Hlavní nadpis
-        </Heading>
+      <Hero />
+
+      {/* Video */}
+      <Wrapper size="lg">
+        <Aftermovie />
       </Wrapper>
 
-      <Wrapper size="sm" paddedContent="lg" className="space-y-5">
-        <SocialLinks />
-        <ContactForm />
-        <Alert
-          status="success"
-          title="Lorem ipsum dolor sit amet"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos deserunt cum temporibus adipisci perferendis, mollitia, obcaecati fugiat."
-        />
-        <Alert
-          status="error"
-          title="Lorem ipsum dolor sit amet"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos deserunt cum temporibus adipisci perferendis, mollitia, obcaecati fugiat."
-        />
-        <Alert
-          status="warning"
-          title="Lorem ipsum dolor sit amet"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos deserunt cum temporibus adipisci perferendis, mollitia, obcaecati fugiat."
-        />
-        <Alert
-          status="info"
-          title="Lorem ipsum dolor sit amet"
-          text="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos deserunt cum temporibus adipisci perferendis, mollitia, obcaecati fugiat."
-        />
-        <div className="flex flex-wrap gap-5">
-          <Badge hasDot>Badge</Badge>
-          <Badge hasDot>Badge</Badge>
-          <Badge hasDot>Badge</Badge>
-          <Badge hasDot>Badge</Badge>
-          <Badge hasDot>Badge</Badge>
-        </div>
-        <div className="flex flex-wrap gap-5">
-          <Button>Button</Button>
-          <Button>Button</Button>
-          <Button>Button</Button>
-          <Button>Button</Button>
-          <Button>Button</Button>
-          <Button>Button</Button>
-        </div>
-        <div className="flex flex-wrap gap-5">
-          <Spinner />
-          <Spinner />
-          <Spinner />
-          <Spinner />
-          <Spinner />
-          <Spinner />
-        </div>
-        <div className="divide-y divide-copy-rich/15">
-          <Accordion title="Lorem ipsum dolor sit amet?">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos
-            deserunt cum temporibus adipisci perferendis, mollitia, obcaecati
-            fugiat, odit at laudantium autem sequi eos cumque labore amet itaque
-            rerum? Harum delectus soluta optio, sequi veniam, doloribus ducimus,
-            animi accusantium deserunt molestias vero ex. Quia temporibus
-            possimus nulla asperiores. Earum, eligendi delectus officiis, aut
-            expedita consectetur in iusto deserunt minus maiores nam accusamus
-            quos dolorem nihil nesciunt. Id sit consequatur voluptatum obcaecati
-            error earum voluptatibus molestias pariatur, quis placeat
-            laboriosam? Corporis corrupti error dolores totam, tenetur
-            laudantium eveniet fugiat consequuntur ipsa quisquam perspiciatis.
-            Repellat consequatur animi iusto sapiente beatae molestiae
-            assumenda?
-          </Accordion>
-          <Accordion title="Lorem ipsum dolor sit amet?">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos
-            deserunt cum temporibus adipisci perferendis, mollitia, obcaecati
-            fugiat, odit at laudantium autem sequi eos cumque labore amet itaque
-            rerum? Harum delectus soluta optio, sequi veniam, doloribus ducimus,
-            animi accusantium deserunt molestias vero ex. Quia temporibus
-            possimus nulla asperiores. Earum, eligendi delectus officiis, aut
-            expedita consectetur in iusto deserunt minus maiores nam accusamus
-            quos dolorem nihil nesciunt. Id sit consequatur voluptatum obcaecati
-            error earum voluptatibus molestias pariatur, quis placeat
-            laboriosam? Corporis corrupti error dolores totam, tenetur
-            laudantium eveniet fugiat consequuntur ipsa quisquam perspiciatis.
-            Repellat consequatur animi iusto sapiente beatae molestiae
-            assumenda?
-          </Accordion>
-          <Accordion title="Lorem ipsum dolor sit amet?">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos
-            deserunt cum temporibus adipisci perferendis, mollitia, obcaecati
-            fugiat, odit at laudantium autem sequi eos cumque labore amet itaque
-            rerum? Harum delectus soluta optio, sequi veniam, doloribus ducimus,
-            animi accusantium deserunt molestias vero ex. Quia temporibus
-            possimus nulla asperiores. Earum, eligendi delectus officiis, aut
-            expedita consectetur in iusto deserunt minus maiores nam accusamus
-            quos dolorem nihil nesciunt. Id sit consequatur voluptatum obcaecati
-            error earum voluptatibus molestias pariatur, quis placeat
-            laboriosam? Corporis corrupti error dolores totam, tenetur
-            laudantium eveniet fugiat consequuntur ipsa quisquam perspiciatis.
-            Repellat consequatur animi iusto sapiente beatae molestiae
-            assumenda?
-          </Accordion>
-          <Accordion title="Lorem ipsum dolor sit amet?">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos
-            deserunt cum temporibus adipisci perferendis, mollitia, obcaecati
-            fugiat, odit at laudantium autem sequi eos cumque labore amet itaque
-            rerum? Harum delectus soluta optio, sequi veniam, doloribus ducimus,
-            animi accusantium deserunt molestias vero ex. Quia temporibus
-            possimus nulla asperiores. Earum, eligendi delectus officiis, aut
-            expedita consectetur in iusto deserunt minus maiores nam accusamus
-            quos dolorem nihil nesciunt. Id sit consequatur voluptatum obcaecati
-            error earum voluptatibus molestias pariatur, quis placeat
-            laboriosam? Corporis corrupti error dolores totam, tenetur
-            laudantium eveniet fugiat consequuntur ipsa quisquam perspiciatis.
-            Repellat consequatur animi iusto sapiente beatae molestiae
-            assumenda?
-          </Accordion>
-          <Accordion title="Lorem ipsum dolor sit amet?">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab quos
-            deserunt cum temporibus adipisci perferendis, mollitia, obcaecati
-            fugiat, odit at laudantium autem sequi eos cumque labore amet itaque
-            rerum? Harum delectus soluta optio, sequi veniam, doloribus ducimus,
-            animi accusantium deserunt molestias vero ex. Quia temporibus
-            possimus nulla asperiores. Earum, eligendi delectus officiis, aut
-            expedita consectetur in iusto deserunt minus maiores nam accusamus
-            quos dolorem nihil nesciunt. Id sit consequatur voluptatum obcaecati
-            error earum voluptatibus molestias pariatur, quis placeat
-            laboriosam? Corporis corrupti error dolores totam, tenetur
-            laudantium eveniet fugiat consequuntur ipsa quisquam perspiciatis.
-            Repellat consequatur animi iusto sapiente beatae molestiae
-            assumenda?
-          </Accordion>
-        </div>
+      {/* Proč chtít lepší zvuk v autě? */}
+      <Wrapper paddedContentTop="lg" paddedContentBottom="md" className="mt-12">
+        <WhyBetterSound />
+      </Wrapper>
+
+      {/* Co děláme za značky aut? */}
+      <CarBrands />
+
+      {/* Jak to funguje? */}
+      <Wrapper paddedContent="lg">
+        <HowItWorks />
+      </Wrapper>
+
+      {/* Reference */}
+      <Wrapper paddedContentTop="sm">
+        <ScrollReveal>
+          <Heading
+            as={"h2"}
+            size="xl"
+            align="center"
+            color="primary"
+            className="mx-auto mb-20 sm:mb-32"
+          >
+            Reference
+          </Heading>
+        </ScrollReveal>
+        <Testimonials />
+      </Wrapper>
+
+      {/* Náš tým */}
+      <Wrapper paddedContent="sm">
+        <Team />
+      </Wrapper>
+
+      {/* Call to action -> Kontakt */}
+      <Wrapper size="lg" paddedContentTop="md" paddedContentBottom="lg">
+        <CallToActionWide />
       </Wrapper>
     </>
   );

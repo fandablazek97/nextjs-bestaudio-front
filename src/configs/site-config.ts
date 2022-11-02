@@ -37,7 +37,7 @@ export const config = {
       hostingProvider:
         "WEDOS Internet, a.s. (IČ: 28115708) - poskytovatel webových serverů",
       emailProvider: "Emailjs.com - zprostředkovatel e-mailových serverů",
-      websiteAdministrator: "Acamo.cz - správce webu",
+      websiteAdministrator: "reveal.cz - správce webu",
     },
     cookies: {
       validConsentPeriod: "šest měsíců",

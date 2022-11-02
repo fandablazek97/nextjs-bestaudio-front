@@ -21,13 +21,14 @@ type ButtonProps = {
   isIconBox?: boolean;
   isLoading?: boolean;
   isDisabled?: boolean;
+  isFocusable?: boolean;
   className?: string;
   onClick?: () => void;
   [x: string]: any;
 };
 
 const cvs = {
-  base: "inline-flex items-center justify-center overflow-hidden font-medium tracking-wide no-underline outline-none transition duration-200 focus-visible:ring-4",
+  base: "inline-flex items-center justify-center overflow-hidden font-medium font-display tracking-wide no-underline outline-none transition duration-200 focus-visible:ring-4",
   variant: {
     filled: "",
     outlined:
@@ -121,6 +122,7 @@ const Button = forwardRef<Ref, ButtonProps>(
       isIconBox = false,
       isLoading = false,
       isDisabled = false,
+      isFocusable = true,
       className = "",
       onClick,
       children,
@@ -157,7 +159,7 @@ const Button = forwardRef<Ref, ButtonProps>(
         onClick={onClick}
         disabled={isDisabled || isLoading}
         aria-hidden={isDisabled || isLoading}
-        tabIndex={isDisabled || isLoading ? -1 : 0}
+        tabIndex={isDisabled || isLoading || !isFocusable ? -1 : 0}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
         {...rest}

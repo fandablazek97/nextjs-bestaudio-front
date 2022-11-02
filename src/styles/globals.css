@@ -9,6 +9,10 @@
 @import "tailwindcss/utilities";
 @import "tailwindcss/variants";
 
+/* Libs */
+@import "libs/scroll-reveal.css";
+@import "libs/toastify.css";
+
 /* @layer base {
   ...
 } */
