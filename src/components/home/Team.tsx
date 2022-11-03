@@ -1,12 +1,13 @@
 import Button from "@ui/Button";
 import Heading from "@ui/Heading";
 import ScrollReveal from "@ui/ScrollReveal";
+import { team } from "@configs/team";
 
 type TeamMemberCardProps = {
+  imageSrc: string;
+  name: string;
+  content: string;
   className?: string;
-  imageSrc?: string;
-  name?: string;
-  content?: string;
 };
 
 export function TeamMemberCard({
@@ -57,11 +58,15 @@ export default function Team({ className = "" }: TeamProps) {
         </div>
       </ScrollReveal>
       <div className="col-span-1 grid grid-cols-1 gap-16 xs:grid-cols-2">
-        <TeamMemberCard className="col-span-1" />
-        <TeamMemberCard className="col-span-1" />
-        <TeamMemberCard className="col-span-1" />
-        <TeamMemberCard className="col-span-1" />
-        <TeamMemberCard className="col-span-1" />
+        {team.map((member, i) => (
+          <TeamMemberCard
+            key={i}
+            imageSrc={member.src}
+            name={member.name}
+            content={member.content.short}
+            className="col-span-1"
+          />
+        ))}
       </div>
     </div>
   );

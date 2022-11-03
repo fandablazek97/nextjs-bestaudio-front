@@ -4,7 +4,7 @@ import Seo from "@ui/Seo";
 import Wrapper from "@ui/Wrapper";
 import Aftermovie from "@components/home/Aftermovie";
 import WhyBetterSound from "@components/home/WhyBetterSound";
-import CarBrands from "@components/home/CarBrands";
+import CarBrandsMarquee from "@components/home/CarBrandsMarquee";
 import HowItWorks from "@components/home/HowItWorks";
 import Heading from "@ui/Heading";
 import ScrollReveal from "@ui/ScrollReveal";
@@ -69,7 +69,7 @@ const Home: NextPage = () => {
       </Wrapper>
 
       {/* Co děláme za značky aut? */}
-      <CarBrands />
+      <CarBrandsMarquee />
 
       {/* Jak to funguje? */}
       <Wrapper paddedContent="lg">

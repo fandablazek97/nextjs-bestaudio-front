@@ -1,9 +1,11 @@
 import Heading from "@ui/Heading";
 import Wrapper from "@ui/Wrapper";
+import ParticlesBackground from "@components/ParticlesBackground";
 
 export default function Hero() {
   return (
     <div className="relative h-[80vh] min-h-[540px] w-screen md:min-h-[768px] lg:h-[90vh]">
+      <ParticlesBackground className="-z-10 opacity-20" />
       <Wrapper
         as={"header"}
         className="flex h-full flex-col items-center justify-center"

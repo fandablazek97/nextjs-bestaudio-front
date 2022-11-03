@@ -16,7 +16,7 @@ const BlogDetail: NextPage = () => {
         noFollow={false}
       />
       {/* Page Content... */}
-      <HeroGlobal title="Detail příspěvku" />
+      <HeroGlobal title="Detail příspěvku" cta="Přečíst více" />
 
       <Wrapper size="lg">
         <div className="w-full overflow-hidden rounded-xl grayscale">

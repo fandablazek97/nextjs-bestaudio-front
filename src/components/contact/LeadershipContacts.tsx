@@ -1,5 +1,6 @@
 import Heading from "@ui/Heading";
 import AppLink from "@ui/AppLink";
+import { team } from "@configs/team";
 
 type TeamMemberCardProps = {
   className?: string;
@@ -85,8 +86,26 @@ export default function LeadershipContacts({
         </p>
       </div>
       <div className="mt-12 grid w-full grid-cols-1 gap-x-10 gap-y-10 md:mt-28 lg:grid-cols-2 lg:gap-y-16 xl:gap-x-16 xl:gap-y-24">
-        <TeamMemberCard className="col-span-1" />
-        <TeamMemberCard className="col-span-1" />
+        <TeamMemberCard
+          imageSrc={team[0].src}
+          name={team[0].name}
+          position={team[0].position}
+          phoneLink={team[0].contact.phone.href}
+          phoneLabel={team[0].contact.phone.label}
+          emailLink={team[0].contact.email.href}
+          emailLabel={team[0].contact.email.label}
+          className="col-span-1"
+        />
+        <TeamMemberCard
+          imageSrc={team[1].src}
+          name={team[1].name}
+          position={team[1].position}
+          phoneLink={team[1].contact.phone.href}
+          phoneLabel={team[1].contact.phone.label}
+          emailLink={team[1].contact.email.href}
+          emailLabel={team[1].contact.email.label}
+          className="col-span-1"
+        />
       </div>
     </>
   );

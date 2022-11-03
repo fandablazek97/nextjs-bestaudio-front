@@ -5,6 +5,7 @@ import HeroGlobal from "@components/HeroGlobal";
 import Seo from "@ui/Seo";
 import Wrapper from "@ui/Wrapper";
 import type { NextPage } from "next";
+import { team } from "@configs/team";
 
 const ONas: NextPage = () => {
   return (
@@ -51,11 +52,16 @@ const ONas: NextPage = () => {
           Náš tým
         </Heading>
         <div className="mt-12 grid w-full grid-cols-1 gap-x-10 gap-y-10 md:mt-28 lg:grid-cols-2 lg:gap-y-16 xl:gap-x-16 xl:gap-y-24">
-          <TeamMemberCard className="col-span-1" />
-          <TeamMemberCard className="col-span-1" />
-          <TeamMemberCard className="col-span-1" />
-          <TeamMemberCard className="col-span-1" />
-          <TeamMemberCard className="col-span-1" />
+          {team.map((member, i) => (
+            <TeamMemberCard
+              key={i}
+              imageSrc={member.src}
+              name={member.name}
+              position={member.position}
+              content={member.content.long}
+              className="col-span-1"
+            />
+          ))}
         </div>
       </Wrapper>
 

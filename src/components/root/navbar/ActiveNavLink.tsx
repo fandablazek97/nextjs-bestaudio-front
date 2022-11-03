@@ -22,7 +22,7 @@ export default function ActiveNavLink({
     <AppLink
       href={href}
       onClick={onClick}
-      hoverEffect="underline"
+      hoverEffect="underline-slide"
       className={`${matches ? "!text-primary" : ""} ${className}`}
     >
       {children}

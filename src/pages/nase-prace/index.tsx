@@ -8,6 +8,90 @@ import CaseStudyCard from "@components/our-work/CaseStudyCard";
 import Wrapper from "@ui/Wrapper";
 import type { NextPage } from "next";
 
+const caseStudies = [
+  {
+    href: "/nase-prace/detail",
+    imageSrc: "/images/work/bmw.jpg",
+    title: "Název studie",
+    carBrand: "BMW",
+    carModel: "X5",
+    perex:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
+  },
+  {
+    href: "/nase-prace/detail",
+    imageSrc: "/images/work/bmw.jpg",
+    title: "Název studie",
+    carBrand: "BMW",
+    carModel: "X5",
+    perex:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
+  },
+  {
+    href: "/nase-prace/detail",
+    imageSrc: "/images/work/bmw.jpg",
+    title: "Název studie",
+    carBrand: "BMW",
+    carModel: "X5",
+    perex:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
+  },
+  {
+    href: "/nase-prace/detail",
+    imageSrc: "/images/work/bmw.jpg",
+    title: "Název studie",
+    carBrand: "BMW",
+    carModel: "X5",
+    perex:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
+  },
+  {
+    href: "/nase-prace/detail",
+    imageSrc: "/images/work/bmw.jpg",
+    title: "Název studie",
+    carBrand: "BMW",
+    carModel: "X5",
+    perex:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
+  },
+  {
+    href: "/nase-prace/detail",
+    imageSrc: "/images/work/bmw.jpg",
+    title: "Název studie",
+    carBrand: "BMW",
+    carModel: "X5",
+    perex:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
+  },
+  {
+    href: "/nase-prace/detail",
+    imageSrc: "/images/work/bmw.jpg",
+    title: "Název studie",
+    carBrand: "BMW",
+    carModel: "X5",
+    perex:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
+  },
+  {
+    href: "/nase-prace/detail",
+    imageSrc: "/images/work/bmw.jpg",
+    title: "Název studie",
+    carBrand: "BMW",
+    carModel: "X5",
+    perex:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
+  },
+  {
+    href: "/nase-prace/detail",
+    imageSrc: "/images/work/bmw.jpg",
+    title: "Název studie",
+    carBrand: "BMW",
+    carModel: "X5",
+    perex:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
+  },
+];
+
 const NasePrace: NextPage = () => {
   return (
     <>
@@ -23,15 +107,18 @@ const NasePrace: NextPage = () => {
       {/* Příspěvky z případových studií */}
       <Wrapper paddedContentTop="sm" paddedContentBottom="md">
         <CaseStudies>
-          <CaseStudyCard href="/nase-prace/detail" className="col-span-1" />
-          <CaseStudyCard href="/nase-prace/detail" className="col-span-1" />
-          <CaseStudyCard href="/nase-prace/detail" className="col-span-1" />
-          <CaseStudyCard href="/nase-prace/detail" className="col-span-1" />
-          <CaseStudyCard href="/nase-prace/detail" className="col-span-1" />
-          <CaseStudyCard href="/nase-prace/detail" className="col-span-1" />
-          <CaseStudyCard href="/nase-prace/detail" className="col-span-1" />
-          <CaseStudyCard href="/nase-prace/detail" className="col-span-1" />
-          <CaseStudyCard href="/nase-prace/detail" className="col-span-1" />
+          {caseStudies.map((item, i) => (
+            <CaseStudyCard
+              key={i}
+              href={item.href}
+              imageSrc={item.imageSrc}
+              title={item.title}
+              carBrand={item.carBrand}
+              carModel={item.carModel}
+              perex={item.perex}
+              className="col-span-1"
+            />
+          ))}
         </CaseStudies>
       </Wrapper>
 

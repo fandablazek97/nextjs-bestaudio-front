@@ -2,7 +2,7 @@
   .lib-sra {
     --sra-duration: 900ms;
     --sra-easing: ease;
-    --sra-offset: 4rem;
+    --sra-offset: 2.5rem;
     --sra-delay: 0ms;
 
     transform-origin: 50% 50%;
@@ -13,7 +13,7 @@
   .lib-sra-children > * {
     --sra-duration: 900ms;
     --sra-easing: ease;
-    --sra-offset: 4rem;
+    --sra-offset: 2.5rem;
     --sra-delay: 0ms;
     --sra-delay-increment: 1;
 

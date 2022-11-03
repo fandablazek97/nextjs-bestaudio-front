@@ -34,9 +34,6 @@ export default function Navbar() {
       className={`fixed isolate z-40 h-16 w-screen transition-[background,transform,opacity,box-shadow] duration-500 sm:h-20 2xl:h-24 
         ${isVisible ? "translate-y-0" : "-translate-y-full"}
         ${isScrolled ? "bg-body/80 backdrop-blur-md" : ""} 
-        ${
-          isVisible && isScrolled ? "shadow-xl dark:shadow-none" : "shadow-none"
-        }
       `}
     >
       <Wrapper

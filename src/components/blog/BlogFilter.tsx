@@ -23,8 +23,10 @@ export default function BlogFilter({
       {...rest}
     >
       {FilterOptions.map((option) => (
-        <li key={option} tabIndex={-1} className="font-medium">
-          {option}
+        <li key={option}>
+          <button className="font-medium focus-visible:ring-4 focus-visible:ring-copy-rich/70">
+            {option}
+          </button>
         </li>
       ))}
     </ul>
