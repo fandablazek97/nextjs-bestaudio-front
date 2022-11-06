@@ -22,7 +22,7 @@ export default function CollabBrands({ className = "" }: Props) {
       <div className="grid grid-cols-4 gap-x-12 gap-y-5 pt-12 sm:gap-y-16 sm:pt-28 md:grid-cols-6">
         <ScrollReveal className="col-span-2 h-[104px] w-[348px] max-w-full">
           <img
-            src="/svg/bestaudio_logo_horizontalni_digital_tmave_pozadi.svg"
+            src="/brand/bestaudio_logo_horizontalni_digital_tmave_pozadi.svg"
             alt="Logo značky"
             width="348"
             height="104"
@@ -34,7 +34,7 @@ export default function CollabBrands({ className = "" }: Props) {
           className="col-span-2 h-[104px] w-[348px] max-w-full"
         >
           <img
-            src="/svg/bestaudio_logo_horizontalni_digital_tmave_pozadi.svg"
+            src="/brand/bestaudio_logo_horizontalni_digital_tmave_pozadi.svg"
             alt="Logo značky"
             width="348"
             height="104"
@@ -46,7 +46,7 @@ export default function CollabBrands({ className = "" }: Props) {
           className="col-span-2 h-[104px] w-[348px] max-w-full"
         >
           <img
-            src="/svg/bestaudio_logo_horizontalni_digital_tmave_pozadi.svg"
+            src="/brand/bestaudio_logo_horizontalni_digital_tmave_pozadi.svg"
             alt="Logo značky"
             width="348"
             height="104"
@@ -59,7 +59,7 @@ export default function CollabBrands({ className = "" }: Props) {
           className="col-span-2 h-[104px] w-[348px] max-w-full md:col-start-2"
         >
           <img
-            src="/svg/bestaudio_logo_horizontalni_digital_tmave_pozadi.svg"
+            src="/brand/bestaudio_logo_horizontalni_digital_tmave_pozadi.svg"
             alt="Logo značky"
             width="348"
             height="104"
@@ -71,7 +71,7 @@ export default function CollabBrands({ className = "" }: Props) {
           className="col-span-2 col-start-2 h-[104px] w-[348px] max-w-full md:col-start-4 md:col-end-6"
         >
           <img
-            src="/svg/bestaudio_logo_horizontalni_digital_tmave_pozadi.svg"
+            src="/brand/bestaudio_logo_horizontalni_digital_tmave_pozadi.svg"
             alt="Logo značky"
             width="348"
             height="104"

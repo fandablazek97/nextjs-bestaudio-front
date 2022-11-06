@@ -6,12 +6,17 @@ import { contacts } from "@configs/contacts";
 export default function HeroContact() {
   // Logic goes here
   return (
-    <div className="relative h-[90vh] max-h-[960px] min-h-[640px] w-screen md:min-h-[768px]">
+    <div className="relative h-[80vh] max-h-[960px] min-h-[640px] w-screen pt-24 md:min-h-[768px] lg:mb-28 lg:pt-0">
       <Wrapper
         as={"header"}
         className="flex h-full flex-col items-center justify-center md:pt-12"
       >
-        <Heading as={"h1"} size="3xl" align="center">
+        <Heading
+          as={"h1"}
+          size="3xl"
+          align="center"
+          className="mb-[0.25em] lg:mt-auto lg:mb-0"
+        >
           Kontakt
         </Heading>
         <div className="mt-5">
@@ -22,7 +27,7 @@ export default function HeroContact() {
             úterý - pátek 10:00 - 16:00 (nebo dle domluvy)
           </p>
         </div>
-        <div className="mt-16 flex w-full flex-col gap-12 lg:mt-28 lg:flex-row lg:gap-20 2xl:mt-48 2xl:gap-28">
+        <div className="mt-10 flex w-full flex-col gap-6 lg:mt-auto lg:flex-row lg:gap-20 2xl:gap-28">
           <div className="flex flex-col items-center justify-center gap-3 lg:items-start lg:justify-start">
             <span className="block font-semibold uppercase tracking-widest text-copy-muted">
               Telefon:

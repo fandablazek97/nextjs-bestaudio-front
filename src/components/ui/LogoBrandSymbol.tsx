@@ -11,7 +11,7 @@ export default function LogoBrandSymbol({
     <div className={`h-[35px] w-[40px] ${className}`}>
       {variant === "colored" && (
         <img
-          src="/svg/brand-symbol-color.svg"
+          src="/brand/brand-symbol-color.svg"
           alt="Logo značky"
           width="40"
           height="35"
@@ -20,7 +20,7 @@ export default function LogoBrandSymbol({
       )}
       {variant === "black" && (
         <img
-          src="/svg/brand-symbol-black.svg"
+          src="/brand/brand-symbol-black.svg"
           alt="Logo značky"
           width="40"
           height="35"
@@ -29,7 +29,7 @@ export default function LogoBrandSymbol({
       )}
       {variant === "white" && (
         <img
-          src="/svg/brand-symbol-white.svg"
+          src="/brand/brand-symbol-white.svg"
           alt="Logo značky"
           width="40"
           height="35"

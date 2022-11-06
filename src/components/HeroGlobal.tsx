@@ -14,15 +14,20 @@ export default function HeroGlobal({
 }: HeroGlobalProps) {
   // Logic goes here
   return (
-    <div className="relative h-[87vh] max-h-[960px] min-h-[540px] w-screen md:min-h-[768px]">
+    <div className="relative h-[88vh] max-h-[960px] min-h-[560px] w-screen md:min-h-[768px]">
       <Wrapper
         as={"header"}
-        className="flex h-full flex-col items-center justify-center pt-12"
+        className="flex h-full flex-col items-center justify-center"
       >
-        <Heading as={"h1"} size="3xl" align="center">
+        <Heading
+          as={"h1"}
+          size="3xl"
+          align="center"
+          className="mb-[0.65em] lg:mt-auto lg:mb-0"
+        >
           {title}
         </Heading>
-        <div className="mt-8 flex w-full flex-col lg:mt-28 lg:flex-row-reverse 2xl:mt-48">
+        <div className="flex w-full flex-col lg:mt-auto lg:flex-row-reverse lg:items-start">
           <p className="mx-auto max-w-xl text-center text-base font-medium md:text-lg lg:mr-0 lg:ml-auto lg:text-left">
             {perex}
           </p>

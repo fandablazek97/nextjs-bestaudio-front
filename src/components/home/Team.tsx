@@ -19,11 +19,11 @@ export function TeamMemberCard({
 }: TeamMemberCardProps) {
   return (
     <ScrollReveal className={`flex flex-col gap-5 ${className}`}>
-      <div className="aspect-square w-full overflow-hidden rounded-lg object-cover object-center contrast-125 grayscale">
+      <div className="grayscale-toned-image aspect-square w-full overflow-hidden rounded-lg object-cover object-center">
         <img src={imageSrc} alt={name} width="512" height="512" />
       </div>
       <div className="flex flex-col">
-        <Heading as={"span"} size="md" color="primary">
+        <Heading as={"span"} size="md" color="primary" hasMarginBottom>
           {name}
         </Heading>
         <p className="text-sm sm:text-base">{content}</p>

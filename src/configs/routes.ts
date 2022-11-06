@@ -55,7 +55,7 @@ export const other = [
     label: "Cookies",
   },
   {
-    href: "/graficke-podklady",
+    href: "/firemni-identita",
     label: "Firemní identita",
   },
 ];

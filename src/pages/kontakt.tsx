@@ -25,7 +25,7 @@ const KontaktPage: NextPage = () => {
       <Wrapper
         as={"section"}
         id="vice"
-        paddedContentTop="sm"
+        paddedContentTop="lg"
         paddedContentBottom="md"
       >
         <LeadershipContacts />

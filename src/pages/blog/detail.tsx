@@ -18,8 +18,8 @@ const BlogDetail: NextPage = () => {
       {/* Page Content... */}
       <HeroGlobal title="Detail příspěvku" cta="Přečíst více" />
 
-      <Wrapper size="lg">
-        <div className="w-full overflow-hidden rounded-xl grayscale">
+      <Wrapper size="lg" paddedContent="md">
+        <div className="grayscale-toned-image w-full overflow-hidden rounded-xl">
           <Image
             src="/images/work/bmw.jpg"
             alt="obrazek"

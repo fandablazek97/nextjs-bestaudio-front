@@ -49,7 +49,7 @@ const PageTemplate: NextPage = () => {
       </Wrapper>
 
       <Wrapper paddedContent="sm">
-        <div className="grayscale-toned-image w-full overflow-hidden rounded-xl grayscale">
+        <div className="grayscale-toned-image w-full overflow-hidden rounded-xl">
           <Image
             src="/images/work/bmw.jpg"
             alt="obrazek"
@@ -82,7 +82,7 @@ const PageTemplate: NextPage = () => {
 
       <Wrapper paddedContent="sm">
         <div className="grid gap-10 sm:grid-cols-2">
-          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl grayscale">
+          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl">
             <Image
               src="/images/work/bmw.jpg"
               alt="obrazek"
@@ -91,7 +91,7 @@ const PageTemplate: NextPage = () => {
               className="aspect-[9/16] w-full object-cover"
             />
           </div>
-          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl grayscale sm:mt-52">
+          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl sm:mt-52">
             <Image
               src="/images/work/bmw.jpg"
               alt="obrazek"
@@ -125,7 +125,7 @@ const PageTemplate: NextPage = () => {
 
       <Wrapper paddedContent="sm">
         <div className="grid gap-10 pt-10 md:grid-cols-2">
-          <div className="col-span-1 w-full overflow-hidden rounded-xl grayscale md:col-span-2">
+          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl md:col-span-2">
             <Image
               src="/images/work/bmw.jpg"
               alt="obrazek"
@@ -134,7 +134,7 @@ const PageTemplate: NextPage = () => {
               className="aspect-video w-full object-cover"
             />
           </div>
-          <div className="col-span-1 w-full overflow-hidden rounded-xl grayscale">
+          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl">
             <Image
               src="/images/work/bmw.jpg"
               alt="obrazek"
@@ -143,7 +143,7 @@ const PageTemplate: NextPage = () => {
               className="aspect-video w-full object-cover"
             />
           </div>
-          <div className="col-span-1 w-full overflow-hidden rounded-xl grayscale">
+          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl">
             <Image
               src="/images/work/bmw.jpg"
               alt="obrazek"

@@ -11,13 +11,13 @@ export default function MenuLinks({
   onEachLinkClick,
 }: MenuLinksProps) {
   return (
-    <ul className={`flex list-none flex-col gap-y-3 leading-none ${className}`}>
+    <ul className={`flex list-none flex-col gap-y-2 leading-none ${className}`}>
       {routes.map((path) => (
         <li key={path.label}>
           <ActiveNavLink
             href={path.href}
             onClick={onEachLinkClick}
-            className="text-2xl font-bold text-copy-rich md:text-4xl xl:text-5xl"
+            className="text-xl font-bold text-copy-rich md:text-3xl xl:text-4xl"
           >
             {path.label}
           </ActiveNavLink>

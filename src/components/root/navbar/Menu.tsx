@@ -1,3 +1,4 @@
+import SocialLinks from "@ui/SocialLinks";
 import Wrapper from "@ui/Wrapper";
 import { useEffect, useState } from "react";
 import BurgerMenu from "./BurgerMenu";
@@ -56,7 +57,7 @@ export default function Menu({ className = "" }: MenuProps) {
       >
         <Wrapper
           size="lg"
-          className="flex h-full flex-col justify-between pt-28 pl-0 md:pt-36 lg:pl-[50%]"
+          className="flex h-full flex-col justify-between pt-24 pl-0 md:pt-36 lg:pl-[50%]"
         >
           <MenuLinks
             onEachLinkClick={closeMenu}
@@ -74,10 +75,18 @@ export default function Menu({ className = "" }: MenuProps) {
                 : "duration-0 -translate-y-12 opacity-0 delay-150"
             }`}
           />
+          <SocialLinks
+            className={`my-auto transform-gpu pb-8 transition-[transform,opacity] ease-out ${
+              isOpen
+                ? "translate-y-0 opacity-100 delay-[450ms] duration-500"
+                : "duration-0 -translate-y-12 opacity-0 delay-150"
+            }`}
+          />
+
           <MenuCta
             className={`my-auto transform-gpu transition-[transform,opacity] ease-out ${
               isOpen
-                ? "translate-y-0 opacity-100 delay-[450ms] duration-500"
+                ? "translate-y-0 opacity-100 delay-[600ms] duration-500"
                 : "duration-0 -translate-y-12 opacity-0 delay-150"
             }`}
           />

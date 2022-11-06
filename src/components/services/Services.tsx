@@ -1,6 +1,7 @@
 import Button from "@ui/Button";
 import Heading from "@ui/Heading";
 import ScrollReveal from "@ui/ScrollReveal";
+import AppLink from "@ui/AppLink";
 
 export default function Services() {
   return (
@@ -20,9 +21,11 @@ export default function Services() {
             nam nobis nemo adipisci deleniti ipsa laudantium minus consectetur
             aperiam!
           </p>
-          <Button variant="outlined" className="mt-5">
-            Objednat
-          </Button>
+          <AppLink href="/kontakt" passHref>
+            <Button variant="outlined" className="mt-5">
+              Objednat
+            </Button>
+          </AppLink>
         </ScrollReveal>
         <ScrollReveal
           smDelay="200"
@@ -36,9 +39,11 @@ export default function Services() {
             nam nobis nemo adipisci deleniti ipsa laudantium minus consectetur
             aperiam!
           </p>
-          <Button variant="outlined" className="mt-5">
-            Objednat
-          </Button>
+          <AppLink href="/kontakt" passHref>
+            <Button variant="outlined" className="mt-5">
+              Objednat
+            </Button>
+          </AppLink>
         </ScrollReveal>
         <ScrollReveal
           lgDelay="400"
@@ -52,9 +57,11 @@ export default function Services() {
             nam nobis nemo adipisci deleniti ipsa laudantium minus consectetur
             aperiam!
           </p>
-          <Button variant="outlined" className="mt-5">
-            Objednat
-          </Button>
+          <AppLink href="/kontakt" passHref>
+            <Button variant="outlined" className="mt-5">
+              Objednat
+            </Button>
+          </AppLink>
         </ScrollReveal>
       </div>
     </>

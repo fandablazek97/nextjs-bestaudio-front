@@ -26,7 +26,7 @@ const Sluzby: NextPage = () => {
       <Wrapper
         as={"section"}
         id="vice"
-        paddedContentTop="sm"
+        paddedContentTop="lg"
         paddedContentBottom="md"
       >
         <Services />
@@ -77,6 +77,7 @@ const Sluzby: NextPage = () => {
             href="/nase-prace"
             preHeading="Jak to vypadá v praxi?"
             heading="Případové studie"
+            button="Zobrazit naší práci"
             className="col-span-1"
           />
         </div>

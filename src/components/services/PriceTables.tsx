@@ -1,3 +1,4 @@
+import AppLink from "@ui/AppLink";
 import Button from "@ui/Button";
 import Heading from "@ui/Heading";
 import ScrollReveal from "@ui/ScrollReveal";
@@ -51,13 +52,17 @@ export function PriceCard({
         {children}
       </ul>
       {colored ? (
-        <Button color="neutral" leftIcon={<HiFire />}>
-          Objednat
-        </Button>
+        <AppLink href="/kontakt" passHref>
+          <Button color="neutral" leftIcon={<HiFire />}>
+            Objednat
+          </Button>
+        </AppLink>
       ) : (
-        <Button variant="outlined" leftIcon={<HiFire />}>
-          Objednat
-        </Button>
+        <AppLink href="/kontakt" passHref>
+          <Button variant="outlined" leftIcon={<HiFire />}>
+            Objednat
+          </Button>
+        </AppLink>
       )}
     </div>
   );

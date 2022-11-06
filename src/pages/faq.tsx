@@ -22,7 +22,7 @@ const Faq: NextPage = () => {
       <Wrapper
         as={"section"}
         id="vice"
-        paddedContentTop="sm"
+        paddedContentTop="lg"
         paddedContentBottom="md"
       >
         <Heading as={"h2"} size="xl" color="primary">

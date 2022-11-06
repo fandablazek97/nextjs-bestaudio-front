@@ -13,14 +13,17 @@ import Team from "@components/home/Team";
 import CallToActionWide from "@ui/CallToActionWide";
 
 // To Do
-// Favikona
-// Stránka s brandingem
+// Zapnout strict mod
 // Particles
+// Cookie lišta
 // Zprovoznit formulář
 // Otestovat mobilní verzi
 // Prolinkovat sociální sítě
 // Finální content
 // Přidat dropdown do filtru u případovek
+// Filtr u blogu
+// Hover u tlačítek
+// Barevné filtry k fotkám (přidat všude classu)
 
 const Home: NextPage = () => {
   return (
