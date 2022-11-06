@@ -19,7 +19,7 @@ export default function CollabBrands({ className = "" }: Props) {
           Spolupráce s firmami
         </Heading>
       </ScrollReveal>
-      <div className="grid grid-cols-4 gap-x-12 gap-y-20 pt-36 md:grid-cols-6">
+      <div className="grid grid-cols-4 gap-x-12 gap-y-5 pt-12 sm:gap-y-16 sm:pt-28 md:grid-cols-6">
         <ScrollReveal className="col-span-2 h-[104px] w-[348px] max-w-full">
           <img
             src="/svg/bestaudio_logo_horizontalni_digital_tmave_pozadi.svg"

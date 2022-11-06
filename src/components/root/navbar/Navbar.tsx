@@ -8,6 +8,7 @@ import NavbarLinks from "./NavbarLinks";
 import NavbarSecondaryLinks from "./NavbarSecondaryLinks";
 import Button from "@ui/Button";
 import { HiShoppingCart } from "react-icons/hi2";
+import { shop } from "@configs/routes";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,7 +39,7 @@ export default function Navbar() {
     >
       <Wrapper
         size="lg"
-        className="flex h-full items-center justify-end gap-5 sm:gap-8 md:gap-10"
+        className="flex h-full items-center justify-end gap-2 sm:gap-8 md:gap-10"
       >
         {/* Logo */}
         <AppLink href="/" passHref>
@@ -55,14 +56,16 @@ export default function Navbar() {
 
         <Button
           as={"a"}
+          target={"_blank"}
+          rel="noopenner noreferrer"
           variant="outlined"
           leftIcon={<HiShoppingCart />}
-          href="https://bestaudio.cz"
+          href={shop.href}
           color="primary"
           size="sm"
-          className="z-10"
+          className="z-10 shrink-0"
         >
-          E-shop
+          {shop.label}
         </Button>
 
         <Menu className="block xl:hidden" />

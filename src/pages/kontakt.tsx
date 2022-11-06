@@ -6,6 +6,7 @@ import Heading from "@ui/Heading";
 import Seo from "@ui/Seo";
 import Wrapper from "@ui/Wrapper";
 import type { NextPage } from "next";
+import { config } from "@configs/site-config";
 
 const KontaktPage: NextPage = () => {
   return (
@@ -21,7 +22,12 @@ const KontaktPage: NextPage = () => {
       <HeroContact />
 
       {/* Důležité osoby */}
-      <Wrapper paddedContentTop="sm" paddedContentBottom="md">
+      <Wrapper
+        as={"section"}
+        id="vice"
+        paddedContentTop="sm"
+        paddedContentBottom="md"
+      >
         <LeadershipContacts />
       </Wrapper>
 
@@ -29,8 +35,21 @@ const KontaktPage: NextPage = () => {
         <Heading as={"h2"} size="xl" color="primary">
           Máte dotaz?
         </Heading>
-        <div className="max-w-4xl pt-24">
-          <ContactForm />
+        <div className="grid w-full grid-cols-1 gap-10 pt-12 lg:grid-cols-3 lg:pt-20 xl:gap-24">
+          <div className="col-span-1 lg:col-span-2">
+            <ContactForm />
+          </div>
+          <div id="firemni-udaje" className="col-span-1">
+            <Heading as={"h3"} size="lg" hasMarginBottom>
+              Firemní údaje
+            </Heading>
+            <ul role={"list"} className="flex flex-col space-y-3">
+              <li>{config.legal.company.name}</li>
+              <li>Adresa: {config.legal.company.adress}</li>
+              <li>IČ: {config.legal.company.ic}</li>
+              <li>DIČ: {config.legal.company.dic}</li>
+            </ul>
+          </div>
         </div>
       </Wrapper>
 

@@ -77,7 +77,7 @@ export default function LeadershipContacts({
         className={`flex flex-col items-start justify-start gap-8 lg:flex-row lg:justify-between lg:gap-12 ${className}`}
       >
         <Heading as={"h2"} size="xl" color="primary" className="basis-2/3">
-          Vaši lidé v bestaudiu
+          Vaši lidé u nás
         </Heading>
         <p className="max-w-xl lg:ml-auto">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa

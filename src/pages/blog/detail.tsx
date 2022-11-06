@@ -30,7 +30,7 @@ const BlogDetail: NextPage = () => {
         </div>
       </Wrapper>
 
-      <ContentFormater>
+      <ContentFormater id="vice">
         {/* CMS Content goes here */}
 
         {/* Demo content - smazat v produkční verzi */}

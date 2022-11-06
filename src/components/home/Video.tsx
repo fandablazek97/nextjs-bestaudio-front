@@ -5,7 +5,7 @@ import { Fragment, useState } from "react";
 import { BsFillPlayFill } from "react-icons/bs";
 import { MdClose } from "react-icons/md";
 
-export default function Aftermovie() {
+export default function Video() {
   let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
@@ -17,9 +17,9 @@ export default function Aftermovie() {
   }
 
   return (
-    <section id="aftermovie">
+    <section id="video">
       <button
-        aria-label="Přehrát aftermovie"
+        aria-label="Přehrát Video"
         className="group relative isolate aspect-[16/9] w-full cursor-pointer overflow-hidden rounded-xl bg-gray-900 focus-visible:outline focus-visible:outline-4 focus-visible:outline-primary"
         onClick={openModal}
       >
@@ -29,7 +29,7 @@ export default function Aftermovie() {
           muted
           className="h-full w-full object-cover opacity-40"
         >
-          <source src="/video/ffp-19-preview.mp4" type="video/mp4" />
+          <source src="/video/bestaudio-preview.mp4" type="video/mp4" />
           Váš prohlížeč nepodporuje video
         </video>
         <div className="z-1 absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2">
@@ -78,7 +78,7 @@ export default function Aftermovie() {
                 <iframe
                   width="560"
                   height="315"
-                  src="https://www.youtube.com/embed/bUianikiilw"
+                  src="https://www.youtube.com/embed/1JJM0mJk0Nk"
                   title="YouTube video player"
                   frameBorder="0"
                   className="h-full w-full bg-gray-400"

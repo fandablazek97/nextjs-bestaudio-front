@@ -10,14 +10,14 @@ const CookiesPage: NextPage = () => {
   return (
     <>
       <Seo
-        title="Page title"
+        title="Zpracování souborů cookies"
         description="Page description"
         noIndex={true}
         noFollow={true}
       />
       {/* Page Content... */}
       <Wrapper paddedContent="lg">
-        <Heading as="h1" size="2xl" align="center" className="mx-auto">
+        <Heading as="h1" size="2xl" align="center" className="mx-auto pt-12">
           Zpracování souborů cookies
         </Heading>
       </Wrapper>
@@ -32,7 +32,7 @@ const CookiesPage: NextPage = () => {
           statisticCookies={config.legal.cookies.statisticCookies}
           marketingCookies={config.legal.cookies.marketingCookies}
           thirdPartyCookies={config.legal.cookies.thirdPartyCookies}
-          lastDocumentUpdate="1.11.2022"
+          lastDocumentUpdate="1.11. 2022"
         />
       </ContentFormater>
     </>

@@ -1,11 +1,6 @@
 import AppLink from "@ui/AppLink";
 import { socials } from "@configs/socials";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaTwitter,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
 type SocialLinksOptions = {
   as?: React.ElementType;
@@ -44,22 +39,12 @@ export default function SocialLinks({
         </li>
         <li>
           <AppLink
-            href={socials.twitter.href}
+            href={socials.youtube.href}
             isExternal
-            aria-label={socials.twitter.aria}
+            aria-label={socials.youtube.aria}
             className="text-xl text-copy outline-none transition-colors duration-150 ease-in-out hover:text-primary focus-visible:ring-2 focus-visible:ring-copy/70"
           >
-            <FaTwitter />
-          </AppLink>
-        </li>
-        <li>
-          <AppLink
-            href={socials.linkedin.href}
-            isExternal
-            aria-label={socials.linkedin.aria}
-            className="text-xl text-copy outline-none transition-colors duration-150 ease-in-out hover:text-primary focus-visible:ring-2 focus-visible:ring-copy/70"
-          >
-            <FaLinkedinIn />
+            <FaYoutube />
           </AppLink>
         </li>
       </ul>

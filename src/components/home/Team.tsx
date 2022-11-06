@@ -2,6 +2,7 @@ import Button from "@ui/Button";
 import Heading from "@ui/Heading";
 import ScrollReveal from "@ui/ScrollReveal";
 import { team } from "@configs/team";
+import AppLink from "@ui/AppLink";
 
 type TeamMemberCardProps = {
   imageSrc: string;
@@ -54,10 +55,12 @@ export default function Team({ className = "" }: TeamProps) {
           accusamus blanditiis.
         </p>
         <div className="mt-5">
-          <Button size="lg">Více o nás</Button>
+          <AppLink href="/o-nas" passHref>
+            <Button size="lg">Více o nás</Button>
+          </AppLink>
         </div>
       </ScrollReveal>
-      <div className="col-span-1 grid grid-cols-1 gap-16 xs:grid-cols-2">
+      <div className="col-span-1 grid grid-cols-1 gap-6 xs:grid-cols-2 sm:gap-16">
         {team.map((member, i) => (
           <TeamMemberCard
             key={i}

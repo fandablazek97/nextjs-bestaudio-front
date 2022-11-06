@@ -76,7 +76,12 @@ const Blog: NextPage = () => {
       <HeroGlobal title="Blog" />
 
       {/* Příspěvky z případových studií */}
-      <Wrapper paddedContentTop="sm" paddedContentBottom="md">
+      <Wrapper
+        as={"section"}
+        id="vice"
+        paddedContentTop="sm"
+        paddedContentBottom="md"
+      >
         <BlogPosts>
           {blogPosts.map((post, i) => (
             <BlogPostCard

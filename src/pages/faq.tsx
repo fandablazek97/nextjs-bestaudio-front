@@ -19,7 +19,12 @@ const Faq: NextPage = () => {
       <HeroGlobal title="FAQ" />
 
       {/* Úvodní sekce */}
-      <Wrapper paddedContentTop="sm" paddedContentBottom="md">
+      <Wrapper
+        as={"section"}
+        id="vice"
+        paddedContentTop="sm"
+        paddedContentBottom="md"
+      >
         <Heading as={"h2"} size="xl" color="primary">
           Co vás nejčastěji zajímá
         </Heading>

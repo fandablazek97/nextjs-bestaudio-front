@@ -22,7 +22,7 @@ export default function CarBrand({
       rel="noopenner noreferrer"
       className={`flex shrink-0 flex-row items-center justify-center gap-2 rounded-full bg-body-100 py-2.5 px-6 outline-none transition-colors duration-300 hover:bg-body-200 focus-visible:ring-4 focus-visible:ring-primary ${className}`}
     >
-      <div className="flex h-7 w-9 items-center justify-center">
+      <div className="flex h-7 w-9 shrink-0 items-center justify-center">
         <Image
           src={src}
           alt={name}
@@ -31,13 +31,15 @@ export default function CarBrand({
           className="h-full w-full object-contain"
         />
       </div>
-      <span className="font-display text-sm leading-none">{name}</span>
+      <span className="hidden font-display text-sm leading-none sm:block">
+        {name}
+      </span>
     </a>
   ) : (
     <div
       className={`flex shrink-0 flex-row items-center justify-center gap-1.5 rounded-full bg-body-100 py-3 px-6 ${className}`}
     >
-      <div className="flex h-7 w-9 items-center justify-center">
+      <div className="flex h-7 w-9 shrink-0 items-center justify-center">
         <Image
           src={src}
           alt={name}
@@ -46,7 +48,9 @@ export default function CarBrand({
           className="h-full w-full object-contain"
         />
       </div>
-      <span className="font-display text-sm leading-none">{name}</span>
+      <span className="hidden font-display text-sm leading-none sm:block">
+        {name}
+      </span>
     </div>
   );
 }

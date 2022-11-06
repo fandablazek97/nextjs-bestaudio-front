@@ -23,7 +23,7 @@ export default function BlogPostCard({
   return (
     <Link href={href} passHref legacyBehavior>
       <a
-        className={`isolate scale-100 transition duration-300 ease-out hover:scale-95 ${className}`}
+        className={`isolate scale-100 outline-none transition duration-300 ease-out hover:scale-95 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-copy-rich/70 ${className}`}
       >
         <div className="aspect-[16/10] w-full overflow-hidden object-cover object-center contrast-125 grayscale">
           <img src={imageSrc} alt={title} width="1920" height="1200" />

@@ -22,7 +22,13 @@ const PageTemplate: NextPage = () => {
         perex="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo est laudantium quia accusantium molestiae et error cupiditate, neque nobis sed!"
       />
 
-      <Wrapper size="sm" paddedContentBottom="md" paddedContentTop="lg">
+      <Wrapper
+        as={"section"}
+        id="vice"
+        size="sm"
+        paddedContentBottom="md"
+        paddedContentTop="lg"
+      >
         <Heading as="h2" size="2xl" color="primary" hasMarginBottom>
           Zadání
         </Heading>
@@ -43,7 +49,7 @@ const PageTemplate: NextPage = () => {
       </Wrapper>
 
       <Wrapper paddedContent="sm">
-        <div className="w-full overflow-hidden rounded-xl grayscale">
+        <div className="grayscale-toned-image w-full overflow-hidden rounded-xl grayscale">
           <Image
             src="/images/work/bmw.jpg"
             alt="obrazek"
@@ -76,7 +82,7 @@ const PageTemplate: NextPage = () => {
 
       <Wrapper paddedContent="sm">
         <div className="grid gap-10 sm:grid-cols-2">
-          <div className="col-span-1 w-full overflow-hidden rounded-xl grayscale">
+          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl grayscale">
             <Image
               src="/images/work/bmw.jpg"
               alt="obrazek"
@@ -85,7 +91,7 @@ const PageTemplate: NextPage = () => {
               className="aspect-[9/16] w-full object-cover"
             />
           </div>
-          <div className="col-span-1 w-full overflow-hidden rounded-xl grayscale sm:mt-52">
+          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl grayscale sm:mt-52">
             <Image
               src="/images/work/bmw.jpg"
               alt="obrazek"

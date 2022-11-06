@@ -7,13 +7,9 @@ export const socials = {
     href: "https://www.instagram.com/",
     aria: "Odkaz na Instagram",
   },
-  twitter: {
-    href: "https://www.twitter.com/",
-    aria: "Odkaz na Instagram",
-  },
-  linkedin: {
-    href: "https://www.linkedin.com/",
-    aria: "Odkaz na LinkedIn",
+  youtube: {
+    href: "https://www.youtube.com/",
+    aria: "Odkaz na YouTube",
   },
   // Others
   // youtube: {

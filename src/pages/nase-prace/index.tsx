@@ -105,7 +105,12 @@ const NasePrace: NextPage = () => {
       <HeroGlobal title="Naše práce" />
 
       {/* Příspěvky z případových studií */}
-      <Wrapper paddedContentTop="sm" paddedContentBottom="md">
+      <Wrapper
+        as={"section"}
+        id="vice"
+        paddedContentTop="sm"
+        paddedContentBottom="md"
+      >
         <CaseStudies>
           {caseStudies.map((item, i) => (
             <CaseStudyCard

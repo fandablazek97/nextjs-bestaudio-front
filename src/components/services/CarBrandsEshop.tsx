@@ -20,7 +20,7 @@ export default function CarBrandsEshop() {
           tempora vero labore.
         </p>
       </ScrollReveal>
-      <div className="mt-20 grid grid-cols-2 gap-5 xs:grid-cols-3 md:grid-cols-4 lg:mt-28 lg:gap-10 xl:grid-cols-6">
+      <div className="mt-20 grid grid-cols-3 gap-5 md:grid-cols-4 lg:mt-28 lg:gap-10 xl:grid-cols-6">
         {cars.map((car) => (
           <CarBrand
             key={car.name}

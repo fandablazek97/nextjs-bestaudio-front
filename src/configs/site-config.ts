@@ -1,18 +1,18 @@
 export const config = {
   seo: {
-    url: "https://domena.cz",
-    shortUrl: "domena.cz",
-    titleTemplate: "%s | Firma",
+    url: "https://bestaudio.cz",
+    shortUrl: "bestaudio.cz",
+    titleTemplate: "%s | Bestaudio",
   },
   cookies: {
-    prefix: "domena",
+    prefix: "bestaudio",
   },
   author: {
     name: "František Blažek",
-    company: "Acamo",
-    url: "Acamo.cz",
+    company: "Reveal & Acamo",
+    url: "Acamo.cz & Reveal.cz",
     phone: "+420 737 090 913",
-    email: "info@acamo.cz",
+    email: "blazek@reveal.cz",
   },
   // New
   legal: {

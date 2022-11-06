@@ -22,7 +22,7 @@ const Page404: NextPage = () => {
           className="flex flex-col items-center justify-center"
         >
           <PreHeading align="center" hasMarginBottom>
-            404
+            Chyba 404
           </PreHeading>
           <Heading as="h1" size="2xl" align="center" hasMarginBottom>
             Tato stránka neexistuje

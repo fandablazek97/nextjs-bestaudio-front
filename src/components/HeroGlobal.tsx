@@ -27,17 +27,20 @@ export default function HeroGlobal({
             {perex}
           </p>
 
-          <div className="mx-auto mt-28 flex flex-col items-center justify-center lg:mr-auto lg:ml-0 lg:mt-0 lg:items-start">
+          <a
+            href="#vice"
+            className="group mx-auto mt-28 flex cursor-pointer flex-col items-center justify-center outline-none focus-visible:outline-4 focus-visible:outline-offset-8 focus-visible:outline-copy-rich/70 lg:mr-auto lg:ml-0 lg:mt-0 lg:items-start"
+          >
             <span className="block font-display text-xl font-semibold">
               {cta}
             </span>
-            <div className="animate-scroll mt-7 flex items-end justify-center lg:mt-3 lg:animate-none">
-              <span className="h-24 w-0.5 rounded-full bg-primary" />
-              <span className="h-4 w-0.5 origin-bottom -translate-x-0.5 rotate-45 rounded-full bg-primary" />
-              <span className="h-4 w-0.5 origin-bottom -translate-x-1 -rotate-45 rounded-full bg-primary" />
+            <div className="mt-7 flex items-end justify-center lg:mt-3 lg:animate-none">
+              <span className="h-24 w-0.5 origin-top scale-y-50 rounded-full bg-primary transition-transform duration-300 ease-out-back group-hover:scale-y-100" />
+              <span className="h-4 w-0.5 origin-bottom -translate-x-0.5 -translate-y-12 rotate-45 rounded-full bg-primary transition-transform duration-300 ease-out-back group-hover:translate-y-0" />
+              <span className="h-4 w-0.5 origin-bottom -translate-x-1 -translate-y-12 -rotate-45 rounded-full bg-primary transition-transform duration-300 ease-out-back group-hover:translate-y-0" />
             </div>
             {/* <HiArrowDown className="mt-8 text-3xl text-primary" /> */}
-          </div>
+          </a>
         </div>
       </Wrapper>
     </div>

@@ -5,6 +5,7 @@ import ScrollReveal from "@ui/ScrollReveal";
 import Wrapper from "@ui/Wrapper";
 import Marquee from "react-fast-marquee";
 import { cars } from "@configs/car-brands";
+import AppLink from "@ui/AppLink";
 
 export default function CarBrandsMarquee() {
   return (
@@ -25,10 +26,12 @@ export default function CarBrandsMarquee() {
           delay="200"
           className="mx-auto mt-8 flex max-w-sm flex-col items-center justify-center gap-5 sm:max-w-xl sm:flex-row lg:mt-12"
         >
-          <Button variant="outlined" className="w-full">
-            Zobrazit služby
-          </Button>
-          <Button color="neutral" className="w-full">
+          <AppLink href="/sluzby" passHref>
+            <Button variant="outlined" className="w-full">
+              Zobrazit služby
+            </Button>
+          </AppLink>
+          <Button as={"a"} href="#reference" color="neutral" className="w-full">
             Zobrazit reference
           </Button>
         </ScrollReveal>
@@ -46,7 +49,7 @@ export default function CarBrandsMarquee() {
               key={i}
               src={car.src}
               name={car.name}
-              className="mx-4 sm:mx-6 lg:mx-8 2xl:mx-10"
+              className="mx-2 sm:mx-6 lg:mx-8 2xl:mx-10"
             />
           ))}
       </Marquee>
@@ -63,7 +66,7 @@ export default function CarBrandsMarquee() {
               key={i}
               src={car.src}
               name={car.name}
-              className="mx-4 sm:mx-6 lg:mx-8 2xl:mx-10"
+              className="mx-2 sm:mx-6 lg:mx-8 2xl:mx-10"
             />
           ))}
       </Marquee>
@@ -80,7 +83,7 @@ export default function CarBrandsMarquee() {
               key={i}
               src={car.src}
               name={car.name}
-              className="mx-4 sm:mx-6 lg:mx-8 2xl:mx-10"
+              className="mx-2 sm:mx-6 lg:mx-8 2xl:mx-10"
             />
           ))}
       </Marquee>

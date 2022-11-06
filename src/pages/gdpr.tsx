@@ -10,14 +10,14 @@ const GdprPage: NextPage = () => {
   return (
     <>
       <Seo
-        title="Page title"
+        title="Zpracování osobních údajů"
         description="Page description"
         noIndex={true}
         noFollow={true}
       />
       {/* Page Content... */}
       <Wrapper paddedContent="lg">
-        <Heading as="h1" size="2xl" align="center" className="mx-auto">
+        <Heading as="h1" size="2xl" align="center" className="mx-auto pt-12">
           Zpracování osobních údajů
         </Heading>
       </Wrapper>

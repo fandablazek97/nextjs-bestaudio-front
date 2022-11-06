@@ -23,7 +23,12 @@ const Sluzby: NextPage = () => {
       <HeroGlobal title="Služby" />
 
       {/* Seznam služeb */}
-      <Wrapper paddedContentTop="sm" paddedContentBottom="md">
+      <Wrapper
+        as={"section"}
+        id="vice"
+        paddedContentTop="sm"
+        paddedContentBottom="md"
+      >
         <Services />
       </Wrapper>
 
@@ -68,7 +73,12 @@ const Sluzby: NextPage = () => {
         </Heading>
         <div className="grid w-full grid-cols-1 gap-10 sm:gap-16 lg:grid-cols-2">
           <CallToAction className="col-span-1" />
-          <CallToAction className="col-span-1" />
+          <CallToAction
+            href="/nase-prace"
+            preHeading="Jak to vypadá v praxi?"
+            heading="Případové studie"
+            className="col-span-1"
+          />
         </div>
       </Wrapper>
     </>

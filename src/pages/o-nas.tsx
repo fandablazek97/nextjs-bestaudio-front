@@ -19,7 +19,12 @@ const ONas: NextPage = () => {
 
       <HeroGlobal title="O nás" />
 
-      <Wrapper paddedContentTop="sm" paddedContentBottom="lg">
+      <Wrapper
+        as={"section"}
+        id="vice"
+        paddedContentTop="sm"
+        paddedContentBottom="lg"
+      >
         <Heading as={"h2"} size="xl" color="primary">
           Poznejte Bestaudio
         </Heading>

@@ -17,9 +17,11 @@
   ...
 } */
 
-/* @layer components {
-  ...
-} */
+@layer components {
+  .grayscale-toned-image {
+    filter: grayscale(100%) sepia(30%) hue-rotate(200deg);
+  }
+}
 
 /* @layer utilities {
   ...

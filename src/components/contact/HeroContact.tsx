@@ -14,6 +14,14 @@ export default function HeroContact() {
         <Heading as={"h1"} size="3xl" align="center">
           Kontakt
         </Heading>
+        <div className="mt-5">
+          <span className="block text-center text-lg font-medium">
+            Otevírací doba:
+          </span>
+          <p className="text-center">
+            úterý - pátek 10:00 - 16:00 (nebo dle domluvy)
+          </p>
+        </div>
         <div className="mt-16 flex w-full flex-col gap-12 lg:mt-28 lg:flex-row lg:gap-20 2xl:mt-48 2xl:gap-28">
           <div className="flex flex-col items-center justify-center gap-3 lg:items-start lg:justify-start">
             <span className="block font-semibold uppercase tracking-widest text-copy-muted">
@@ -41,7 +49,20 @@ export default function HeroContact() {
               {contacts.main.email.label}
             </AppLink>
           </div>
-          <div className="mx-auto mt-10 flex flex-col items-center justify-center lg:hidden">
+          <a
+            href="#vice"
+            className="group mx-auto mt-10 flex cursor-pointer flex-col items-center justify-center lg:hidden"
+          >
+            <span className="block font-display text-xl font-semibold">
+              Zjistit více
+            </span>
+            <div className="mt-7 flex items-end justify-center lg:mt-3 lg:animate-none">
+              <span className="h-24 w-0.5 origin-top scale-y-50 rounded-full bg-primary transition-transform duration-300 ease-out-back group-hover:scale-y-100" />
+              <span className="h-4 w-0.5 origin-bottom -translate-x-0.5 -translate-y-12 rotate-45 rounded-full bg-primary transition-transform duration-300 ease-out-back group-hover:translate-y-0" />
+              <span className="h-4 w-0.5 origin-bottom -translate-x-1 -translate-y-12 -rotate-45 rounded-full bg-primary transition-transform duration-300 ease-out-back group-hover:translate-y-0" />
+            </div>
+          </a>
+          {/* <div className="mx-auto mt-10 flex flex-col items-center justify-center lg:hidden">
             <span className="block font-display text-xl font-semibold">
               Zjistit více
             </span>
@@ -50,7 +71,7 @@ export default function HeroContact() {
               <span className="h-4 w-0.5 origin-bottom -translate-x-0.5 rotate-45 rounded-full bg-primary" />
               <span className="h-4 w-0.5 origin-bottom -translate-x-1 -rotate-45 rounded-full bg-primary" />
             </div>
-          </div>
+          </div> */}
         </div>
       </Wrapper>
     </div>

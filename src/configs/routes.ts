@@ -1,3 +1,8 @@
+export const shop = {
+  href: "https://www.bestaudio.cz",
+  label: "E-shop",
+};
+
 export const routes = [
   {
     href: "/",
@@ -29,5 +34,28 @@ export const secondary = [
   {
     href: "/blog",
     label: "Blog",
+  },
+];
+
+export const other = [
+  {
+    href: "/kontakt/#firemni-udaje",
+    label: "Firemní údaje",
+  },
+  {
+    href: "/obchodni-podminky",
+    label: "Obchodní podmínky",
+  },
+  {
+    href: "/gdpr",
+    label: "Zpracování osobních údajů",
+  },
+  {
+    href: "/cookies",
+    label: "Cookies",
+  },
+  {
+    href: "/graficke-podklady",
+    label: "Firemní identita",
   },
 ];
