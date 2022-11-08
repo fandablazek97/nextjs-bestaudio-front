@@ -14,7 +14,7 @@ export default function HeroGlobal({
 }: HeroGlobalProps) {
   // Logic goes here
   return (
-    <div className="relative h-[88vh] max-h-[960px] min-h-[560px] w-screen md:min-h-[768px]">
+    <div className="relative h-[88vh] max-h-[768px] min-h-[560px] w-screen md:max-h-[960px] md:min-h-[768px]">
       <Wrapper
         as={"header"}
         className="flex h-full flex-col items-center justify-center"
@@ -23,7 +23,7 @@ export default function HeroGlobal({
           as={"h1"}
           size="3xl"
           align="center"
-          className="mb-[0.65em] lg:mt-auto lg:mb-0"
+          className="mb-[0.65em] mt-auto lg:mb-0"
         >
           {title}
         </Heading>
@@ -34,7 +34,7 @@ export default function HeroGlobal({
 
           <a
             href="#vice"
-            className="group mx-auto mt-28 flex cursor-pointer flex-col items-center justify-center outline-none focus-visible:outline-4 focus-visible:outline-offset-8 focus-visible:outline-copy-rich/70 lg:mr-auto lg:ml-0 lg:mt-0 lg:items-start"
+            className="group mx-auto mt-12 flex cursor-pointer flex-col items-center justify-center outline-none focus-visible:outline-4 focus-visible:outline-offset-8 focus-visible:outline-copy-rich/70 xs:mt-28 lg:mr-auto lg:ml-0 lg:mt-0 lg:items-start"
           >
             <span className="block font-display text-xl font-semibold">
               {cta}

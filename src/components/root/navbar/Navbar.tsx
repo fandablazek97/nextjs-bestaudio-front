@@ -39,7 +39,7 @@ export default function Navbar() {
     >
       <Wrapper
         size="lg"
-        className="flex h-full items-center justify-end gap-2 sm:gap-8 md:gap-10"
+        className="flex h-full items-center justify-end sm:gap-8 md:gap-10"
       >
         {/* Logo */}
         <AppLink href="/" passHref>
@@ -63,7 +63,7 @@ export default function Navbar() {
           href={shop.href}
           color="primary"
           size="sm"
-          className="z-10 shrink-0"
+          className="z-10 mr-2 hidden shrink-0 xs:inline-flex sm:mr-0"
         >
           {shop.label}
         </Button>

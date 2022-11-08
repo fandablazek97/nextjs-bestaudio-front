@@ -6,7 +6,7 @@ import { contacts } from "@configs/contacts";
 export default function HeroContact() {
   // Logic goes here
   return (
-    <div className="relative h-[80vh] max-h-[960px] min-h-[640px] w-screen pt-24 md:min-h-[768px] lg:mb-28 lg:pt-0">
+    <div className="sm:min-h-[640px relative h-[100vh] max-h-[960px] min-h-[560px] w-screen pt-24 sm:h-[80vh] sm:min-h-[680px] md:min-h-[768px] lg:mb-28 lg:pt-0">
       <Wrapper
         as={"header"}
         className="flex h-full flex-col items-center justify-center md:pt-12"
@@ -20,16 +20,16 @@ export default function HeroContact() {
           Kontakt
         </Heading>
         <div className="mt-5">
-          <span className="block text-center text-lg font-medium">
+          <span className="block text-center text-base font-medium sm:text-lg">
             Otevírací doba:
           </span>
-          <p className="text-center">
+          <p className="text-center text-sm sm:text-base">
             úterý - pátek 10:00 - 16:00 (nebo dle domluvy)
           </p>
         </div>
         <div className="mt-10 flex w-full flex-col gap-6 lg:mt-auto lg:flex-row lg:gap-20 2xl:gap-28">
-          <div className="flex flex-col items-center justify-center gap-3 lg:items-start lg:justify-start">
-            <span className="block font-semibold uppercase tracking-widest text-copy-muted">
+          <div className="flex flex-col items-center justify-center sm:gap-3 lg:items-start lg:justify-start">
+            <span className="block text-xs font-semibold uppercase tracking-widest text-copy-muted sm:text-base">
               Telefon:
             </span>
             <AppLink
@@ -41,8 +41,8 @@ export default function HeroContact() {
               {contacts.main.phone.label}
             </AppLink>
           </div>
-          <div className="flex flex-col items-center justify-center gap-3 lg:items-start lg:justify-start">
-            <span className="block font-semibold uppercase tracking-widest text-copy-muted">
+          <div className="flex flex-col items-center justify-center sm:gap-3 lg:items-start lg:justify-start">
+            <span className="block text-xs font-semibold uppercase tracking-widest text-copy-muted sm:text-base">
               E-mail:
             </span>
             <AppLink

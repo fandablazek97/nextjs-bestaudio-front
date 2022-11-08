@@ -57,7 +57,7 @@ export default function Menu({ className = "" }: MenuProps) {
       >
         <Wrapper
           size="lg"
-          className="flex h-full flex-col justify-between pt-24 pl-0 md:pt-36 lg:pl-[50%]"
+          className="flex h-full flex-col justify-between pt-20 pl-0 xs:pt-24 md:pt-36 lg:pl-[50%]"
         >
           <MenuLinks
             onEachLinkClick={closeMenu}
@@ -84,7 +84,7 @@ export default function Menu({ className = "" }: MenuProps) {
           />
 
           <MenuCta
-            className={`my-auto transform-gpu transition-[transform,opacity] ease-out ${
+            className={`my-auto transform-gpu pb-36 transition-[transform,opacity] ease-out ${
               isOpen
                 ? "translate-y-0 opacity-100 delay-[600ms] duration-500"
                 : "duration-0 -translate-y-12 opacity-0 delay-150"

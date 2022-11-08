@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Combobox } from "@headlessui/react";
+import { Listbox } from "@headlessui/react";
 import { HiChevronUpDown, HiCheck } from "react-icons/hi2";
 
-type FormComboboxProps = {
+type FormSelectProps = {
   options: string[];
   label: string;
   name: string;
@@ -44,7 +44,7 @@ const cvs = {
   },
 };
 
-export default function FormCombobox({
+export default function FormSelect({
   options = [
     "Fanda",
     "Libor",
@@ -63,26 +63,17 @@ export default function FormCombobox({
   radius = "md",
   isLabelHidden = false,
   className = "",
-}: FormComboboxProps) {
+}: FormSelectProps) {
   const [selectedOption, setSelectedOption] = useState(options[0]);
-  const [query, setQuery] = useState("");
-
-  const filteredOptions =
-    query === ""
-      ? options
-      : options.filter((option) => {
-          return option.toLowerCase().includes(query.toLowerCase());
-        });
 
   return (
-    <Combobox
+    <Listbox
       as={"div"}
-      name={name}
       value={selectedOption}
       onChange={setSelectedOption}
       className={`w-full ${className}`}
     >
-      <Combobox.Label
+      <Listbox.Label
         className={`${
           isLabelHidden
             ? "sr-only"
@@ -91,27 +82,29 @@ export default function FormCombobox({
       >
         <span>{label}</span>
         {isRequired && <span className="text-error">*</span>}
-      </Combobox.Label>
+      </Listbox.Label>
       <div className="relative z-10 w-full">
-        <Combobox.Input
-          onChange={(event) => setQuery(event.target.value)}
+        <Listbox.Button
+          name={name}
           className={`
             ${cvs.base}
             ${cvs.variant[variant]} 
             ${cvs.color[color]}
             ${cvs.radius[radius]}
           `}
-        />
-        <Combobox.Button
-          className={`absolute top-1/2 right-3 -translate-y-1/2`}
         >
-          <HiChevronUpDown className="text-2xl text-copy" />
-        </Combobox.Button>
-        <Combobox.Options
-          className={`absolute left-0 right-0 top-14 max-h-96 w-full overflow-y-scroll bg-body-100 py-1 ${cvs.radius[radius]}`}
+          <span className="block text-left">{selectedOption}</span>
+          <span
+            className={`pointer-events-none absolute top-1/2 right-3 -translate-y-1/2`}
+          >
+            <HiChevronUpDown className="text-2xl text-copy" />
+          </span>
+        </Listbox.Button>
+        <Listbox.Options
+          className={`absolute left-0 right-0 top-14 max-h-96 w-full overflow-y-scroll bg-body-100 py-1 outline-none ${cvs.radius[radius]}`}
         >
-          {filteredOptions.map((option, i) => (
-            <Combobox.Option key={i} value={option} className={`py-2`}>
+          {options.map((option, i) => (
+            <Listbox.Option key={i} value={option} className={`py-2`}>
               {({ active, selected }) => (
                 <li
                   className={`flex items-center justify-start gap-2 py-2 px-3 ${
@@ -124,10 +117,10 @@ export default function FormCombobox({
                   </span>
                 </li>
               )}
-            </Combobox.Option>
+            </Listbox.Option>
           ))}
-        </Combobox.Options>
+        </Listbox.Options>
       </div>
-    </Combobox>
+    </Listbox>
   );
 }

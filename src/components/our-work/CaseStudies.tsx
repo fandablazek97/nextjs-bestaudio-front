@@ -1,7 +1,6 @@
 import Button from "@ui/Button";
-import { HiChevronDown } from "react-icons/hi";
 import FormCombobox from "@ui/FormCombobox";
-import { cars } from "@configs/car-brands";
+import FormSelect from "@ui/FormSelect";
 
 type CaseStudiesProps = {
   className?: string;
@@ -56,17 +55,17 @@ export default function CaseStudies({
     <div className={`w-full ${className}`}>
       <div className="mb-12 ml-auto flex flex-col justify-end gap-8 md:mb-16 md:max-w-xl md:flex-row">
         <FormCombobox
-          isRequired
-          label="Combobox label"
-          isLabelHidden
+          label="Vyberte značku:"
           name="combobox"
           color="primary"
           options={carBrands}
         />
-        <span className="flex shrink-0 items-center justify-start font-medium">
-          <span className="mr-1">Filtrovat podle služeb</span>
-          <HiChevronDown className="scale-125" />
-        </span>
+        <FormSelect
+          label="Vyberte balíček:"
+          name="select"
+          color="primary"
+          options={["Všechny balíčky", "Balíček 1", "Balíček 2", "Balíček 3"]}
+        />
       </div>
       <div className="grid w-full grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:gap-y-24 xl:grid-cols-3 xl:gap-x-14">
         {children}

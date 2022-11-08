@@ -5,15 +5,7 @@ type ButtonProps = {
   children: string;
   as?: React.ElementType;
   variant?: "filled" | "outlined" | "tinted" | "plain";
-  color?:
-    | "primary"
-    | "secondary"
-    | "accent"
-    | "neutral"
-    | "info"
-    | "success"
-    | "warning"
-    | "error";
+  color?: "primary" | "secondary" | "accent" | "neutral" | "light" | "error";
   radius?: "none" | "sm" | "md" | "lg" | "xl" | "full";
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   leftIcon?: React.ReactNode;
@@ -28,60 +20,75 @@ type ButtonProps = {
 };
 
 const cvs = {
-  base: "inline-flex items-center justify-center overflow-hidden font-medium font-display tracking-wide no-underline outline-none transition duration-200 focus-visible:ring-4",
+  base: "inline-flex relative group/button items-center isolate justify-center font-medium font-display tracking-wide no-underline outline-none transition duration-[250ms] ease-out-back focus-visible:ring-4",
   variant: {
     filled: "",
     outlined:
-      "shadow-[inset_0px_0px_0px_2px] bg-opacity-0 hover:bg-opacity-100",
-    tinted: "bg-opacity-15 hover:bg-opacity-25",
-    plain: "bg-opacity-0 hover:bg-opacity-15",
+      "shadow-[inset_0px_0px_0px_2px] bg-opacity-0 group-hover/button:bg-opacity-100",
+    tinted: "bg-opacity-15 group-hover/button:bg-opacity-25",
+    plain: "bg-opacity-0 group-hover/button:bg-opacity-15",
   },
-  color: {
+  textVariants: {
     filled: {
-      primary: "bg-primary hover:bg-primary-active text-primary-content",
-      secondary:
-        "bg-secondary hover:bg-secondary-active text-secondary-content",
-      accent: "bg-accent hover:bg-accent-active text-accent-content",
-      neutral: "bg-neutral hover:bg-neutral-active text-neutral-content",
-      info: "bg-info hover:bg-info-active text-info-content",
-      success: "bg-success hover:bg-success-active text-success-content",
-      warning: "bg-warning hover:bg-warning-active text-warning-content",
-      error: "bg-error hover:bg-error-active text-error-content",
+      primary: "text-primary-content",
+      secondary: "text-secondary-content",
+      accent: "text-accent-content",
+      neutral: "text-neutral-content",
+      light: "text-gray-900",
+      error: "text-error-content",
     },
     outlined: {
-      primary:
-        "bg-primary text-primary shadow-primary hover:text-primary-content",
-      secondary:
-        "bg-secondary text-secondary shadow-secondary hover:text-secondary-content",
-      accent: "bg-accent text-accent shadow-accent hover:text-accent-content",
-      neutral:
-        "bg-neutral text-neutral shadow-neutral hover:text-neutral-content",
-      info: "bg-info text-info shadow-info hover:text-info-content",
-      success:
-        "bg-success text-success shadow-success hover:text-success-content",
-      warning:
-        "bg-warning text-warning shadow-warning hover:text-warning-content",
-      error: "bg-error text-error shadow-error hover:text-error-content",
+      primary: "text-white hover:text-primary-content",
+      secondary: "text-secondary hover:text-secondary-content",
+      accent: "text-accent hover:text-accent-content",
+      neutral: "text-neutral hover:text-neutral-content",
+      light: "text-white hover:text-gray-900",
+      error: "text-error hover:text-error-content",
     },
     // Used for tinted and plain variants
     tinted: {
-      primary: "bg-primary hover:bg-primary-active text-primary",
-      secondary: "bg-secondary hover:bg-secondary-active text-secondary",
-      accent: "bg-accent hover:bg-accent-active text-accent",
-      neutral: "bg-neutral hover:bg-neutral-active text-neutral",
-      info: "bg-info hover:bg-info-active text-info",
-      success: "bg-success hover:bg-success-active text-success",
-      warning: "bg-warning hover:bg-warning-active text-warning",
-      error: "bg-error hover:bg-error-active text-error",
+      primary: "text-primary",
+      secondary: "text-secondary",
+      accent: "text-accent",
+      neutral: "text-neutral",
+      light: "text-white",
+      error: "text-error",
     },
+  },
+  backgroundVariants: {
+    filled: {
+      primary: "bg-primary group-hover/button:bg-primary-active",
+      secondary: "bg-secondary group-hover/button:bg-secondary-active",
+      accent: "bg-accent group-hover/button:bg-accent-active",
+      neutral: "bg-neutral group-hover/button:bg-neutral-active",
+      light: "bg-white group-hover/button:bg-white",
+      error: "bg-error group-hover/button:bg-error-active",
+    },
+    outlined: {
+      primary: "bg-primary shadow-primary",
+      secondary: "bg-secondary shadow-secondary",
+      accent: "bg-accent shadow-accent",
+      neutral: "bg-neutral shadow-neutral",
+      light: "bg-white shadow-white",
+      error: "bg-error shadow-error",
+    },
+    // Used for tinted and plain variants
+    tinted: {
+      primary: "bg-primary group-hover/button:bg-primary-active",
+      secondary: "bg-secondary group-hover/button:bg-secondary-active",
+      accent: "bg-accent group-hover/button:bg-accent-active",
+      neutral: "bg-neutral group-hover/button:bg-neutral-active",
+      light: "bg-white group-hover/button:bg-white",
+      error: "bg-error group-hover/button:bg-error-active",
+    },
+  },
+  color: {
     focus: {
       primary: "focus-visible:ring-primary-active/70",
       secondary: "focus-visible:ring-secondary-active/70",
       accent: "focus-visible:ring-accent-active/70",
       neutral: "focus-visible:ring-neutral-active/70",
-      info: "focus-visible:ring-info-active/70",
-      success: "focus-visible:ring-success-active/70",
-      warning: "focus-visible:ring-warning-active/70",
+      light: "focus-visible:ring-white/70",
       error: "focus-visible:ring-error-active/70",
     },
   },
@@ -137,15 +144,13 @@ const Button = forwardRef<Ref, ButtonProps>(
         ref={ref}
         className={`
           ${cvs.base}
-          ${cvs.variant[variant]}
-          ${variant === "filled" ? cvs.color.filled[color] : ""} 
-          ${variant === "outlined" ? cvs.color.outlined[color] : ""}
+          ${variant === "filled" ? cvs.textVariants.filled[color] : ""} 
+          ${variant === "outlined" ? cvs.textVariants.outlined[color] : ""}
           ${
             variant === "tinted" || variant === "plain"
-              ? cvs.color.tinted[color]
+              ? cvs.textVariants.tinted[color]
               : ""
           } 
-          ${cvs.radius[radius]} ${cvs.color.focus[color]}
           ${!isIconBox ? cvs.size[size] : cvs.iconBoxSize[size]}
           ${
             isLoading
@@ -164,6 +169,24 @@ const Button = forwardRef<Ref, ButtonProps>(
         onMouseLeave={() => setHover(false)}
         {...rest}
       >
+        {/* Hover effect */}
+        <div
+          className={`absolute inset-0 z-[-1] h-full w-full transform-gpu transition duration-[250ms] ease-out-back group-hover/button:scale-110 
+        ${cvs.variant[variant]}
+        ${variant === "filled" ? cvs.backgroundVariants.filled[color] : ""} 
+          ${
+            variant === "outlined" ? cvs.backgroundVariants.outlined[color] : ""
+          }
+          ${
+            variant === "tinted" || variant === "plain"
+              ? cvs.backgroundVariants.tinted[color]
+              : ""
+          } 
+        ${cvs.radius[radius]} ${cvs.color.focus[color]}
+        ${hover ? "will-change-transform" : "will-change-auto"}
+        `}
+        ></div>
+
         {/* Left icon */}
         {leftIcon !== null && isIconBox === false && (
           <span

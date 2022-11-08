@@ -17,13 +17,12 @@ import CallToActionWide from "@ui/CallToActionWide";
 // Particles
 // Cookie lišta
 // Zprovoznit formulář
-// Otestovat mobilní verzi
+// Otestovat mobilní verzi - x
 // Prolinkovat sociální sítě
 // Finální content
-// Přidat dropdown do filtru u případovek
-// Filtr u blogu
+// Přidat dropdown do filtru u případovek - x
+// Filtr u blogu - x
 // Hover u tlačítek
-// Barevné filtry k fotkám (přidat všude classu)
 
 const Home: NextPage = () => {
   return (

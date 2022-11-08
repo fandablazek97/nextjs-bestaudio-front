@@ -18,8 +18,8 @@ export const config = {
   legal: {
     websiteLaunchDate: "1.1. 2023",
     company: {
-      name: "Firma s.r.o.",
-      adress: "Ulice 123, 123 45 Město",
+      name: "Bestaudio s.r.o.",
+      adress: "Ulice 123, 456 78 Město",
       ic: "00000000",
       dic: "CZ00000000",
       phone: "+420 123 456 789",

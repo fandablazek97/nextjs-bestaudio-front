@@ -24,14 +24,18 @@ export default function CarBrandsMarquee() {
         </ScrollReveal>
         <ScrollReveal
           delay="200"
-          className="mx-auto mt-8 flex max-w-sm flex-col items-center justify-center gap-5 sm:max-w-xl sm:flex-row lg:mt-12"
+          className="mx-auto mt-8 flex max-w-sm flex-col items-center justify-center gap-5 sm:max-w-xl sm:flex-row sm:gap-10 lg:mt-12"
         >
           <AppLink href="/sluzby" passHref>
-            <Button variant="outlined" className="w-full">
-              Zobrazit služby
-            </Button>
+            <Button className="w-full">Zobrazit služby</Button>
           </AppLink>
-          <Button as={"a"} href="#reference" color="neutral" className="w-full">
+          <Button
+            as={"a"}
+            href="#reference"
+            variant="outlined"
+            color="light"
+            className="w-full"
+          >
             Zobrazit reference
           </Button>
         </ScrollReveal>

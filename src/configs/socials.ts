@@ -1,14 +1,14 @@
 export const socials = {
   facebook: {
-    href: "https://www.facebook.com/",
+    href: "https://www.facebook.com/bestaudio.cz",
     aria: "Odkaz na Facebook",
   },
   instagram: {
-    href: "https://www.instagram.com/",
+    href: "https://www.facebook.com/bestaudio.cz",
     aria: "Odkaz na Instagram",
   },
   youtube: {
-    href: "https://www.youtube.com/",
+    href: "https://www.youtube.com/channel/UCqV1cVWJ1vjYWhKEKPIFR4A",
     aria: "Odkaz na YouTube",
   },
   // Others

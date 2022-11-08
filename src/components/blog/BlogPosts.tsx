@@ -1,5 +1,5 @@
 import Button from "@ui/Button";
-import BlogFilter from "./BlogFilter";
+// import BlogFilter from "./BlogFilter";
 
 type BlogPostsProps = {
   className?: string;
@@ -12,9 +12,9 @@ export default function BlogPosts({
 }: BlogPostsProps) {
   return (
     <div className={`w-full ${className}`}>
-      <div>
+      {/* <div>
         <BlogFilter className="mb-12 md:mb-16" />
-      </div>
+      </div> */}
       <div className="grid w-full grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:gap-y-24 xl:grid-cols-3 xl:gap-x-14">
         {children}
       </div>
