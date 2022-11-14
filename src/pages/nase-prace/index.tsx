@@ -102,7 +102,15 @@ const NasePrace: NextPage = () => {
         noFollow={false}
       />
 
-      <HeroGlobal title="Naše práce" />
+      <HeroGlobal
+        title="Naše práce"
+        hasScene
+        position={[25, -70, 15]}
+        rotation={[120, 0, 0]}
+        count={180}
+        gap={2.5}
+        fov={100}
+      />
 
       {/* Příspěvky z případových studií */}
       <Wrapper

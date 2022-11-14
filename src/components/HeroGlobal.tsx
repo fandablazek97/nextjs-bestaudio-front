@@ -1,16 +1,42 @@
 import Heading from "@ui/Heading";
 import Wrapper from "@ui/Wrapper";
+import { Suspense } from "react";
+import Scene3D from "@components/Scene3D";
 
 type HeroGlobalProps = {
   title?: string;
   perex?: string;
   cta?: string;
+  // bgSvgSrc?: string | null;
+  // Scene props
+  hasScene?: boolean;
+  position?: [number, number, number];
+  rotation?: [number, number, number];
+  fov?: number;
+  t?: number;
+  f?: number;
+  a?: number;
+  count?: number;
+  gap?: number;
+  tSpeed?: number;
 };
 
 export default function HeroGlobal({
   title = "Lorem ipsum dolor",
   perex = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque totam dolor magnam esse perspiciatis facere, nam quae quos? Quas reiciendis minus, illum molestiae tempora earum?",
   cta = "Zjistit více",
+  // bgSvgSrc = null,
+  // Scene props
+  hasScene = false,
+  position = [100, 10, 10],
+  rotation = [0, 0, 0],
+  fov = 75,
+  t = 0,
+  f = 0.0025,
+  a = 3,
+  count = 120,
+  gap = 3,
+  tSpeed = 50,
 }: HeroGlobalProps) {
   // Logic goes here
   return (
@@ -19,6 +45,41 @@ export default function HeroGlobal({
         as={"header"}
         className="flex h-full flex-col items-center justify-center"
       >
+        {hasScene && (
+          <Suspense
+            fallback={
+              <div className="absolute top-0 left-0 z-10 flex h-[110vh] w-screen items-center justify-center">
+                <span className="block">Loading...</span>
+              </div>
+            }
+          >
+            {/* <Scene3D
+            position={[0, 90, 0]}
+            rotation={[120, 0, 0]}
+            count={180}
+            gap={2.5}
+            fov={90}
+            className="absolute top-0 left-0 -z-10 h-full w-screen opacity-40"
+          /> */}
+            <Scene3D
+              position={position}
+              rotation={rotation}
+              count={count}
+              gap={gap}
+              fov={fov}
+              t={t}
+              f={f}
+              a={a}
+              tSpeed={tSpeed}
+              className="pointer-events-none absolute top-0 left-0 -z-10 h-full w-screen opacity-40"
+            />
+          </Suspense>
+        )}
+
+        {/* {!hasScene && bgSvgSrc !== null && (
+          <img src={} alt="" />
+        )} */}
+
         <Heading
           as={"h1"}
           size="3xl"

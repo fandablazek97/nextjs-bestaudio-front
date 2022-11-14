@@ -59,12 +59,14 @@ export default function CaseStudies({
           name="combobox"
           color="primary"
           options={carBrands}
+          className="z-20"
         />
         <FormSelect
           label="Vyberte balíček:"
           name="select"
           color="primary"
           options={["Všechny balíčky", "Balíček 1", "Balíček 2", "Balíček 3"]}
+          className="z-10"
         />
       </div>
       <div className="grid w-full grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:gap-y-24 xl:grid-cols-3 xl:gap-x-14">

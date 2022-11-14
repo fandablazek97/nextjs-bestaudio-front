@@ -34,7 +34,11 @@ export default function Navbar() {
     <nav
       className={`fixed isolate z-40 h-16 w-screen transition-[background,transform,opacity,box-shadow] duration-500 sm:h-20 2xl:h-24 
         ${isVisible ? "translate-y-0" : "-translate-y-full"}
-        ${isScrolled ? "bg-body/80 backdrop-blur-lg" : ""} 
+        ${
+          isScrolled
+            ? "bg-body/80 backdrop-blur-lg"
+            : "bg-gradient-to-b from-body/80 to-transparent"
+        } 
       `}
     >
       <Wrapper

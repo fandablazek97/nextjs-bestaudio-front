@@ -16,9 +16,7 @@ export default function Footer() {
         className="grid grid-cols-1 gap-y-10 gap-x-10 md:grid-cols-2 md:gap-y-20 xl:grid-cols-4"
       >
         <div className="flex flex-col items-center justify-center text-center md:items-start md:justify-start md:text-left">
-          <AppLink href="/" passHref className="cursor-pointer">
-            <LogoBrandFull variant="white" />
-          </AppLink>
+          <LogoBrandFull variant="white" />
         </div>
         <div className="flex flex-col items-center justify-center text-center md:items-start md:justify-start md:text-left">
           <Heading as={"span"} size="md" hasMarginBottom>

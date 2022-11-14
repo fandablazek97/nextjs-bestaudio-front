@@ -20,7 +20,15 @@ const Sluzby: NextPage = () => {
         noFollow={false}
       />
 
-      <HeroGlobal title="Služby" />
+      <HeroGlobal
+        title="Služby"
+        hasScene
+        position={[0, 90, 0]}
+        rotation={[120, 0, 0]}
+        count={180}
+        gap={2.5}
+        fov={100}
+      />
 
       {/* Seznam služeb */}
       <Wrapper
