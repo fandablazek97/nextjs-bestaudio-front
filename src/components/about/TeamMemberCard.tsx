@@ -1,4 +1,5 @@
 import Heading from "@ui/Heading";
+import Image from "next/image";
 
 type TeamMemberCardProps = {
   className?: string;
@@ -17,13 +18,14 @@ export function TeamMemberCard({
 }: TeamMemberCardProps) {
   return (
     <div className={`grid grid-cols-1 gap-8 sm:grid-cols-2 ${className}`}>
-      <div className="grayscale-toned-image col-span-1 aspect-square w-full max-w-md overflow-hidden rounded-lg object-cover object-center">
-        <img
+      <div className="grayscale-toned-image col-span-1 aspect-square w-full max-w-md overflow-hidden rounded-lg">
+        <Image
           src={imageSrc}
           alt={name}
           width="512"
           height="512"
-          className="w-full"
+          loading="lazy"
+          className="w-full object-cover object-center"
         />
       </div>
       <div className="col-span-1 flex flex-col">

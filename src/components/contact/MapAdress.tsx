@@ -73,6 +73,7 @@ export default function MapAdress({ className = "" }: Props) {
             src="https://maps.google.com/maps?q=P%C3%ADseck%C3%A1%201307/19,%20326%2000%20Plze%C5%88%202-Slovany&t=k&z=13&ie=UTF8&iwloc=&output=embed"
             frameBorder="0"
             scrolling="no"
+            loading="lazy"
             className="h-full w-full object-cover"
           />
         </div>

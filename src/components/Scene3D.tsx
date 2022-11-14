@@ -1,7 +1,7 @@
 import { Suspense, useMemo, useRef, useCallback } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
-import { OrbitControls } from "@react-three/drei";
+// import { OrbitControls } from "@react-three/drei";
 
 type PointsProps = {
   t?: number;
@@ -121,7 +121,7 @@ export default function Scene3D({
   return (
     <div className={`${className}`}>
       <Canvas camera={{ position: position, rotation: rotation, fov: fov }}>
-        <OrbitControls />
+        {/* <OrbitControls /> */}
         <Suspense fallback={null}>
           <Points t={t} f={f} a={a} count={count} gap={gap} tSpeed={tSpeed} />
         </Suspense>

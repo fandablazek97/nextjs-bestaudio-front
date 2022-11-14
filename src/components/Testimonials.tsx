@@ -3,6 +3,7 @@ import Heading from "@ui/Heading";
 import useIsomorphicLayoutEffect from "@hooks/useIsomorphicLayoutEffect";
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import Image from "next/image";
 
 const testimonialsArray = [
   // Column 1
@@ -371,11 +372,12 @@ export function Testimonial({ avatar, name, car, content }: TestimonialProps) {
     <li className="col-span-1 flex flex-col gap-4 rounded-xl bg-body-100 px-6 py-8">
       <div className="flex gap-3 sm:gap-5">
         <div className="h-12 w-12 shrink-0 overflow-hidden rounded-full">
-          <img
+          <Image
             src={avatar}
             alt={name}
             width="64"
             height="64"
+            loading="lazy"
             className="h-12 w-12"
           />
         </div>

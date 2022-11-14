@@ -28,6 +28,7 @@ export default function CarBrand({
           alt={name}
           width={36}
           height={28}
+          loading="lazy"
           className="h-full w-full object-contain"
         />
       </div>
@@ -45,6 +46,7 @@ export default function CarBrand({
           alt={name}
           width={36}
           height={28}
+          loading="lazy"
           className="h-full w-full object-contain"
         />
       </div>

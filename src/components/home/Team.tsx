@@ -3,6 +3,7 @@ import Heading from "@ui/Heading";
 import ScrollReveal from "@ui/ScrollReveal";
 import { team } from "@configs/team";
 import AppLink from "@ui/AppLink";
+import Image from "next/image";
 
 type TeamMemberCardProps = {
   imageSrc: string;
@@ -19,8 +20,15 @@ export function TeamMemberCard({
 }: TeamMemberCardProps) {
   return (
     <ScrollReveal className={`flex flex-col gap-5 ${className}`}>
-      <div className="grayscale-toned-image aspect-square w-full overflow-hidden rounded-lg object-cover object-center">
-        <img src={imageSrc} alt={name} width="512" height="512" />
+      <div className="grayscale-toned-image aspect-square w-full overflow-hidden rounded-lg">
+        <Image
+          src={imageSrc}
+          alt={name}
+          width="512"
+          height="512"
+          loading="lazy"
+          className="object-cover object-center"
+        />
       </div>
       <div className="flex flex-col">
         <Heading as={"span"} size="md" color="primary" hasMarginBottom>
