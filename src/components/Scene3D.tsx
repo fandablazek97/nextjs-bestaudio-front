@@ -95,7 +95,6 @@ function Points({
 
 type Scene3DProps = {
   position?: [number, number, number];
-  rotation?: [number, number, number];
   fov?: number;
   t?: number;
   f?: number;

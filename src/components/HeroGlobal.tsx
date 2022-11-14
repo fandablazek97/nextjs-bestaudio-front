@@ -53,7 +53,6 @@ export default function HeroGlobal({
           >
             {/* <Scene3D
             position={[0, 90, 0]}
-            rotation={[120, 0, 0]}
             count={180}
             gap={2.5}
             fov={90}
