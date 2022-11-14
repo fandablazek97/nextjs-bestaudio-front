@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import styles from "./FormHnypot.module.css";
+import styles from "./FormHnpot.module.css";
 
 type FormHnypotProps = {
   type?: "text" | "tel" | "email" | "url";
