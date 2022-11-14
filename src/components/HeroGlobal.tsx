@@ -11,7 +11,6 @@ type HeroGlobalProps = {
   // Scene props
   hasScene?: boolean;
   position?: [number, number, number];
-  rotation?: [number, number, number];
   fov?: number;
   t?: number;
   f?: number;
@@ -29,7 +28,6 @@ export default function HeroGlobal({
   // Scene props
   hasScene = false,
   position = [100, 10, 10],
-  rotation = [0, 0, 0],
   fov = 75,
   t = 0,
   f = 0.0025,
@@ -63,7 +61,6 @@ export default function HeroGlobal({
           /> */}
             <Scene3D
               position={position}
-              rotation={rotation}
               count={count}
               gap={gap}
               fov={fov}

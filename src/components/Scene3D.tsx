@@ -108,7 +108,6 @@ type Scene3DProps = {
 
 export default function Scene3D({
   position = [100, 10, 10],
-  rotation = [0, 0, 0],
   fov = 75,
   t = 0,
   f = 0.0025,
@@ -120,7 +119,7 @@ export default function Scene3D({
 }: Scene3DProps) {
   return (
     <div className={`${className}`}>
-      <Canvas camera={{ position: position, rotation: rotation, fov: fov }}>
+      <Canvas camera={{ position: position, fov: fov }}>
         {/* <OrbitControls /> */}
         <Suspense fallback={null}>
           <Points t={t} f={f} a={a} count={count} gap={gap} tSpeed={tSpeed} />

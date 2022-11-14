@@ -19,8 +19,7 @@ export default function Hero() {
           }
         >
           <Scene3D
-            position={[100, 15, 0]}
-            rotation={[120, 0, 0]}
+            position={[100, 20, 5]}
             fov={90}
             className="pointer-events-none absolute top-0 left-0 -z-10 h-[120vh] min-h-full w-screen opacity-40"
           />
