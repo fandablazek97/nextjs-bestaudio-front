@@ -93,7 +93,7 @@ function Points({
   );
 }
 
-type Scene3DProps = {
+type SceneProps = {
   position?: [number, number, number];
   fov?: number;
   t?: number;
@@ -105,7 +105,7 @@ type Scene3DProps = {
   className?: string;
 };
 
-export default function Scene3D({
+export default function Scene({
   position = [100, 10, 10],
   fov = 75,
   t = 0,
@@ -115,7 +115,7 @@ export default function Scene3D({
   gap = 3,
   tSpeed = 50,
   className = "",
-}: Scene3DProps) {
+}: SceneProps) {
   return (
     <div className={`${className}`}>
       <Canvas camera={{ position: position, fov: fov }}>

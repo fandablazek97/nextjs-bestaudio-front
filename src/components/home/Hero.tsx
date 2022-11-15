@@ -1,8 +1,12 @@
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
 import Heading from "@ui/Heading";
 import Wrapper from "@ui/Wrapper";
-// import Scene from "@components/3d-scene/Scene";
-import { Suspense } from "react";
-import Scene3D from "@components/Scene3D";
+// import Scene from "@components/Scene";
+
+const DynamicScene = dynamic(() => import("../Scene"), {
+  suspense: true,
+});
 
 export default function Hero() {
   return (
@@ -14,11 +18,11 @@ export default function Hero() {
         <Suspense
           fallback={
             <div className="absolute top-0 left-0 z-10 flex h-[110vh] w-screen items-center justify-center">
-              <span className="block">Loading...</span>
+              <span className="block">Načítání...</span>
             </div>
           }
         >
-          <Scene3D
+          <DynamicScene
             position={[100, 20, 5]}
             fov={90}
             className="pointer-events-none absolute top-0 left-0 -z-10 h-[120vh] min-h-full w-screen opacity-40"

@@ -1,7 +1,12 @@
+import { Suspense } from "react";
+import dynamic from "next/dynamic";
 import Heading from "@ui/Heading";
 import Wrapper from "@ui/Wrapper";
-import { Suspense } from "react";
-import Scene3D from "@components/Scene3D";
+// import Scene from "@components/Scene";
+
+const DynamicScene = dynamic(() => import("../components/Scene"), {
+  suspense: true,
+});
 
 type HeroGlobalProps = {
   title?: string;
@@ -51,14 +56,7 @@ export default function HeroGlobal({
               </div>
             }
           >
-            {/* <Scene3D
-            position={[0, 90, 0]}
-            count={180}
-            gap={2.5}
-            fov={90}
-            className="absolute top-0 left-0 -z-10 h-full w-screen opacity-40"
-          /> */}
-            <Scene3D
+            <DynamicScene
               position={position}
               count={count}
               gap={gap}
