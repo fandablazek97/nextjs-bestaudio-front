@@ -82,7 +82,7 @@ function Points({
       <pointsMaterial
         attach="material"
         map={pointTexture}
-        color={0x00aaff}
+        color={0x00bbff}
         size={0.5}
         sizeAttenuation
         transparent={false}
@@ -113,7 +113,7 @@ export default function Scene({
   a = 3,
   count = 120,
   gap = 3,
-  tSpeed = 50,
+  tSpeed = 65,
   className = "",
 }: SceneProps) {
   return (

@@ -105,10 +105,10 @@ const NasePrace: NextPage = () => {
       <HeroGlobal
         title="Naše práce"
         hasScene
-        position={[25, -70, 15]}
+        position={[25, -50, 15]}
         count={180}
         gap={2.5}
-        fov={100}
+        fov={105}
       />
 
       {/* Příspěvky z případových studií */}

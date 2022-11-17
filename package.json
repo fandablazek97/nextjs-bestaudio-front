@@ -15,7 +15,6 @@
     "@fontsource/inter": "^4.5.14",
     "@fontsource/syne": "^4.5.11",
     "@headlessui/react": "^1.7.3",
-    "@react-three/drei": "^9.40.0",
     "@react-three/fiber": "^8.9.1",
     "copy-to-clipboard": "^3.3.2",
     "next": "13.0.0",

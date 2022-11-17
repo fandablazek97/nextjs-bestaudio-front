@@ -84,12 +84,12 @@ const cvs = {
   },
   color: {
     focus: {
-      primary: "focus-visible:ring-primary-active/70",
-      secondary: "focus-visible:ring-secondary-active/70",
-      accent: "focus-visible:ring-accent-active/70",
-      neutral: "focus-visible:ring-neutral-active/70",
+      primary: "focus-visible:ring-primary/70",
+      secondary: "focus-visible:ring-secondary/70",
+      accent: "focus-visible:ring-accent/70",
+      neutral: "focus-visible:ring-neutral/70",
       light: "focus-visible:ring-white/70",
-      error: "focus-visible:ring-error-active/70",
+      error: "focus-visible:ring-error/70",
     },
   },
   radius: {
@@ -157,6 +157,8 @@ const Button = forwardRef<Ref, ButtonProps>(
               ? "pointer-events-none cursor-not-allowed"
               : "cursor-pointer"
           } 
+          ${cvs.radius[radius]}
+          ${cvs.color.focus[color]}
           ${isDisabled ? "pointer-events-none opacity-60 grayscale-[30%]" : ""} 
           ${hover ? "will-change-transform" : "will-change-auto"}
           ${className}
@@ -182,7 +184,7 @@ const Button = forwardRef<Ref, ButtonProps>(
               ? cvs.backgroundVariants.tinted[color]
               : ""
           } 
-        ${cvs.radius[radius]} ${cvs.color.focus[color]}
+        ${cvs.radius[radius]}
         ${hover ? "will-change-transform" : "will-change-auto"}
         `}
         ></div>

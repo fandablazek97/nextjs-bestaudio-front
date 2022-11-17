@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import Heading from "@ui/Heading";
 import Wrapper from "@ui/Wrapper";
+import Spinner from "@ui/Spinner";
 // import Scene from "@components/Scene";
 
 const DynamicScene = dynamic(() => import("../components/Scene"), {
@@ -51,9 +52,11 @@ export default function HeroGlobal({
         {hasScene && (
           <Suspense
             fallback={
-              <div className="absolute top-0 left-0 z-10 flex h-[110vh] w-screen items-center justify-center">
-                <span className="block">Loading...</span>
-              </div>
+              <Spinner
+                size="lg"
+                color="muted"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              />
             }
           >
             <DynamicScene

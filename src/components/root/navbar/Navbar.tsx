@@ -47,7 +47,7 @@ export default function Navbar() {
       >
         {/* Logo */}
         <AppLink href="/" passHref>
-          <a className="z-10 mr-auto origin-left scale-75 outline-none focus-visible:ring-4 focus-visible:ring-copy-rich/70 sm:scale-100">
+          <a className="z-10 mr-auto origin-left scale-[0.7] outline-none focus-visible:ring-4 focus-visible:ring-copy-rich/70 sm:scale-100">
             <LogoBrandFull variant="white" />
           </a>
         </AppLink>

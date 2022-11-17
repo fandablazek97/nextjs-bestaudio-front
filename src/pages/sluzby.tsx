@@ -23,10 +23,10 @@ const Sluzby: NextPage = () => {
       <HeroGlobal
         title="Služby"
         hasScene
-        position={[0, 90, 0]}
+        position={[0, 80, 0]}
         count={180}
         gap={2.5}
-        fov={100}
+        fov={90}
       />
 
       {/* Seznam služeb */}

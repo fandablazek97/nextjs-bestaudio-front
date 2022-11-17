@@ -22,7 +22,7 @@ export default function Services() {
             aperiam!
           </p>
           <AppLink href="/kontakt" passHref>
-            <Button variant="outlined" className="mt-5">
+            <Button as={"a"} variant="outlined" className="mt-5">
               Objednat
             </Button>
           </AppLink>
@@ -40,7 +40,7 @@ export default function Services() {
             aperiam!
           </p>
           <AppLink href="/kontakt" passHref>
-            <Button variant="outlined" className="mt-5">
+            <Button as={"a"} variant="outlined" className="mt-5">
               Objednat
             </Button>
           </AppLink>
@@ -58,7 +58,7 @@ export default function Services() {
             aperiam!
           </p>
           <AppLink href="/kontakt" passHref>
-            <Button variant="outlined" className="mt-5">
+            <Button as={"a"} variant="outlined" className="mt-5">
               Objednat
             </Button>
           </AppLink>

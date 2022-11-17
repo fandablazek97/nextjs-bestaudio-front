@@ -479,9 +479,9 @@ export default function Testimonials({ className = "" }: TestimonialsProps) {
         ))}
       </div>
       <div
-        className={`flex h-64 w-full items-center justify-center bg-gradient-to-t from-body to-transparent
+        className={`flex h-40 w-full items-center justify-center bg-gradient-to-t from-body to-transparent
         ${hasTransition ? "transition-[transform,opacity] duration-300" : ""}
-        ${isExpanded ? "sticky bottom-0 translate-y-0" : "-translate-y-64"}
+        ${isExpanded ? "sticky bottom-0 translate-y-0" : "-translate-y-40"}
         ${
           isExpanded && !isCollapseButtonVisible
             ? "translate-y-8 opacity-0"
