@@ -13,16 +13,13 @@ import Team from "@components/home/Team";
 import CallToActionWide from "@ui/CallToActionWide";
 
 // To Do
+// Animace úvodní stránky při prvním loadu (Animace textu a kamery v partiklech)
+// Statické partikly - přidat
 // Zapnout strict mod
-// Particles
 // Cookie lišta
 // Zprovoznit formulář
-// Otestovat mobilní verzi - x
 // Prolinkovat sociální sítě
 // Finální content
-// Přidat dropdown do filtru u případovek - x
-// Filtr u blogu - x
-// Hover u tlačítek
 
 const Home: NextPage = () => {
   return (

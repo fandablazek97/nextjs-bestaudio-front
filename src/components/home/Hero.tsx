@@ -28,6 +28,7 @@ export default function Hero() {
           <DynamicScene
             position={[100, 20, 5]}
             fov={90}
+            tSpeed={45}
             className="pointer-events-none absolute top-0 left-0 -z-10 h-[120vh] min-h-full w-screen opacity-40"
           />
         </Suspense>
