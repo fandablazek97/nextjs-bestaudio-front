@@ -18,30 +18,32 @@ export default function Video() {
 
   return (
     <section id="video">
-      <button
-        aria-label="Přehrát Video"
-        className="group relative isolate aspect-[16/9] w-full cursor-pointer overflow-hidden rounded-xl bg-gray-900 focus-visible:outline focus-visible:outline-4 focus-visible:outline-primary"
-        onClick={openModal}
-      >
-        <video
-          autoPlay
-          loop
-          muted
-          className="h-full w-full object-cover opacity-40"
+      <div className="relative">
+        <button
+          aria-label="Přehrát Video"
+          className="group relative isolate aspect-[16/9] w-full cursor-pointer overflow-hidden rounded-xl bg-gray-900 focus-visible:outline focus-visible:outline-4 focus-visible:outline-primary"
+          onClick={openModal}
         >
-          <source src="/video/bestaudio-preview.mp4" type="video/mp4" />
-          Váš prohlížeč nepodporuje video
-        </video>
-        <div className="z-1 absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2">
-          <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-transparent">
-            <BsFillPlayFill className="z-10 text-3xl text-primary" />
-            <div className="absolute inset-0 -z-10 h-20 w-20 rounded-full bg-white/35 backdrop-blur-lg transition-transform duration-300 ease-out-back group-hover:scale-[1.25] lg:group-hover:scale-[1.35]"></div>
+          <video
+            autoPlay
+            loop
+            muted
+            className="h-full w-full object-cover opacity-40"
+          >
+            <source src="/video/bestaudio-preview.mp4" type="video/mp4" />
+            Váš prohlížeč nepodporuje video
+          </video>
+          <div className="z-1 absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2">
+            <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-transparent">
+              <BsFillPlayFill className="z-10 text-3xl text-primary" />
+              <div className="absolute inset-0 -z-10 h-20 w-20 rounded-full bg-white/35 backdrop-blur-lg transition-transform duration-300 ease-out-back group-hover:scale-[1.25] lg:group-hover:scale-[1.35]"></div>
+            </div>
           </div>
-        </div>
-      </button>
-      <span className="block pt-4 font-display text-xs font-semibold uppercase tracking-widest sm:pt-6 sm:text-sm">
-        Přehrát video
-      </span>
+        </button>
+        <span className="block pt-4 font-display text-xs font-semibold uppercase tracking-widest sm:absolute sm:bottom-8 sm:left-8 sm:text-sm">
+          Přehrát video
+        </span>
+      </div>
 
       {/* Samotný modal */}
       <Transition show={isOpen} as={Fragment}>

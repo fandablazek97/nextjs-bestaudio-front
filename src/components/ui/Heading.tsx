@@ -33,7 +33,7 @@ const cvs = {
     lg: "text-2xl sm:text-3xl xl:text-4xl",
     xl: "text-3xl sm:text-4xl lg:text-5xl xl:text-6xl",
     "2xl": "text-3xl sm:text-4xl md:text-5xl xl:text-7xl",
-    "3xl": "text-4xl sm:text-6xl lg:text-8xl xl:text-9xl 2xl:text-10xl",
+    "3xl": "text-3xl sm:text-4xl lg:text-6xl xl:text-7xl 2xl:text-8xl",
     none: "",
   },
   color: {

@@ -26,19 +26,21 @@ export default function Hero() {
           }
         >
           <DynamicScene
-            position={[100, 20, 5]}
-            fov={90}
+            position={[90, 12, 0]}
+            fov={100}
             tSpeed={45}
+            a={3.75}
             className="pointer-events-none absolute top-0 left-0 -z-10 h-[120vh] min-h-full w-screen opacity-40"
           />
         </Suspense>
         <Heading as={"h1"} size="3xl" align="center">
-          Děláme nejlepší <br className="hidden sm:block" /> zvuk v autě
+          Vytváříme dokonalý <br className="hidden sm:block" /> zvukový zážitek
+          v autě
+          {/* Děláme nejlepší <br className="hidden sm:block" /> zvuk v autě */}
         </Heading>
         <p className="mx-auto mt-12 max-w-xl text-center text-base font-medium md:text-lg lg:mt-28 lg:ml-auto lg:mr-0 lg:text-left">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque totam
-          dolor magnam esse perspiciatis facere, nam quae quos? Quas reiciendis
-          minus, illum molestiae tempora earum?
+          Hudba je těsnopis emocí. Emoce, které lze popsat tak nesnadno, jsou
+          přímo sdělovány člověku v hudbě a v tom je její síla a význam
         </p>
       </Wrapper>
     </div>

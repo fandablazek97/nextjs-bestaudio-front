@@ -25,6 +25,7 @@ const Sluzby: NextPage = () => {
         hasScene
         position={[0, 80, 0]}
         count={180}
+        a={3.75}
         gap={2.5}
         fov={90}
       />

@@ -47,8 +47,16 @@ type TeamProps = {
 export default function Team({ className = "" }: TeamProps) {
   return (
     <div
-      className={`grid w-full grid-cols-1 gap-12 lg:grid-cols-2 ${className}`}
+      className={`relative grid w-full grid-cols-1 gap-12 lg:grid-cols-2 ${className}`}
     >
+      {/* <Image
+        src={"/images/particles/bubble.png"}
+        alt="částice v pozadí"
+        aria-hidden="true"
+        width={512}
+        height={512}
+        className="absolute top-1/2 left-0 hidden -translate-x-1/2 scale-150 opacity-40 lg:block"
+      /> */}
       <ScrollReveal
         staggerChildren
         staggerChildrenIncrement="200"
