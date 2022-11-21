@@ -33,7 +33,7 @@ export default function Hero() {
             className="pointer-events-none absolute top-0 left-0 -z-10 h-[120vh] min-h-full w-screen opacity-40"
           />
         </Suspense>
-        <Heading as={"h1"} size="3xl" align="center">
+        <Heading as={"h1"} size="home-hero" align="center">
           Vytváříme dokonalý <br className="hidden sm:block" /> zvukový zážitek
           v autě
           {/* Děláme nejlepší <br className="hidden sm:block" /> zvuk v autě */}
