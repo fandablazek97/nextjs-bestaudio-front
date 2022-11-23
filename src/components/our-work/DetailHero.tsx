@@ -44,7 +44,7 @@ export default function DetailHero({
           >
             {title}
           </Heading>
-          <p className="max-w-2xl text-xl font-medium sm:text-2xl lg:mb-32 lg:ml-auto">
+          <p className="max-w-2xl text-lg font-medium sm:text-xl lg:mb-32 lg:ml-auto">
             {perex}
           </p>
         </Wrapper>

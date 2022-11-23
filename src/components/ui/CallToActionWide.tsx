@@ -25,7 +25,7 @@ export default function CallToActionWide({
   return (
     <Link href={href} passHref legacyBehavior>
       <a
-        className={`group relative flex w-full items-center justify-center rounded-xl py-14 px-8 outline-none focus-visible:ring-8 focus-visible:ring-primary/70 sm:py-28 ${className}`}
+        className={`group relative flex w-full items-center justify-center overflow-hidden rounded-xl py-14 px-8 outline-none focus-visible:ring-8 focus-visible:ring-primary/70 sm:py-28 ${className}`}
         {...rest}
       >
         {/* Background */}

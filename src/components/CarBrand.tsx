@@ -38,7 +38,7 @@ export default function CarBrand({
     </a>
   ) : (
     <div
-      className={`flex shrink-0 flex-row items-center justify-center gap-1.5 rounded-full bg-body-100 py-3 px-6 ${className}`}
+      className={`flex shrink-0 flex-row items-center justify-center gap-1.5 rounded-full bg-body-200/20 py-3 px-6 backdrop-blur-sm ${className}`}
     >
       <div className="flex h-7 w-9 shrink-0 items-center justify-center">
         <Image

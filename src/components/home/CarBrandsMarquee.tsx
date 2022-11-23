@@ -6,11 +6,19 @@ import Wrapper from "@ui/Wrapper";
 import Marquee from "react-fast-marquee";
 import { cars } from "@configs/car-brands";
 import AppLink from "@ui/AppLink";
+import Image from "next/image";
 
 export default function CarBrandsMarquee() {
   return (
-    <>
+    <div className="relative">
       <Wrapper paddedContentTop="lg" paddedContentBottom="sm">
+        <Image
+          src={"/images/particles/particles-shell.png"}
+          alt="xxx"
+          width={1920}
+          height={1920}
+          className="pointer-events-none absolute left-0 top-0 -z-10 aspect-square h-auto w-[200vw] translate-y-[-15%] opacity-40 md:w-screen"
+        />
         <ScrollReveal>
           <Heading
             as={"h2"}
@@ -91,6 +99,6 @@ export default function CarBrandsMarquee() {
             />
           ))}
       </Marquee>
-    </>
+    </div>
   );
 }

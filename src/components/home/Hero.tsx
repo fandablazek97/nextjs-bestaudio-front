@@ -30,7 +30,7 @@ export default function Hero() {
             fov={100}
             tSpeed={45}
             a={3.75}
-            className="pointer-events-none absolute top-0 left-0 -z-10 h-[120vh] min-h-full w-screen opacity-40"
+            className="pointer-events-none absolute top-0 left-0 -z-10 h-screen min-h-full w-screen opacity-30 sm:h-[120vh]"
           />
         </Suspense>
         <Heading as={"h1"} size="home-hero" align="center">
