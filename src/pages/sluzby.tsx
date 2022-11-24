@@ -41,9 +41,11 @@ const Sluzby: NextPage = () => {
       </Wrapper>
 
       {/* Seznam značek + odkazy na e-shop */}
-      <Wrapper paddedContent="md">
-        <CarBrandsEshop />
-      </Wrapper>
+      <div className="relative overflow-x-clip">
+        <Wrapper paddedContent="md">
+          <CarBrandsEshop />
+        </Wrapper>
+      </div>
 
       {/* Balíčky */}
       <Wrapper paddedContent="md">
