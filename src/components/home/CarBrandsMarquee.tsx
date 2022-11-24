@@ -10,7 +10,7 @@ import Image from "next/image";
 
 export default function CarBrandsMarquee() {
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden">
       <Wrapper paddedContentTop="lg" paddedContentBottom="sm">
         <Image
           src={"/images/particles/particles-shell.png"}
