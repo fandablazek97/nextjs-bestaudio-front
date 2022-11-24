@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
+  reactStrictMode: true,
   swcMinify: true,
 
   // Change output folder structure for static export: https://nextjs.org/docs/api-reference/next.config.js/trailing-slash

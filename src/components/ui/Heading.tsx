@@ -35,7 +35,7 @@ const cvs = {
     "2xl": "text-3xl sm:text-4xl md:text-5xl xl:text-7xl",
     "3xl": "text-4xl sm:text-6xl lg:text-8xl xl:text-9xl 2xl:text-10xl",
     "home-hero":
-      "text-3xl sm:text-5xl lg:text-7xl xl:text-[5.75rem] 2xl:text-[6.45rem]",
+      "text-3xl sm:text-5xl lg:text-7xl xl:text-[5.75rem] 2xl:text-[6.4rem]",
     none: "",
   },
   color: {
