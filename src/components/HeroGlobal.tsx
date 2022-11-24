@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import Heading from "@ui/Heading";
 import Wrapper from "@ui/Wrapper";
 import Spinner from "@ui/Spinner";
+import Image from "next/image";
 // import Scene from "@components/Scene";
 
 const DynamicScene = dynamic(() => import("../components/Scene"), {
@@ -13,7 +14,7 @@ type HeroGlobalProps = {
   title?: string;
   perex?: string;
   cta?: string;
-  // bgSvgSrc?: string | null;
+  variant?: null | "brand-identity" | "faq";
   // Scene props
   hasScene?: boolean;
   position?: [number, number, number];
@@ -30,7 +31,7 @@ export default function HeroGlobal({
   title = "Lorem ipsum dolor",
   perex = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque totam dolor magnam esse perspiciatis facere, nam quae quos? Quas reiciendis minus, illum molestiae tempora earum?",
   cta = "Zjistit více",
-  // bgSvgSrc = null,
+  variant = null,
   // Scene props
   hasScene = false,
   position = [100, 10, 10],
@@ -73,9 +74,27 @@ export default function HeroGlobal({
           </Suspense>
         )}
 
-        {/* {!hasScene && bgSvgSrc !== null && (
-          <img src={} alt="" />
-        )} */}
+        {!hasScene && variant === "brand-identity" && (
+          <Image
+            src={"/images/particles/bestaudio-symbol.png"}
+            alt="chyba 404"
+            width={623}
+            height={961}
+            aria-hidden={true}
+            className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-full w-auto max-w-[90vw] origin-center -translate-x-1/2 -translate-y-1/2 scale-[0.75] object-contain opacity-35"
+          />
+        )}
+
+        {!hasScene && variant === "faq" && (
+          <Image
+            src={"/images/particles/question-mark.png"}
+            alt="chyba 404"
+            width={473}
+            height={639}
+            aria-hidden={true}
+            className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-full w-auto max-w-[90vw] origin-center -translate-x-1/2 -translate-y-1/2 scale-[0.6] object-contain opacity-35"
+          />
+        )}
 
         <Heading
           as={"h1"}

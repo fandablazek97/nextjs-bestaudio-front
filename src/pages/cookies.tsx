@@ -5,6 +5,7 @@ import Wrapper from "@ui/Wrapper";
 import Heading from "@ui/Heading";
 import CookiesPolicy from "@components/cookies/CookiesPolicy";
 import { config } from "@configs/site-config";
+import Image from "next/image";
 
 const CookiesPage: NextPage = () => {
   return (
@@ -16,7 +17,15 @@ const CookiesPage: NextPage = () => {
         noFollow={true}
       />
       {/* Page Content... */}
-      <Wrapper paddedContent="lg">
+      <Wrapper paddedContent="lg" className="relative">
+        <Image
+          src={"/images/particles/cookie.png"}
+          alt="cookies symbol"
+          width={659}
+          height={660}
+          aria-hidden={true}
+          className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-full w-auto max-w-[90vw] origin-center -translate-x-1/2 -translate-y-1/2 scale-[0.60] object-contain opacity-35"
+        />
         <Heading as="h1" size="2xl" align="center" className="mx-auto pt-12">
           Zpracování souborů cookies
         </Heading>

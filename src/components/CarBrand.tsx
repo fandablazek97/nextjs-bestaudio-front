@@ -20,7 +20,7 @@ export default function CarBrand({
       href={href}
       target={"_blank"}
       rel="noopenner noreferrer"
-      className={`flex shrink-0 flex-row items-center justify-center gap-2 rounded-full bg-body-100 py-2.5 px-6 outline-none transition-colors duration-300 hover:bg-body-200 focus-visible:ring-4 focus-visible:ring-primary ${className}`}
+      className={`flex shrink-0 flex-row items-center justify-center gap-2 rounded-full bg-body-200/35 py-2.5 px-6 outline-none backdrop-blur-sm transition-colors duration-300 hover:bg-body-200/90 focus-visible:ring-4 focus-visible:ring-primary ${className}`}
     >
       <div className="flex h-7 w-9 shrink-0 items-center justify-center">
         <Image

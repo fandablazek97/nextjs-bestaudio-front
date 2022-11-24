@@ -17,7 +17,7 @@ const BrandIdentityPage: NextPage = () => {
         noFollow={false}
       />
       {/* Page Content... */}
-      <HeroGlobal title="Firemní identita" />
+      <HeroGlobal title="Firemní identita" variant="brand-identity" />
 
       <Wrapper
         as={"section"}
@@ -79,25 +79,14 @@ const BrandIdentityPage: NextPage = () => {
           />
           <CardLogo
             className="col-span-1"
-            srcSvg="/brand/bestaudio_symbol_digital_tmave_pozadi.svg"
-            srcPng="/brand/bestaudio_symbol_digital_tmave_pozadi.png"
-            width={140}
-            height={218}
-            title="Symbol Bestaudio - pro tmavé pozadí"
-            caption="Lorem ipsum dolor sit amet"
-            isUpScaled
-            background="black"
-          />
-          <CardLogo
-            className="col-span-1"
             srcSvg="/brand/bestaudio_symbol_digital_svetle_pozadi.svg"
             srcPng="/brand/bestaudio_symbol_digital_svetle_pozadi.png"
             width={140}
             height={218}
-            title="Symbol Bestaudio - pro světlé pozadí"
+            title="Symbol Bestaudio"
             caption="Lorem ipsum dolor sit amet"
             isUpScaled
-            background="white"
+            background="black"
           />
         </div>
       </Wrapper>

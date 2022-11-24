@@ -6,6 +6,7 @@ import type { NextPage } from "next";
 import { HiHome } from "react-icons/hi2";
 import Button from "@ui/Button";
 import AppLink from "@ui/AppLink";
+import Image from "next/image";
 
 const Page404: NextPage = () => {
   return (
@@ -19,8 +20,16 @@ const Page404: NextPage = () => {
       <div className="flex h-screen w-screen items-center justify-center">
         <Wrapper
           paddedContent="lg"
-          className="flex flex-col items-center justify-center"
+          className="relative flex flex-col items-center justify-center"
         >
+          <Image
+            src={"/images/particles/404.png"}
+            alt="chyba 404"
+            width={1675}
+            height={561}
+            aria-hidden={true}
+            className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-auto w-full -translate-x-1/2 -translate-y-1/2 opacity-35"
+          />
           <PreHeading align="center" hasMarginBottom>
             Chyba 404
           </PreHeading>

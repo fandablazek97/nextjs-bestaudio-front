@@ -16,7 +16,7 @@ const Faq: NextPage = () => {
         noFollow={false}
       />
 
-      <HeroGlobal title="FAQ" />
+      <HeroGlobal title="FAQ" variant={"faq"} />
 
       {/* Úvodní sekce */}
       <Wrapper
