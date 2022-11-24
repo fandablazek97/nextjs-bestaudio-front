@@ -17,7 +17,7 @@ export default function CarBrandsMarquee() {
           alt="xxx"
           width={1920}
           height={1920}
-          className="pointer-events-none absolute left-0 top-0 -z-10 aspect-square h-auto w-[200vw] translate-y-[-15%] opacity-40 md:w-screen"
+          className="pointer-events-none absolute left-0 top-0 -z-10 aspect-square h-auto w-[200vw] translate-y-[-16%] opacity-40 md:w-screen"
         />
         <ScrollReveal>
           <Heading
