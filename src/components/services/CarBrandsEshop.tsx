@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function CarBrandsEshop() {
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative overflow-x-clip">
       <Image
         src={"/images/particles/particles-shell.png"}
         alt="castice v pozadi"
