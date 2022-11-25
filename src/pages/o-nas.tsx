@@ -6,6 +6,7 @@ import Seo from "@ui/Seo";
 import Wrapper from "@ui/Wrapper";
 import type { NextPage } from "next";
 import { team } from "@configs/team";
+import Image from "next/image";
 
 const ONas: NextPage = () => {
   return (
@@ -44,7 +45,15 @@ const ONas: NextPage = () => {
       </Wrapper>
 
       <Wrapper size="lg">
-        <div className="aspect-video w-full rounded-md bg-body-200"></div>
+        <div className="grayscale-toned-image aspect-video w-full overflow-hidden rounded-md">
+          <Image
+            src={"/images/team/team-group-photo.jpg"}
+            alt="skupinová fotky"
+            width={2121}
+            height={1414}
+            className="w-full bg-body-200 object-contain object-center"
+          />
+        </div>
       </Wrapper>
 
       <Wrapper paddedContent="lg">
