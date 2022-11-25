@@ -14,11 +14,11 @@ export default function CarBrandsMarquee() {
       <Wrapper paddedContentTop="lg" paddedContentBottom="sm">
         <Image
           src={"/images/particles/particles-shell.png"}
-          alt="xxx"
-          width={1920}
-          height={1920}
+          alt="částice na pozadí"
+          width={2035}
+          height={1793}
           aria-hidden={true}
-          className="pointer-events-none absolute left-0 top-0 -z-10 aspect-square h-auto w-screen origin-center translate-y-1/3 scale-[2.25] opacity-20 sm:translate-y-0 sm:scale-150 md:translate-y-[-10%] md:scale-110 xl:left-1/2 xl:max-w-[1728px] xl:translate-y-[-15%] xl:-translate-x-1/2 xl:scale-110"
+          className="pointer-events-none absolute left-0 top-0 -z-10 aspect-square h-auto w-screen origin-center translate-y-1/3 scale-[2.25] opacity-20 sm:translate-y-0 sm:scale-150 md:translate-y-[-10%] md:scale-110 xl:left-1/2 xl:max-w-[1920px] xl:translate-y-[-15%] xl:-translate-x-1/2 xl:scale-110"
         />
         <ScrollReveal>
           <Heading

@@ -40,7 +40,7 @@ export default function Video() {
             </div>
           </div>
         </button>
-        <span className="pointer-events-none block pt-4 font-display text-xs font-semibold uppercase tracking-widest sm:absolute sm:bottom-8 sm:left-8 sm:text-sm">
+        <span className="pointer-events-none absolute bottom-5 left-5 block font-display text-xs font-semibold uppercase tracking-widest sm:bottom-8 sm:left-8 sm:text-sm">
           Přehrát video
         </span>
       </div>
