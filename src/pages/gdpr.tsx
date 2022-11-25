@@ -24,7 +24,7 @@ const GdprPage: NextPage = () => {
           width={640}
           height={640}
           aria-hidden={true}
-          className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-full w-auto max-w-[90vw] origin-center -translate-x-1/2 -translate-y-1/2 scale-90 object-contain opacity-35"
+          className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-full w-auto max-w-[90vw] origin-center -translate-x-1/2 -translate-y-1/2 scale-[0.7] object-contain opacity-25"
         />
         <Heading as="h1" size="2xl" align="center" className="mx-auto pt-12">
           Zpracování osobních údajů

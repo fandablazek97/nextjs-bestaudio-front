@@ -45,6 +45,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           color="#ffa200"
         />
         <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#12121C" />
       </NextHead>
       <header>
         <SkipToContent />
