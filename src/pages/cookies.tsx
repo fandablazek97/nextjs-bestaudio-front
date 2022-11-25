@@ -17,7 +17,7 @@ const CookiesPage: NextPage = () => {
         noFollow={true}
       />
       {/* Page Content... */}
-      <Wrapper paddedContent="lg" className="relative">
+      <Wrapper className="relative py-44 sm:py-52 xl:py-60">
         <Image
           src={"/images/particles/cookie.png"}
           alt="cookies symbol"
@@ -26,7 +26,7 @@ const CookiesPage: NextPage = () => {
           aria-hidden={true}
           className="pointer-events-none absolute top-1/2 left-1/2 -z-10 h-full w-auto max-w-[90vw] origin-center -translate-x-1/2 -translate-y-1/2 scale-[0.60] object-contain opacity-35"
         />
-        <Heading as="h1" size="2xl" align="center" className="mx-auto pt-12">
+        <Heading as="h1" size="2xl" align="center" className="mx-auto">
           Zpracování souborů cookies
         </Heading>
       </Wrapper>

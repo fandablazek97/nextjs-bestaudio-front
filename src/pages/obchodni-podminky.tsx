@@ -14,8 +14,8 @@ const TermsAndConditionsPage: NextPage = () => {
         noFollow={true}
       />
       {/* Page Content... */}
-      <Wrapper paddedContent="lg">
-        <Heading as="h1" size="2xl" align="center" className="mx-auto pt-12">
+      <Wrapper className="py-44 sm:py-52 xl:py-60">
+        <Heading as="h1" size="2xl" align="center" className="mx-auto">
           Obchodní podmínky
         </Heading>
       </Wrapper>
