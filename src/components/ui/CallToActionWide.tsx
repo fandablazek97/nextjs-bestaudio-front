@@ -15,7 +15,7 @@ type CallToActionWideProps = {
 export default function CallToActionWide({
   href = "/kontakt",
   preHeading = "Zaujalo vás to?",
-  heading = "kontaktujte nás",
+  heading = "Kontaktujte nás",
   content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ducimus dolorem eligendi nemo architecto soluta consectetur, dolores expedita quod nisi.",
   button = "kontakt",
   className = "",

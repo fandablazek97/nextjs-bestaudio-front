@@ -106,6 +106,7 @@ const NasePrace: NextPage = () => {
         title="Naše práce"
         hasScene
         position={[25, -50, 15]}
+        tSpeed={35}
         count={180}
         gap={2.5}
         fov={105}

@@ -28,9 +28,9 @@ export default function Hero() {
           <DynamicScene
             position={[90, 12, 0]}
             fov={100}
-            tSpeed={45}
+            tSpeed={30}
             a={3.75}
-            className="pointer-events-none absolute top-0 left-0 -z-10 h-screen min-h-full w-screen opacity-30 sm:h-[120vh]"
+            className="pointer-events-none absolute top-0 left-0 -z-10 h-[80vh] min-h-full w-screen translate-y-[20vh] opacity-30 sm:h-[120vh] sm:translate-y-0"
           />
         </Suspense>
         <Heading as={"h1"} size="home-hero" align="center">
@@ -40,7 +40,7 @@ export default function Hero() {
         </Heading>
         <p className="mx-auto mt-12 max-w-xl text-center text-base font-medium md:text-lg lg:mt-28 lg:ml-auto lg:mr-0 lg:text-left">
           Hudba je těsnopis emocí. Emoce, které lze popsat tak nesnadno, jsou
-          přímo sdělovány člověku v hudbě a v tom je její síla a význam
+          přímo sdělovány člověku v hudbě a v tom je její síla a význam.
         </p>
       </Wrapper>
     </div>
