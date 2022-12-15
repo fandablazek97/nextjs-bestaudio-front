@@ -12,6 +12,7 @@ type FormComboboxProps = {
   radius?: "none" | "sm" | "md" | "lg" | "xl" | "full";
   isLabelHidden?: boolean;
   className?: string;
+  setOutsideFunction?: any;
 };
 
 const cvs = {
@@ -63,6 +64,7 @@ export default function FormCombobox({
   radius = "md",
   isLabelHidden = false,
   className = "",
+  setOutsideFunction,
 }: FormComboboxProps) {
   const [selectedOption, setSelectedOption] = useState(options[0]);
   const [query, setQuery] = useState("");
@@ -74,12 +76,22 @@ export default function FormCombobox({
           return option.toLowerCase().includes(query.toLowerCase());
         });
 
+  function setStateOutsideAndInside(option: string){
+    setSelectedOption(option);
+    setOutsideFunction(option);
+  }
+
   return (
     <Combobox
       as={"div"}
       name={name}
       value={selectedOption}
-      onChange={setSelectedOption}
+      onChange={(val: string) => 
+        setOutsideFunction ?
+          setStateOutsideAndInside(val)
+        :
+          setSelectedOption(val)
+      }
       className={`w-full ${className}`}
     >
       <Combobox.Label

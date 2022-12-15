@@ -5,7 +5,7 @@ type BlogPostCardProps = {
   href?: string;
   imageSrc?: string;
   title?: string;
-  category?: string;
+  length?: number;
   date?: string;
   perex?: string;
   className?: string;
@@ -15,7 +15,7 @@ export default function BlogPostCard({
   href = "/",
   imageSrc = "/images/team/member.jpg",
   title = "Název příspěvku",
-  category = "Kategorie",
+  length = 5,
   date = "1.11. 2022",
   perex = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
   className = "",
@@ -33,7 +33,7 @@ export default function BlogPostCard({
             {title}
           </Heading>
           <div className="flex gap-2 text-sm font-semibold uppercase tracking-widest text-copy-muted">
-            <span className="block">{category}</span>
+            <span className="block">{length}</span>
             <span className="block">/</span>
             <span className="block">{date}</span>
           </div>

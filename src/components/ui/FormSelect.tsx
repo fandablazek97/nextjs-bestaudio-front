@@ -12,6 +12,7 @@ type FormSelectProps = {
   radius?: "none" | "sm" | "md" | "lg" | "xl" | "full";
   isLabelHidden?: boolean;
   className?: string;
+  setOutsideFunction?: any;
 };
 
 const cvs = {
@@ -63,14 +64,25 @@ export default function FormSelect({
   radius = "md",
   isLabelHidden = false,
   className = "",
+  setOutsideFunction,
 }: FormSelectProps) {
   const [selectedOption, setSelectedOption] = useState(options[0]);
+
+  function setStateOutsideAndInside(option: string){
+    setSelectedOption(option);
+    setOutsideFunction(option);
+  }
 
   return (
     <Listbox
       as={"div"}
       value={selectedOption}
-      onChange={setSelectedOption}
+      onChange={(val: string) => 
+        setOutsideFunction ?
+          setStateOutsideAndInside(val)
+        :
+          setSelectedOption(val)
+      }
       className={`w-full ${className}`}
     >
       <Listbox.Label
