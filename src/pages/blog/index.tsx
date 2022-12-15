@@ -82,20 +82,7 @@ const Blog: NextPage = () => {
         paddedContentTop="lg"
         paddedContentBottom="md"
       >
-        <BlogPosts>
-          {blogPosts.map((post, i) => (
-            <BlogPostCard
-              key={i}
-              href={post.href}
-              imageSrc={post.imageSrc}
-              title={post.title}
-              category={post.category}
-              date={post.date}
-              perex={post.perex}
-              className="col-span-1"
-            />
-          ))}
-        </BlogPosts>
+        <BlogPosts />
       </Wrapper>
 
       {/* Call to action -> Kontakt */}

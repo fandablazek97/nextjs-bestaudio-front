@@ -4,93 +4,8 @@ import HeroGlobal from "@components/HeroGlobal";
 import Seo from "@ui/Seo";
 import Testimonials from "@components/Testimonials";
 import CaseStudies from "@components/our-work/CaseStudies";
-import CaseStudyCard from "@components/our-work/CaseStudyCard";
 import Wrapper from "@ui/Wrapper";
 import type { NextPage } from "next";
-
-const caseStudies = [
-  {
-    href: "/nase-prace/detail",
-    imageSrc: "/images/work/bmw.jpg",
-    title: "Název studie",
-    carBrand: "BMW",
-    carModel: "X5",
-    perex:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
-  },
-  {
-    href: "/nase-prace/detail",
-    imageSrc: "/images/work/bmw.jpg",
-    title: "Název studie",
-    carBrand: "BMW",
-    carModel: "X5",
-    perex:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
-  },
-  {
-    href: "/nase-prace/detail",
-    imageSrc: "/images/work/bmw.jpg",
-    title: "Název studie",
-    carBrand: "BMW",
-    carModel: "X5",
-    perex:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
-  },
-  {
-    href: "/nase-prace/detail",
-    imageSrc: "/images/work/bmw.jpg",
-    title: "Název studie",
-    carBrand: "BMW",
-    carModel: "X5",
-    perex:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
-  },
-  {
-    href: "/nase-prace/detail",
-    imageSrc: "/images/work/bmw.jpg",
-    title: "Název studie",
-    carBrand: "BMW",
-    carModel: "X5",
-    perex:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
-  },
-  {
-    href: "/nase-prace/detail",
-    imageSrc: "/images/work/bmw.jpg",
-    title: "Název studie",
-    carBrand: "BMW",
-    carModel: "X5",
-    perex:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
-  },
-  {
-    href: "/nase-prace/detail",
-    imageSrc: "/images/work/bmw.jpg",
-    title: "Název studie",
-    carBrand: "BMW",
-    carModel: "X5",
-    perex:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
-  },
-  {
-    href: "/nase-prace/detail",
-    imageSrc: "/images/work/bmw.jpg",
-    title: "Název studie",
-    carBrand: "BMW",
-    carModel: "X5",
-    perex:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
-  },
-  {
-    href: "/nase-prace/detail",
-    imageSrc: "/images/work/bmw.jpg",
-    title: "Název studie",
-    carBrand: "BMW",
-    carModel: "X5",
-    perex:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
-  },
-];
 
 const NasePrace: NextPage = () => {
   return (
@@ -119,20 +34,7 @@ const NasePrace: NextPage = () => {
         paddedContentTop="lg"
         paddedContentBottom="md"
       >
-        <CaseStudies>
-          {caseStudies.map((item, i) => (
-            <CaseStudyCard
-              key={i}
-              href={item.href}
-              imageSrc={item.imageSrc}
-              title={item.title}
-              carBrand={item.carBrand}
-              carModel={item.carModel}
-              perex={item.perex}
-              className="col-span-1"
-            />
-          ))}
-        </CaseStudies>
+        <CaseStudies />
       </Wrapper>
 
       {/* Reference */}

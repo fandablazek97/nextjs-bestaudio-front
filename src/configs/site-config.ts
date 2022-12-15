@@ -47,4 +47,5 @@ export const config = {
       thirdPartyCookies: true,
     },
   },
+  ipToFetch: "https://bestaudio.up.railway.app"
 };
