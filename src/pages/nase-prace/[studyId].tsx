@@ -167,7 +167,7 @@ const PageTemplate: NextPage<ThisProps> = ({
         <div className="grid gap-10 pt-10 prose-a:text-primary prose-a:underline prose-a:underline-offset-2">
           <ul className="col-span-1 ml-3 flex list-disc flex-col gap-3">
             {components.map((component:any, i:number) => (
-              <li>
+              <li key={i}>
                 {component.name + " - "}
                 <a href={component.link}>{component.link}</a>
               </li>
