@@ -56,14 +56,14 @@ const carPacks = [
   "Balíček 3"
 ];
 
-let downloadedData: any[] = [];
+let data: any[] = [];
 
 export default function CaseStudies({
   className = "",
 }: CaseStudiesProps) {
+  const [refresh, setRefresh] = useState<boolean>(false);
   const [brand, setBrand] = useState<string>(carBrands[0]);
   const [pack, setPack] = useState<string>(carPacks[0]);
-  const [dataCounter, setDataCounter] = useState<number | null>(null);
   const [hasItemsLeft, setHasItemsLeft] = useState<boolean>(true);
   const itemsAtStart = 6;
   const addItems = 3;
@@ -94,17 +94,17 @@ export default function CaseStudies({
         /* Pokud se to úspěšně připojilo */
         if (all.data !== undefined && all.data !== null) {
           /* Pokud zatím nejsou žádný data nebo se změnil filtr */
-          if (dataCounter === 0 || dataCounter === null || filterChanged) {
+          if (data.length === 0 || filterChanged) {
             /* Pokud se v databázi nenašla žádná data podle parametrů */
             if (all.data.length === 0) {
-              downloadedData = [];
-              setDataCounter(0);
+              data = [];
+              setRefresh(!refresh);
               setHasItemsLeft(false);
             }
             /* Pokud se našli data */
             else {
-              downloadedData = all.data;
-              setDataCounter(all.data.length);
+              data = all.data;
+              setRefresh(!refresh);
               /* Pokud je stažených dat míň než bylo požádáno -> skryje tlačítko */
               if (all.data.length < currentAmount + addXItems) {
                 setHasItemsLeft(false);
@@ -113,19 +113,19 @@ export default function CaseStudies({
           }
           /* Pokud už existujou nějaký data */
           else {
-            downloadedData.push(...all.data);
-            setDataCounter(downloadedData.length)
+            data.push(...all.data);
+            setRefresh(!refresh);
 
             /* Pokud je dat míň než bylo požádáno -> skryje tlačítko */
-            if (downloadedData.length < currentAmount + addXItems) {
+            if (data.length < currentAmount + addXItems) {
               setHasItemsLeft(false);
             }
           }
         }
         /* Špatný připojení/požadavek */
         else {
-          downloadedData = [];
-          setDataCounter(null);
+          data = [];
+          setRefresh(!refresh);
         }
       })
   }
@@ -151,7 +151,7 @@ export default function CaseStudies({
         />
       </div>
       <div className="grid w-full grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:gap-y-24 xl:grid-cols-3 xl:gap-x-14">
-        {downloadedData.map((item, i) => (
+        {data.map((item, i) => (
           <CaseStudyCard
             key={i}
             href={"nase-prace/" + item.id}
@@ -168,7 +168,7 @@ export default function CaseStudies({
       {hasItemsLeft &&
         <Button 
           size="lg"
-          onClick={() => getData(dataCounter!, addItems, false)}
+          onClick={() => getData(data.length, addItems, false)}
         >
           Načíst další
         </Button>
