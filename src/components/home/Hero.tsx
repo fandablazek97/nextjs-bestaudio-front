@@ -39,9 +39,8 @@ export default function Hero() {
           {/* Děláme nejlepší <br className="hidden sm:block" /> zvuk v autě */}
         </Heading>
         <p className="mx-auto mt-12 max-w-xl text-center text-base font-medium md:text-lg lg:mt-28 lg:ml-auto lg:mr-0 lg:text-left">
-          Hudba je těsnopis emocí. Emoce, které lze popsat tak nesnadno, jsou
-          přímo sdělovány člověku v hudbě a v tom je její síla a význam. <br />{" "}
-          <span className="mt-2 xl:mt-4">- Lev Nikolajevič Tolstoj</span>
+          Dvacet let se zabýváme špičkovým ozvučením vozů. Máme za sebou stovky
+          montáží. Posouváme limity toho, co je možné.
         </p>
       </Wrapper>
     </div>

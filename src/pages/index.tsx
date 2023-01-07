@@ -25,8 +25,8 @@ const Home: NextPage = () => {
   return (
     <>
       <Seo
-        title="Děláme nejlepší zvuk v autě"
-        description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto impedit non ad?"
+        title="Vytváříme dokonalý zvukový zážitek v autě"
+        description="Dvacet let se zabýváme špičkovým ozvučením vozů. Máme za sebou stovky montáží. Posouváme limity toho, co je možné."
         noIndex={false}
         noFollow={false}
       />
