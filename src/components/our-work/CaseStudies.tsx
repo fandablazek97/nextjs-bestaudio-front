@@ -3,7 +3,7 @@ import FormCombobox from "@ui/FormCombobox";
 import FormSelect from "@ui/FormSelect";
 import CaseStudyCard from "./CaseStudyCard";
 import { useState, useEffect } from "react";
-import { config } from "@configs/site-config"
+import { config } from "@configs/site-config";
 
 type CaseStudiesProps = {
   className?: string;
@@ -51,45 +51,53 @@ export const carBrands = [
 
 const carPacks = [
   "Všechny balíčky",
-  "Balíček 1",
-  "Balíček 2",
-  "Balíček 3"
+  "Stage 1",
+  "Stage 2",
+  "Premium",
+  "High-End",
 ];
 
 let data: any[] = [];
 
-export default function CaseStudies({
-  className = "",
-}: CaseStudiesProps) {
+export default function CaseStudies({ className = "" }: CaseStudiesProps) {
   const [refresh, setRefresh] = useState<boolean>(false);
   const [brand, setBrand] = useState<string>(carBrands[0]);
   const [pack, setPack] = useState<string>(carPacks[0]);
   const [hasItemsLeft, setHasItemsLeft] = useState<boolean>(true);
   const itemsAtStart = 6;
   const addItems = 3;
-  const populateQuery = "?populate[0]=mainImage"
-  const fieldsQuery = "&fields[0]=name&fields[1]=brand&fields[2]=model&fields[3]=perex";
-  const sortQuery = "&sort[0]=id%3Adesc"
-  let brandQuery = brand === carBrands[0] ? "" : "&filters[brand][$containsi]=" + brand;
-  let packQuery = pack === carPacks[0] ? "" : "&filters[pack][$containsi]=" + pack;
+  const populateQuery = "?populate[0]=mainImage";
+  const fieldsQuery =
+    "&fields[0]=name&fields[1]=brand&fields[2]=model&fields[3]=perex";
+  const sortQuery = "&sort[0]=id%3Adesc";
+  let brandQuery =
+    brand === carBrands[0] ? "" : "&filters[brand][$containsi]=" + brand;
+  let packQuery =
+    pack === carPacks[0] ? "" : "&filters[pack][$containsi]=" + pack;
 
-  
   useEffect(() => {
     setHasItemsLeft(true);
-    getData(0, itemsAtStart, true)
-  }, [brand, pack])
+    getData(0, itemsAtStart, true);
+  }, [brand, pack]);
 
-  async function getData(currentAmount: number, addXItems: number, filterChanged: boolean) {
-    let paginationQuery = "&pagination[start]=" + currentAmount + "&pagination[limit]=" + addXItems;
-    await fetch(config.ipToFetch + "/api/jobs"
-      + populateQuery
-      + brandQuery
-      + packQuery
-      + paginationQuery
-      + fieldsQuery
-      + sortQuery
+  async function getData(
+    currentAmount: number,
+    addXItems: number,
+    filterChanged: boolean
+  ) {
+    let paginationQuery =
+      "&pagination[start]=" + currentAmount + "&pagination[limit]=" + addXItems;
+    await fetch(
+      config.ipToFetch +
+        "/api/jobs" +
+        populateQuery +
+        brandQuery +
+        packQuery +
+        paginationQuery +
+        fieldsQuery +
+        sortQuery
     )
-      .then(response => response.json())
+      .then((response) => response.json())
       .then((all) => {
         /* Pokud se to úspěšně připojilo */
         if (all.data !== undefined && all.data !== null) {
@@ -100,9 +108,8 @@ export default function CaseStudies({
               data = [];
               setRefresh(!refresh);
               setHasItemsLeft(false);
-            }
-            /* Pokud se našli data */
-            else {
+            } else {
+              /* Pokud se našli data */
               data = all.data;
               setRefresh(!refresh);
               /* Pokud je stažených dat míň než bylo požádáno -> skryje tlačítko */
@@ -110,9 +117,8 @@ export default function CaseStudies({
                 setHasItemsLeft(false);
               }
             }
-          }
-          /* Pokud už existujou nějaký data */
-          else {
+          } else {
+            /* Pokud už existujou nějaký data */
             data.push(...all.data);
             setRefresh(!refresh);
 
@@ -121,13 +127,12 @@ export default function CaseStudies({
               setHasItemsLeft(false);
             }
           }
-        }
-        /* Špatný připojení/požadavek */
-        else {
+        } else {
+          /* Špatný připojení/požadavek */
           data = [];
           setRefresh(!refresh);
         }
-      })
+      });
   }
 
   return (
@@ -165,14 +170,14 @@ export default function CaseStudies({
         ))}
       </div>
       <div className="mt-16 flex items-center justify-center lg:mt-28">
-      {hasItemsLeft &&
-        <Button 
-          size="lg"
-          onClick={() => getData(data.length, addItems, false)}
-        >
-          Načíst další
-        </Button>
-      }
+        {hasItemsLeft && (
+          <Button
+            size="lg"
+            onClick={() => getData(data.length, addItems, false)}
+          >
+            Načíst další
+          </Button>
+        )}
       </div>
     </div>
   );

@@ -24,7 +24,9 @@ export default function HeroContact() {
             Otevírací doba:
           </span>
           <p className="text-center text-sm sm:text-base">
-            úterý - pátek 10:00 - 16:00 (nebo dle domluvy)
+            pondělí – čtvrtek 8:00 – 17:00 (nebo dle dohody)
+            <br />
+            pátek 8:00 – 14:00
           </p>
         </div>
         <div className="mt-10 flex w-full flex-col gap-6 lg:mt-auto lg:flex-row lg:gap-20 2xl:gap-28">

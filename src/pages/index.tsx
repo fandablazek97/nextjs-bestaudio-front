@@ -80,7 +80,7 @@ const Home: NextPage = () => {
 
       {/* Call to action -> Kontakt */}
       <Wrapper size="lg" paddedContentTop="md" paddedContentBottom="lg">
-        <CallToActionWide />
+        <CallToActionWide content="Naši specialisté s Vámi proberou vhodné řešení, prodiskutují cenu a najdou nejbližší možný termín realizace." />
       </Wrapper>
     </>
   );

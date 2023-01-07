@@ -24,11 +24,12 @@ const Sluzby: NextPage = () => {
         title="Služby"
         hasScene
         position={[0, 80, 0]}
-        tSpeed={35}
+        tSpeed={21}
         count={180}
         a={3.75}
         gap={2.5}
         fov={90}
+        perex="Dvacet let se zabýváme špičkovým ozvučením vozů. Máme za sebou stovky montáží. Posouváme limity toho, co je možné."
       />
 
       {/* Seznam služeb */}
@@ -83,11 +84,15 @@ const Sluzby: NextPage = () => {
           Kam dál?
         </Heading>
         <div className="grid w-full grid-cols-1 gap-10 sm:gap-16 lg:grid-cols-2">
-          <CallToAction className="col-span-1" />
+          <CallToAction
+            content="Naši specialisté s Vámi proberou vhodné řešení, prodiskutují cenu a najdou nejbližší možný termín realizace."
+            className="col-span-1"
+          />
           <CallToAction
             href="/nase-prace"
             preHeading="Jak to vypadá v praxi?"
             heading="Případové studie"
+            content="Prohlédněte si naše již realizované montáže ve kterých naleznete i svůj vůz, tuto databázi postupně rozšiřujeme a doplňujeme"
             button="Zobrazit naší práci"
             className="col-span-1"
           />

@@ -66,9 +66,9 @@ export default function Team({ className = "" }: TeamProps) {
           Náš tým
         </Heading>
         <p className="max-w-prose">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint itaque
-          possimus aliquam fugit maxime quis repellat asperiores magnam
-          accusamus blanditiis.
+          Jsme parta mladých nadšenců do hi-fi. Žijeme naší prací, která je pro
+          nás i koníčkem a (nejen) díky tomu dlouhodobě dosahujeme skvělých
+          výsledků a realizujeme prvotřídní montáže na světové úrovni.
         </p>
         <div className="mt-5">
           <AppLink href="/o-nas" passHref>

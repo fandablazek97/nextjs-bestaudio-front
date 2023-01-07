@@ -43,12 +43,17 @@ const KontaktPage: NextPage = () => {
             <Heading as={"h3"} size="lg" hasMarginBottom>
               Firemní údaje
             </Heading>
-            <ul role={"list"} className="flex flex-col space-y-3">
+            <ul role={"list"} className="flex flex-col space-y-2">
               <li>{config.legal.company.name}</li>
               <li>Adresa: {config.legal.company.adress}</li>
               <li>IČ: {config.legal.company.ic}</li>
               <li>DIČ: {config.legal.company.dic}</li>
+              <li className="pt-2">{config.legal.company.declaration}</li>
             </ul>
+            <Heading as={"h3"} size="sm" hasMarginBottom className="mt-10">
+              Showroom a kamenná prodejna
+            </Heading>
+            <p>{config.legal.showroom.adress}</p>
           </div>
         </div>
       </Wrapper>

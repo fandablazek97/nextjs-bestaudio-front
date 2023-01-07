@@ -29,7 +29,7 @@ export default function CarBrandsMarquee() {
             className="mx-auto"
             color="primary"
           >
-            Co děláme za značky?
+            Jakými značkami aut se zabýváme?
           </Heading>
         </ScrollReveal>
         <ScrollReveal

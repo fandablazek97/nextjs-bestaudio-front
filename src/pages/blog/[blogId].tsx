@@ -10,21 +10,12 @@ import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 type ThisProps = {
   name: string;
-  length: number;
-  date: string;
   perex: string;
   body: string;
   imageUrl: string;
-}
+};
 
-const BlogDetail: NextPage<ThisProps> = ({
-  name,
-  length,
-  date,
-  perex,
-  body,
-  imageUrl
-}) => {
+const BlogDetail: NextPage<ThisProps> = ({ name, perex, body, imageUrl }) => {
   return (
     <>
       <Seo
@@ -50,10 +41,7 @@ const BlogDetail: NextPage<ThisProps> = ({
 
       <ContentFormater id="vice">
         {/* CMS Content goes here */}
-
-        {/* Demo content - smazat v produkční verzi */}
         <ReactMarkdown>{body}</ReactMarkdown>
-        {/* Konec demo contentu */}
       </ContentFormater>
 
       <Wrapper size="lg" paddedContentTop="md" paddedContentBottom="lg">
@@ -66,7 +54,16 @@ const BlogDetail: NextPage<ThisProps> = ({
 export default BlogDetail;
 
 export async function getStaticProps({ params }: any) {
-  const blogData = (await (await fetch(config.ipToFetch + "/api/blogs/" + params.blogId + "?populate[mainImage][fields][0]=url")).json()).data
+  const blogData = (
+    await (
+      await fetch(
+        config.ipToFetch +
+          "/api/blogs/" +
+          params.blogId +
+          "?populate[mainImage][fields][0]=url"
+      )
+    ).json()
+  ).data;
   return {
     props: {
       name: blogData.attributes.name,
@@ -74,22 +71,23 @@ export async function getStaticProps({ params }: any) {
       date: blogData.attributes.date,
       perex: blogData.attributes.perex,
       body: blogData.attributes.name,
-      imageUrl: blogData.attributes.mainImage.data.attributes.url
-    }
-  }
+      imageUrl: blogData.attributes.mainImage.data.attributes.url,
+    },
+  };
 }
 
-
 export async function getStaticPaths() {
-  const data = (await (await fetch(config.ipToFetch + "/api/blogs?fields[0]=id")).json()).data
+  const data = (
+    await (await fetch(config.ipToFetch + "/api/blogs?fields[0]=id")).json()
+  ).data;
 
   const paths = Object.entries(data).map((blog: any) => {
     return {
-      params: { blogId: String(blog[1].id) }
-    }
-  })
+      params: { blogId: String(blog[1].id) },
+    };
+  });
   return {
     paths,
-    fallback: false
-  }
+    fallback: false,
+  };
 }

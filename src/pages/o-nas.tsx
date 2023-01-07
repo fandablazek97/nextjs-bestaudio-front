@@ -18,7 +18,10 @@ const ONas: NextPage = () => {
         noFollow={false}
       />
 
-      <HeroGlobal title="O nás" />
+      <HeroGlobal
+        title="O nás"
+        perex="Jsme parta mladých nadšenců do hi-fi. Žijeme naší prací, která je pro nás i koníčkem a (nejen) díky tomu dlouhodobě dosahujeme skvělých výsledků a realizujeme prvotřídní montáže na světové úrovni."
+      />
 
       <Wrapper as={"section"} id="vice" paddedContent="lg">
         <Heading as={"h2"} size="xl" color="primary">
@@ -26,20 +29,18 @@ const ONas: NextPage = () => {
         </Heading>
         <div className="mt-12 grid w-full grid-cols-1 gap-12 md:mt-28 md:grid-cols-2">
           <p className="col-span-1">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione
-            eaque hic fugiat id, consectetur molestias quidem laborum ducimus
-            voluptatibus saepe dolorem dolore itaque tempore ullam? Aperiam
-            repellendus voluptate quaerat consectetur reprehenderit fugiat
-            inventore veritatis explicabo esse. Nihil odit, voluptatibus, sunt a
-            commodi eius repellat fuga minus nesciunt corporis impedit rerum
-            voluptate nam dolorum! Magnam dolores aliquid itaque placeat.
+            Dvacet let se zabýváme špičkovým ozvučením vozů. Máme za sebou
+            stovky montáží. Posouváme limity toho, co je možné. Stále hledáme
+            nová originální řešení a učíme se nové věci. Přinášíme vám to
+            nejlepší ve všech cenových hladinách. Jsme Bestaudio. Ozvučujeme a
+            odhlučňujeme auta.
           </p>
           <p className="col-span-1">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet
-            assumenda ab provident dolore atque repudiandae fuga, velit, vitae
-            natus inventore quaerat esse corrupti eaque dicta exercitationem ut
-            illo cupiditate. Eaque, repudiandae facere maxime corporis omnis
-            quibusdam sed rem.
+            Díky našim zkušenostem nás oslovují nejen zákazníci ale také přímo
+            prodejci nových automobilů jako například prodejce amerických vozů
+            Unitesta, BMW Renocar či AutaSuper. Jsme oficiálním distributorem
+            některých předních výrobců high-end komponent a spolupracujeme s
+            nimi na jejich zdokonalování.
           </p>
         </div>
       </Wrapper>
@@ -85,8 +86,18 @@ const ONas: NextPage = () => {
           Kam dál?
         </Heading>
         <div className="grid w-full grid-cols-1 gap-10 sm:gap-16 lg:grid-cols-2">
-          <CallToAction className="col-span-1" />
-          <CallToAction className="col-span-1" />
+          <CallToAction
+            content="Naši specialisté s Vámi proberou vhodné řešení, prodiskutují cenu a najdou nejbližší možný termín realizace."
+            className="col-span-1"
+          />
+          <CallToAction
+            href="/nase-prace"
+            preHeading="Jak to vypadá v praxi?"
+            heading="Případové studie"
+            content="Prohlédněte si naše již realizované montáže ve kterých naleznete i svůj vůz, tuto databázi postupně rozšiřujeme a doplňujeme"
+            button="Zobrazit naší práci"
+            className="col-span-1"
+          />
         </div>
       </Wrapper>
     </>

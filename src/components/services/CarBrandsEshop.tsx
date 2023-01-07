@@ -25,9 +25,9 @@ export default function CarBrandsEshop() {
           Co děláme za značky?
         </Heading>
         <p className="max-w-xl lg:ml-auto">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-          quibusdam nihil delectus dolore cumque iure corporis repellendus
-          tempora vero labore.
+          Díky našim dvacetiletým zkušenostem se nebojíme pustit do jakékoli
+          montáže od jakéhokoli výrobce. Ať už to jsou prémiové, nebo běžné
+          značky.
         </p>
       </ScrollReveal>
       <div className="mt-20 grid grid-cols-3 gap-5 md:grid-cols-4 lg:mt-28 lg:gap-10 xl:grid-cols-6">

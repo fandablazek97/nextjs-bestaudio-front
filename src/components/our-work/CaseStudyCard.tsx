@@ -1,6 +1,7 @@
 import Heading from "@ui/Heading";
 import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi";
+import Image from "next/image";
 
 type CaseStudyCardProps = {
   href?: string;
@@ -24,10 +25,16 @@ export default function CaseStudyCard({
   return (
     <Link href={href} passHref legacyBehavior>
       <a
-        className={`isolate scale-100 outline-none transition duration-300 ease-out hover:scale-95 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-copy-rich/70 ${className}`}
+        className={`group isolate scale-100 outline-none transition duration-300 ease-out hover:scale-95 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-copy-rich/70 ${className}`}
       >
         <div className="grayscale-toned-image aspect-[16/10] w-full overflow-hidden object-cover object-center">
-          <img src={imageSrc} alt={title} width="1920" height="1200" />
+          <Image
+            src={imageSrc}
+            alt={title}
+            width="1920"
+            height="1200"
+            className="transition duration-300 ease-out group-hover:scale-110"
+          />
         </div>
         <div className="flex flex-col items-start justify-start gap-3 py-8">
           <Heading as={"span"} size="md" color="primary" className="block">

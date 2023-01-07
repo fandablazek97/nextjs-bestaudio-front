@@ -107,6 +107,7 @@ export default function Heading({
   return (
     <Tag
       className={`
+      leading-[1.2]
       ${cvs.size[size]}
       ${cvs.color[color]}
       ${cvs.align[align]}

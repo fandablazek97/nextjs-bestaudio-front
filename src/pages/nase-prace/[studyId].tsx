@@ -25,11 +25,11 @@ type ThisProps = {
   solution: string;
   solutionImageRightUrl: string;
   solutionImageLeftUrl: string;
-}
+};
 const PageTemplate: NextPage<ThisProps> = ({
   name,
-  brand,
-  model,
+  // brand,
+  // model,
   perex,
   assigment,
   assigmentImageUrl,
@@ -39,11 +39,10 @@ const PageTemplate: NextPage<ThisProps> = ({
   parametersImageRightUrl,
   components,
   mainImageUrl,
-  pack,
+  // pack,
   solution,
   solutionImageRightUrl,
-  solutionImageLeftUrl
-
+  solutionImageLeftUrl,
 }: ThisProps) => {
   return (
     <>
@@ -54,11 +53,7 @@ const PageTemplate: NextPage<ThisProps> = ({
         noFollow={false}
       />
       {/* Page Content... */}
-      <DetailHero
-        src={mainImageUrl}
-        title={name}
-        perex={perex}
-      />
+      <DetailHero src={mainImageUrl} title={name} perex={perex} />
 
       <Wrapper
         as={"section"}
@@ -166,7 +161,7 @@ const PageTemplate: NextPage<ThisProps> = ({
         </Heading>
         <div className="grid gap-10 pt-10 prose-a:text-primary prose-a:underline prose-a:underline-offset-2">
           <ul className="col-span-1 ml-3 flex list-disc flex-col gap-3">
-            {components.map((component:any, i:number) => (
+            {components.map((component: any, i: number) => (
               <li key={i}>
                 {component.name + " - "}
                 <a href={component.link}>{component.link}</a>
@@ -185,7 +180,6 @@ const PageTemplate: NextPage<ThisProps> = ({
 
 export default PageTemplate;
 
-
 export async function getStaticProps({ params }: any) {
   const populateQuery = `
     ?populate[mainImage][fields][0]=url
@@ -197,8 +191,14 @@ export async function getStaticProps({ params }: any) {
     &populate[solutionImageRight][fields][0]=url
     &populate[components][fields][0]=name&populate[components][fields][1]=link
   `;
-  
-  const studyData = (await (await fetch(config.ipToFetch + "/api/jobs/" + params.studyId + populateQuery)).json()).data
+
+  const studyData = (
+    await (
+      await fetch(
+        config.ipToFetch + "/api/jobs/" + params.studyId + populateQuery
+      )
+    ).json()
+  ).data;
   return {
     props: {
       name: studyData.attributes.name,
@@ -209,29 +209,36 @@ export async function getStaticProps({ params }: any) {
       parameters: studyData.attributes.parameters,
       mainImageUrl: studyData.attributes.mainImage.data.attributes.url,
       pack: studyData.attributes.pack,
-      assigmentImageUrl: studyData.attributes.assigmentImage.data.attributes.url,
-      parametersImageBigUrl: studyData.attributes.parametersImageBig.data.attributes.url,
-      parametersImageLeftUrl: studyData.attributes.parametersImageLeft.data.attributes.url,
-      parametersImageRightUrl: studyData.attributes.parametersImageRight.data.attributes.url,
+      assigmentImageUrl:
+        studyData.attributes.assigmentImage.data.attributes.url,
+      parametersImageBigUrl:
+        studyData.attributes.parametersImageBig.data.attributes.url,
+      parametersImageLeftUrl:
+        studyData.attributes.parametersImageLeft.data.attributes.url,
+      parametersImageRightUrl:
+        studyData.attributes.parametersImageRight.data.attributes.url,
       components: studyData.attributes.components,
       solution: studyData.attributes.solution,
-      solutionImageRightUrl: studyData.attributes.solutionImageRight.data.attributes.url,
-      solutionImageLeftUrl: studyData.attributes.solutionImageLeft.data.attributes.url,
-    }
-  }
+      solutionImageRightUrl:
+        studyData.attributes.solutionImageRight.data.attributes.url,
+      solutionImageLeftUrl:
+        studyData.attributes.solutionImageLeft.data.attributes.url,
+    },
+  };
 }
 
-
 export async function getStaticPaths() {
-  const data = (await (await fetch(config.ipToFetch + "/api/jobs?fields[0]=id")).json()).data
+  const data = (
+    await (await fetch(config.ipToFetch + "/api/jobs?fields[0]=id")).json()
+  ).data;
 
   const paths = Object.entries(data).map((study: any) => {
     return {
-      params: { studyId: String(study[1].id) }
-    }
-  })
+      params: { studyId: String(study[1].id) },
+    };
+  });
   return {
     paths,
-    fallback: false
-  }
+    fallback: false,
+  };
 }

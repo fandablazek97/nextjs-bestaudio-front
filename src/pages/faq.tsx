@@ -1,10 +1,11 @@
-import Accordion from "@ui/Accordion";
 import CallToActionWide from "@ui/CallToActionWide";
 import Heading from "@ui/Heading";
 import HeroGlobal from "@components/HeroGlobal";
 import Seo from "@ui/Seo";
 import Wrapper from "@ui/Wrapper";
 import type { NextPage } from "next";
+import AppLink from "@ui/AppLink";
+// import Accordion from "@ui/Accordion";
 
 const Faq: NextPage = () => {
   return (
@@ -21,100 +22,126 @@ const Faq: NextPage = () => {
       {/* Úvodní sekce */}
       <Wrapper
         as={"section"}
-        id="vice"
         paddedContentTop="lg"
-        paddedContentBottom="md"
+        paddedContentBottom="sm"
+        id="vice"
       >
         <Heading as={"h2"} size="xl" color="primary">
           Co vás nejčastěji zajímá
         </Heading>
-        <p className="col-span-1 mt-12 max-w-3xl text-lg font-medium md:mt-16">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione eaque
-          hic fugiat id, consectetur voluptatibus saepe dolorem dolore itaque
-          tempore ullam? Aperiam repellendus voluptate quaerat consectetur
-          reprehenderit.
-        </p>
       </Wrapper>
 
       {/* Hlavní otázky */}
       <Wrapper
-        paddedContent="sm"
+        paddedContentTop="sm"
+        paddedContentBottom="md"
         className="grid grid-cols-1 gap-x-12 gap-y-20 lg:grid-cols-2"
       >
         <div className="col-span-1 flex flex-col gap-12">
           <div className="flex flex-col gap-4">
             <Heading as={"span"} size="sm">
-              Lorem ipsum dolor sit amet?
+              Je nutné, aby navrhovaný set instaloval vždy odborník?
             </Heading>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Consectetur, earum. Dolor, vel, vero fuga dolorum nesciunt
-              eligendi odit, vitae explicabo repellendus quos quam eveniet
-              culpa.
+              Vždy doporučujeme využít kvalifikovanou montážní dílnu. Nicméně se
+              snažíme navrhovat sety tak, aby jejich montáž nebyla nijak
+              obtížná. Stačí jen trocha zručnosti a využití jednoduchých
+              nástrojů. Každý technik, který s automobily pracuje, by měl být
+              schopný montáž zcela bez problémů provést.
             </p>
           </div>
           <div className="flex flex-col gap-4">
             <Heading as={"span"} size="sm">
-              Lorem ipsum dolor sit amet?
+              Kde probíhá instalace?
             </Heading>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Consectetur, earum. Dolor, vel, vero fuga dolorum nesciunt
-              eligendi odit, vitae explicabo repellendus quos quam eveniet
-              culpa.
+              Instalace probíhá u nás v montážní dílně v Plzni, Pařížská 10.{" "}
+              <br /> Viz{" "}
+              <AppLink
+                href="/kontakt#kudy-k-nam"
+                hoverEffect="underline-slide"
+                className="text-primary"
+              >
+                stránka kontaktu.
+              </AppLink>
             </p>
           </div>
           <div className="flex flex-col gap-4">
             <Heading as={"span"} size="sm">
-              Lorem ipsum dolor sit amet?
+              Mám auto na leasing, kde nesmí být provedeny žádné zásahy do vozu.
+              Jaké jsou možnosti?
             </Heading>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Consectetur, earum. Dolor, vel, vero fuga dolorum nesciunt
-              eligendi odit, vitae explicabo repellendus quos quam eveniet
-              culpa.
+              Veškeré připojení je provedeno přes kompatibilní konektory a do
+              elektroinstalace auta se nijak nezasahuje. Není nutné žádné vrtání
+              či narušení elektroinstalace nebo jiná úprava částí vozu.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <Heading as={"span"} size="sm">
+              Ovlivňuje audio systém nějaké další systémy ve voze nebo vybíjení
+              baterie?
+            </Heading>
+            <p>
+              Instalované komponenty nijak nenaruší existující CAN nebo MOST
+              systémy ve voze ani nijak neovlivňují nadměrné vybíjení baterie
+              při jízdě. Nicméně pro hlasitý poslech, když vozidlo stojí
+              doporučujeme nechat nastartovaný motor.
             </p>
           </div>
         </div>
         <div className="col-span-1 flex flex-col gap-12">
           <div className="flex flex-col gap-4">
             <Heading as={"span"} size="sm">
-              Lorem ipsum dolor sit amet?
+              Mohu zachovat originální autorádio?
             </Heading>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Consectetur, earum. Dolor, vel, vero fuga dolorum nesciunt
-              eligendi odit, vitae explicabo repellendus quos quam eveniet
-              culpa.
+              V dnešní době se téměř vždy počítá s tím, že využijeme originální
+              Head unit neboli autorádio. U většiny moderních aut se pomocí
+              rádia ovládají důležité funkce vozu a jeho nastavení. Z tohoto
+              důvodu je jeho zachování téměř nezbytné.
             </p>
           </div>
           <div className="flex flex-col gap-4">
             <Heading as={"span"} size="sm">
-              Lorem ipsum dolor sit amet?
+              Ovlivňuje instalace systému záruku nového vozu?
             </Heading>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Consectetur, earum. Dolor, vel, vero fuga dolorum nesciunt
-              eligendi odit, vitae explicabo repellendus quos quam eveniet
-              culpa.
+              Veškeré komponenty jsou vybírány s ohledem na nulový zásah do
+              originální kabeláže vozu, záruka nového vozu tak není ohrožena.
             </p>
           </div>
           <div className="flex flex-col gap-4">
             <Heading as={"span"} size="sm">
-              Lorem ipsum dolor sit amet?
+              Co je DSP procesor?
             </Heading>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Consectetur, earum. Dolor, vel, vero fuga dolorum nesciunt
-              eligendi odit, vitae explicabo repellendus quos quam eveniet
-              culpa.
+              DSP (DIGITAL SIGNAL PROCESOR) je zařízení, které umožní extrémně
+              detailní nastavení zvuku s maximální možnou přesností. Představme
+              si, že originální autorádio s nastavením basů a výšek umožní
+              několik málo kombinací nastavení zvuku. S DSP procesorem je na
+              výběr nastavení 31 pásem ekvalizéru a milióny kombinací a
+              možností.
+            </p>
+          </div>
+          <div className="flex flex-col gap-4">
+            <Heading as={"span"} size="sm">
+              Jak probíhá odladění a jaká je jeho časová náročnost?
+            </Heading>
+            <p>
+              Odladění probíhá ve dvou fázích. První fází je kompletní naladění
+              celého systému naším specializovaným technikem. V této fázi se
+              provede celková ekvalizace a nastavení časových korekcí. Druhá
+              fáze probíhá už se zákazníkem, kde se doupraví nastavení přímo dle
+              požadavků zákazníka. Časová náročnost se odvíjí od náročnosti
+              instalace a zapojení. Standardně kolem dvou hodin.
             </p>
           </div>
         </div>
       </Wrapper>
 
       {/* Další otázky */}
-      <Wrapper
+      {/* <Wrapper
         paddedContent="sm"
         className="grid grid-cols-1 gap-x-12 gap-y-20 lg:grid-cols-2"
       >
@@ -262,7 +289,7 @@ const Faq: NextPage = () => {
             velit voluptates id ratione, cupiditate pariatur suscipit.
           </Accordion>
         </div>
-      </Wrapper>
+      </Wrapper> */}
 
       {/* Call to action -> Kontakt */}
       <Wrapper size="lg" paddedContentTop="md" paddedContentBottom="lg">

@@ -1,12 +1,12 @@
 export const contacts = {
   main: {
     phone: {
-      href: "tel:+420123456789",
-      label: "+420 123 456 789",
+      href: "tel:+420776009614",
+      label: "+420 776 009 614",
     },
     email: {
-      href: "mailto:info@domena.cz",
-      label: "info@domena.cz",
+      href: "mailto:info@bestaudio.cz",
+      label: "Info@bestaudio.cz",
     },
   },
   // other: {

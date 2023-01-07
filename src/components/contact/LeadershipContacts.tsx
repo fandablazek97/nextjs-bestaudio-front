@@ -40,7 +40,7 @@ export function TeamMemberCard({
         <Heading as={"span"} size="md" color="primary">
           {name}
         </Heading>
-        <span className="block text-sm font-semibold uppercase tracking-widest text-copy-muted">
+        <span className="block text-xs font-semibold uppercase tracking-widest text-copy-muted">
           {position}
         </span>
         <div className="mt-6 flex flex-col gap-2">
@@ -78,13 +78,19 @@ export default function LeadershipContacts({
       <div
         className={`flex flex-col items-start justify-start gap-8 lg:flex-row lg:justify-between lg:gap-12 ${className}`}
       >
-        <Heading as={"h2"} size="xl" color="primary" className="basis-2/3">
-          Lorem ipsum dolor
+        <Heading
+          as={"h2"}
+          size="lg"
+          color="primary"
+          className="max-w-2xl basis-2/3"
+        >
+          Dotazy na zboží, montáže, technické dotazy a informace k objednávkám
         </Heading>
         <p className="max-w-xl lg:ml-auto">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
-          quibusdam nihil delectus dolore cumque iure corporis repellendus
-          tempora vero labore.
+          Nemůžete se nám dovolat? Pravděpodobně se věnujeme zákazníkům na
+          prodejně nebo vyřizujeme telefonické dotazy. Hned, jak to půjde,
+          zavoláme zpět na telefonní číslo, ze kterého jste nám volali. Děkujeme
+          za pochopení.
         </p>
       </div>
       <div className="mt-12 grid w-full grid-cols-1 gap-x-10 gap-y-10 md:mt-28 lg:grid-cols-2 lg:gap-y-16 xl:gap-x-16 xl:gap-y-24">
@@ -96,6 +102,16 @@ export default function LeadershipContacts({
           phoneLabel={team[0].contact.phone.label}
           emailLink={team[0].contact.email.href}
           emailLabel={team[0].contact.email.label}
+          className="col-span-1"
+        />
+        <TeamMemberCard
+          imageSrc={team[3].src}
+          name={team[3].name}
+          position={team[3].position}
+          phoneLink={team[3].contact.phone.href}
+          phoneLabel={team[3].contact.phone.label}
+          emailLink={team[3].contact.email.href}
+          emailLabel={team[3].contact.email.label}
           className="col-span-1"
         />
         <TeamMemberCard

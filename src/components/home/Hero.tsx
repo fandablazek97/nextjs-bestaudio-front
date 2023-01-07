@@ -11,7 +11,7 @@ const DynamicScene = dynamic(() => import("../Scene"), {
 
 export default function Hero() {
   return (
-    <div className="relative h-[80vh] min-h-[540px] w-screen md:min-h-[768px] lg:h-[90vh]">
+    <div className="relative h-[80vh] min-h-[540px] w-screen lg:min-h-[580px]">
       <Wrapper
         as={"header"}
         className="flex h-full flex-col items-center justify-center"
@@ -28,7 +28,7 @@ export default function Hero() {
           <DynamicScene
             position={[90, 12, 0]}
             fov={100}
-            tSpeed={30}
+            tSpeed={18}
             a={3.75}
             className="pointer-events-none absolute top-0 left-0 -z-10 h-[80vh] min-h-full w-screen translate-y-[20vh] opacity-30 sm:h-[120vh] sm:translate-y-0"
           />
@@ -40,7 +40,8 @@ export default function Hero() {
         </Heading>
         <p className="mx-auto mt-12 max-w-xl text-center text-base font-medium md:text-lg lg:mt-28 lg:ml-auto lg:mr-0 lg:text-left">
           Hudba je těsnopis emocí. Emoce, které lze popsat tak nesnadno, jsou
-          přímo sdělovány člověku v hudbě a v tom je její síla a význam.
+          přímo sdělovány člověku v hudbě a v tom je její síla a význam. <br />{" "}
+          <span className="mt-2 xl:mt-4">- Lev Nikolajevič Tolstoj</span>
         </p>
       </Wrapper>
     </div>

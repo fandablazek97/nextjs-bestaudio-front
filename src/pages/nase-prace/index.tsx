@@ -19,9 +19,10 @@ const NasePrace: NextPage = () => {
 
       <HeroGlobal
         title="Naše práce"
+        perex="V galerii níže si můžete prohlédnout naši práci. Využijte přiložený filtr pro co nejsnazší vyhledávání."
         hasScene
         position={[25, -50, 15]}
-        tSpeed={35}
+        tSpeed={22}
         count={180}
         gap={2.5}
         fov={105}
@@ -53,7 +54,7 @@ const NasePrace: NextPage = () => {
 
       {/* Call to action -> Kontakt */}
       <Wrapper size="lg" paddedContentTop="md" paddedContentBottom="lg">
-        <CallToActionWide />
+        <CallToActionWide content="Naši technici vám zodpoví všechny otázky ohledně vylepšení zvuku a tlumení ve vašem voze. Společně najdeme nejlepší cenové řešení a v případě zájmu vybereme termín realizace." />
       </Wrapper>
     </>
   );
