@@ -6,74 +6,20 @@ import Seo from "@ui/Seo";
 import Wrapper from "@ui/Wrapper";
 import type { NextPage } from "next";
 
-const blogPosts = [
-  {
-    href: "/blog/detail",
-    imageSrc: "/images/work/bmw.jpg",
-    title: "Název příspěvku",
-    category: "kategorie",
-    date: "20.10. 2022",
-    perex:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
-  },
-  {
-    href: "/blog/detail",
-    imageSrc: "/images/work/bmw.jpg",
-    title: "Název příspěvku",
-    category: "kategorie",
-    date: "20.10. 2022",
-    perex:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
-  },
-  {
-    href: "/blog/detail",
-    imageSrc: "/images/work/bmw.jpg",
-    title: "Název příspěvku",
-    category: "kategorie",
-    date: "20.10. 2022",
-    perex:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
-  },
-  {
-    href: "/blog/detail",
-    imageSrc: "/images/work/bmw.jpg",
-    title: "Název příspěvku",
-    category: "kategorie",
-    date: "20.10. 2022",
-    perex:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
-  },
-  {
-    href: "/blog/detail",
-    imageSrc: "/images/work/bmw.jpg",
-    title: "Název příspěvku",
-    category: "kategorie",
-    date: "20.10. 2022",
-    perex:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
-  },
-  {
-    href: "/blog/detail",
-    imageSrc: "/images/work/bmw.jpg",
-    title: "Název příspěvku",
-    category: "kategorie",
-    date: "20.10. 2022",
-    perex:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis magnam non, totam velit dignissimos in beatae quo voluptatibus molestiae at.",
-  },
-];
-
 const Blog: NextPage = () => {
   return (
     <>
       <Seo
         title="Blog"
-        description="Page description"
+        description="Žijeme naší prací, která je pro nás i koníčkem a (nejen) díky tomu dlouhodobě dosahujeme skvělých výsledků a realizujeme prvotřídní montáže na světové úrovni. Podívejte se na naši práci a posuďte sami."
         noIndex={false}
         noFollow={false}
       />
 
-      <HeroGlobal title="Blog" />
+      <HeroGlobal
+        title="Blog"
+        perex="Žijeme naší prací, která je pro nás i koníčkem a (nejen) díky tomu dlouhodobě dosahujeme skvělých výsledků a realizujeme prvotřídní montáže na světové úrovni. Podívejte se na naši práci a posuďte sami."
+      />
 
       {/* Příspěvky z případových studií */}
       <Wrapper
@@ -87,7 +33,7 @@ const Blog: NextPage = () => {
 
       {/* Call to action -> Kontakt */}
       <Wrapper size="lg" paddedContentTop="md" paddedContentBottom="lg">
-        <CallToActionWide />
+        <CallToActionWide content="Naši specialisté s Vámi proberou vhodné řešení, prodiskutují cenu a najdou nejbližší možný termín realizace." />
       </Wrapper>
     </>
   );

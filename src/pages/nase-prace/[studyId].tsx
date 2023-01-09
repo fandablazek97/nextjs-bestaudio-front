@@ -46,12 +46,7 @@ const PageTemplate: NextPage<ThisProps> = ({
 }: ThisProps) => {
   return (
     <>
-      <Seo
-        title="Page title"
-        description="Page description"
-        noIndex={false}
-        noFollow={false}
-      />
+      <Seo title={name} description={perex} noIndex={false} noFollow={false} />
       {/* Page Content... */}
       <DetailHero src={mainImageUrl} title={name} perex={perex} />
 

@@ -12,12 +12,16 @@ const Faq: NextPage = () => {
     <>
       <Seo
         title="FAQ"
-        description="Page description"
+        description="V této části jsou odpovědi na nejčastější otázky, které vás zajímají. Pokud nenajdete vaši otázku, kontaktujte nás."
         noIndex={false}
         noFollow={false}
       />
 
-      <HeroGlobal title="FAQ" variant={"faq"} />
+      <HeroGlobal
+        title="FAQ"
+        variant={"faq"}
+        perex="V této části jsou odpovědi na nejčastější otázky, které vás zajímají. Pokud nenajdete vaši otázku, kontaktujte nás."
+      />
 
       {/* Úvodní sekce */}
       <Wrapper
@@ -293,7 +297,7 @@ const Faq: NextPage = () => {
 
       {/* Call to action -> Kontakt */}
       <Wrapper size="lg" paddedContentTop="md" paddedContentBottom="lg">
-        <CallToActionWide />
+        <CallToActionWide content="Naši specialisté s Vámi proberou vhodné řešení, prodiskutují cenu a najdou nejbližší možný termín realizace." />
       </Wrapper>
     </>
   );

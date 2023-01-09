@@ -2,7 +2,7 @@ export const config = {
   seo: {
     url: "https://bestaudio.cz",
     shortUrl: "bestaudio.cz",
-    titleTemplate: "%s | Bestaudio",
+    titleTemplate: "%s | Bestaudio.cz",
   },
   cookies: {
     prefix: "bestaudio",

@@ -12,8 +12,8 @@ const ONas: NextPage = () => {
   return (
     <>
       <Seo
-        title="Služby"
-        description="Page description"
+        title="O nás"
+        description="Jsme tým certifikovaných profesionálů s proklientským přístupem ozvučíme vám auto, aniž bychom zasahovali do interiéru vašeho vozu."
         noIndex={false}
         noFollow={false}
       />

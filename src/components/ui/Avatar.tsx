@@ -97,11 +97,13 @@ export function Avatar({
     .map((n, i) => (i === 0 || i === name.split(" ").length - 1 ? n[0] : ""))
     .join("");
 
-  const randomBgColor = useMemo(() => {
-    return randomBackgroundClasses[
-      Math.floor(Math.random() * randomBackgroundClasses.length)
-    ];
-  }, []);
+    const randomBackgroundColor = useMemo(() => {
+      if (!randomFallbackColor) return;
+  
+      return randomBackgroundClasses[
+        Math.floor(Math.random() * randomBackgroundClasses.length)
+      ];
+    }, [randomFallbackColor]);
 
   return (
     <AvatarPrimitive.Root
@@ -124,7 +126,7 @@ export function Avatar({
         <AvatarPrimitive.Fallback
           className={clsx(
             "flex h-full w-full items-center justify-center text-[1em] font-semibold uppercase leading-none text-white",
-            randomBgColor
+            randomBackgroundColor
           )}
         >
           {initials}

@@ -12,7 +12,7 @@ const NasePrace: NextPage = () => {
     <>
       <Seo
         title="Naše práce"
-        description="Page description"
+        description="Dvacet let se zabýváme špičkovým ozvučením vozů. Máme za sebou stovky montáží. Posouváme limity toho, co je možné."
         noIndex={false}
         noFollow={false}
       />

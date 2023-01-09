@@ -18,12 +18,7 @@ type ThisProps = {
 const BlogDetail: NextPage<ThisProps> = ({ name, perex, body, imageUrl }) => {
   return (
     <>
-      <Seo
-        title="Detail stránky blogu"
-        description="Page description"
-        noIndex={false}
-        noFollow={false}
-      />
+      <Seo title={name} description={perex} noIndex={false} noFollow={false} />
       {/* Page Content... */}
       <HeroGlobal title={name} perex={perex} cta="Přečíst více" />
 
@@ -33,7 +28,7 @@ const BlogDetail: NextPage<ThisProps> = ({ name, perex, body, imageUrl }) => {
             src={imageUrl}
             alt="obrazek"
             width={1920}
-            height="1080"
+            height={1080}
             className="aspect-video w-full object-cover"
           />
         </div>

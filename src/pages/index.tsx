@@ -11,6 +11,7 @@ import ScrollReveal from "@ui/ScrollReveal";
 import Testimonials from "@components/Testimonials";
 import Team from "@components/home/Team";
 import CallToActionWide from "@ui/CallToActionWide";
+import Head from "next/head";
 
 // To Do
 // Animace úvodní stránky při prvním loadu (Animace textu a kamery v partiklech)
@@ -25,10 +26,8 @@ const Home: NextPage = () => {
   return (
     <>
       <Seo
-        title="Vytváříme dokonalý zvukový zážitek v autě"
+        title="Dokonalý zvuk"
         description="Dvacet let se zabýváme špičkovým ozvučením vozů. Máme za sebou stovky montáží. Posouváme limity toho, co je možné."
-        noIndex={false}
-        noFollow={false}
       />
 
       {/* Hero section */}
