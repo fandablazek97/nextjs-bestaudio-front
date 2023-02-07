@@ -19,8 +19,11 @@
 
 @layer components {
   .grayscale-toned-image {
-    filter: grayscale(100%) sepia(30%) hue-rotate(190deg) contrast(120%)
-      brightness(90%);
+    filter: grayscale(100%) sepia(30%) hue-rotate(190deg);
+  }
+  .prose-grayscale-toned-image
+    :is(:where(img):not(:where([class~="not-prose"] *))) {
+    filter: grayscale(100%) sepia(30%) hue-rotate(190deg);
   }
 }
 

@@ -8,6 +8,10 @@ import Image from "next/image";
 import { config } from "@configs/site-config";
 import ReactMarkdown from "react-markdown";
 
+// Icons
+import { SlBadge, SlLayers } from "react-icons/sl";
+import { IoCarSportOutline } from "react-icons/io5";
+
 type ThisProps = {
   name: string;
   brand: string;
@@ -28,8 +32,8 @@ type ThisProps = {
 };
 const PageTemplate: NextPage<ThisProps> = ({
   name,
-  // brand,
-  // model,
+  brand,
+  model,
   perex,
   assigment,
   assigmentImageUrl,
@@ -39,7 +43,7 @@ const PageTemplate: NextPage<ThisProps> = ({
   parametersImageRightUrl,
   components,
   mainImageUrl,
-  // pack,
+  pack,
   solution,
   solutionImageRightUrl,
   solutionImageLeftUrl,
@@ -54,9 +58,36 @@ const PageTemplate: NextPage<ThisProps> = ({
         as={"section"}
         id="vice"
         size="sm"
-        paddedContentBottom="md"
-        paddedContentTop="lg"
+        paddedContent="sm"
+        className="flex flex-wrap gap-x-16 gap-y-8"
       >
+        <div className="col-span-1 flex items-center justify-start gap-4">
+          <SlBadge aria-hidden="true" className="h-8 w-8 shrink-0 text-white" />
+          <span className="block text-xl font-semibold text-copy-muted">
+            {brand}
+          </span>
+        </div>
+        <div className="col-span-1 flex items-center justify-start gap-4">
+          <IoCarSportOutline
+            aria-hidden="true"
+            className="h-8 w-8 shrink-0 text-white"
+          />
+          <span className="block text-xl font-semibold text-copy-muted">
+            {model}
+          </span>
+        </div>
+        <div className="col-span-1 flex items-center justify-start gap-4">
+          <SlLayers
+            aria-hidden="true"
+            className="h-8 w-8 shrink-0 text-white"
+          />
+          <span className="block text-xl font-semibold text-copy-muted">
+            {pack}
+          </span>
+        </div>
+      </Wrapper>
+
+      <Wrapper as={"section"} size="sm" paddedContent="sm">
         <Heading as="h2" size="2xl" color="primary" hasMarginBottom>
           Zadání
         </Heading>

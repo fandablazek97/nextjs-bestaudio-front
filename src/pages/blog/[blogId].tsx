@@ -65,7 +65,7 @@ export async function getStaticProps({ params }: any) {
       length: blogData.attributes.length,
       date: blogData.attributes.date,
       perex: blogData.attributes.perex,
-      body: blogData.attributes.name,
+      body: blogData.attributes.body,
       imageUrl: blogData.attributes.mainImage.data.attributes.url,
     },
   };

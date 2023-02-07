@@ -68,7 +68,7 @@ export default function CaseStudies({ className = "" }: CaseStudiesProps) {
   const addItems = 3;
   const populateQuery = "?populate[0]=mainImage";
   const fieldsQuery =
-    "&fields[0]=name&fields[1]=brand&fields[2]=model&fields[3]=perex";
+    "&fields[0]=name&fields[1]=brand&fields[2]=model&fields[3]=perex&model&fields[4]=pack";
   const sortQuery = "&sort[0]=id%3Adesc";
   let brandQuery =
     brand === carBrands[0] ? "" : "&filters[brand][$containsi]=" + brand;
@@ -76,6 +76,7 @@ export default function CaseStudies({ className = "" }: CaseStudiesProps) {
     pack === carPacks[0] ? "" : "&filters[pack][$containsi]=" + pack;
 
   useEffect(() => {
+    console.log(data);
     setHasItemsLeft(true);
     getData(0, itemsAtStart, true);
   }, [brand, pack]);
@@ -165,6 +166,7 @@ export default function CaseStudies({ className = "" }: CaseStudiesProps) {
             carBrand={item.attributes.brand}
             carModel={item.attributes.model}
             perex={item.attributes.perex}
+            pack={item.attributes.pack}
             className="col-span-1"
           />
         ))}

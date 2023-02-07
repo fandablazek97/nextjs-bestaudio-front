@@ -40,11 +40,11 @@ export default function DetailHero({
           <Heading
             as="h1"
             size="none"
-            className="mb-[1em] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+            className="mb-[1em] text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
           >
             {title}
           </Heading>
-          <p className="max-w-2xl text-lg font-medium sm:text-xl lg:mb-32 lg:ml-auto">
+          <p className="max-w-2xl text-lg font-medium text-white sm:text-xl lg:mb-32 lg:ml-auto">
             {perex}
           </p>
         </Wrapper>
