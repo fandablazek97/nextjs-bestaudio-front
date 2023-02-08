@@ -20,7 +20,7 @@ export function TeamMemberCard({
 }: TeamMemberCardProps) {
   return (
     <ScrollReveal className={`flex flex-col gap-5 ${className}`}>
-      <div className="grayscale-toned-image aspect-square w-full overflow-hidden rounded-lg">
+      <div className="grayscale-toned-image aspect-square w-full overflow-hidden rounded-lg bg-gray-700">
         <Image
           src={imageSrc}
           alt={name}

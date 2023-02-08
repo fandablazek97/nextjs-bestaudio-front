@@ -23,7 +23,7 @@ const BlogDetail: NextPage<ThisProps> = ({ name, perex, body, imageUrl }) => {
       <HeroGlobal title={name} perex={perex} cta="Přečíst více" />
 
       <Wrapper size="lg" paddedContent="md">
-        <div className="grayscale-toned-image w-full overflow-hidden rounded-xl">
+        <div className="grayscale-toned-image w-full overflow-hidden rounded-xl bg-gray-700">
           <Image
             src={imageUrl}
             alt="obrazek"
@@ -73,7 +73,12 @@ export async function getStaticProps({ params }: any) {
 
 export async function getStaticPaths() {
   const data = (
-    await (await fetch(config.ipToFetch + "/api/blogs?fields[0]=id&sort[0]=id&pagination[page]=1&pagination[pageSize]=100")).json()
+    await (
+      await fetch(
+        config.ipToFetch +
+          "/api/blogs?fields[0]=id&sort[0]=id&pagination[page]=1&pagination[pageSize]=100"
+      )
+    ).json()
   ).data;
 
   const paths = Object.entries(data).map((blog: any) => {

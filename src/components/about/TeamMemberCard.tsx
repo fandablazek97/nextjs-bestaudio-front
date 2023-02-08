@@ -18,7 +18,7 @@ export function TeamMemberCard({
 }: TeamMemberCardProps) {
   return (
     <div className={`grid grid-cols-1 gap-8 sm:grid-cols-2 ${className}`}>
-      <div className="grayscale-toned-image col-span-1 aspect-square w-full max-w-md overflow-hidden rounded-lg">
+      <div className="grayscale-toned-image col-span-1 aspect-square w-full max-w-md overflow-hidden rounded-lg bg-gray-700">
         <Image
           src={imageSrc}
           alt={name}

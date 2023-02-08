@@ -46,7 +46,7 @@ const ONas: NextPage = () => {
       </Wrapper>
 
       <Wrapper size="lg">
-        <div className="grayscale-toned-image aspect-video w-full overflow-hidden rounded-md">
+        <div className="grayscale-toned-image aspect-video w-full overflow-hidden rounded-md bg-gray-700">
           <Image
             src={"/images/team/team-group-photo.jpg"}
             alt="skupinová fotky"

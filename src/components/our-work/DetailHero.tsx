@@ -16,7 +16,7 @@ export default function DetailHero({
   return (
     <div className="relative h-[66vh] min-h-[480px] w-screen md:h-screen">
       {/* Bg image */}
-      <div className="grayscale-toned-image absolute inset-0 -z-20 h-full w-full opacity-50">
+      <div className="grayscale-toned-image absolute inset-0 -z-20 h-full w-full bg-gray-700 opacity-50">
         <Image
           src={src}
           alt={title}

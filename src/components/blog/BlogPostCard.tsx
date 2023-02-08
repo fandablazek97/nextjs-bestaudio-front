@@ -31,7 +31,7 @@ export default function BlogPostCard({
       <a
         className={`group isolate scale-100 outline-none transition duration-300 ease-out hover:scale-95 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-copy-rich/70 ${className}`}
       >
-        <div className="grayscale-toned-image aspect-[16/10] w-full overflow-hidden object-cover object-center">
+        <div className="grayscale-toned-image aspect-[16/10] w-full overflow-hidden bg-gray-700 object-cover object-center">
           <Image
             src={imageSrc}
             alt={title}
