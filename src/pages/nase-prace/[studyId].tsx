@@ -7,6 +7,7 @@ import CallToActionWide from "@ui/CallToActionWide";
 import Image from "next/image";
 import { config } from "@configs/site-config";
 import ReactMarkdown from "react-markdown";
+import ContentFormater from "@ui/ContentFormater";
 
 // Icons
 import { SlBadge, SlLayers } from "react-icons/sl";
@@ -91,19 +92,19 @@ const PageTemplate: NextPage<ThisProps> = ({
         <Heading as="h2" size="2xl" color="primary" hasMarginBottom>
           Zadání
         </Heading>
-        <div>
+        <ContentFormater>
           <ReactMarkdown>{assigment}</ReactMarkdown>
-        </div>
+        </ContentFormater>
       </Wrapper>
 
       <Wrapper paddedContent="sm">
-        <div className="grayscale-toned-image w-full overflow-hidden rounded-xl bg-gray-700">
+        <div className="grayscale-toned-image w-full overflow-hidden rounded-xl ">
           <Image
             src={assigmentImageUrl}
             alt="obrazek"
             width={1920}
-            height="1080"
-            className="aspect-video w-full object-cover"
+            height={1080}
+            className="aspect-video w-full bg-gray-700 object-cover"
           />
         </div>
       </Wrapper>
@@ -112,29 +113,29 @@ const PageTemplate: NextPage<ThisProps> = ({
         <Heading as="h2" size="2xl" color="primary" hasMarginBottom>
           Řešení
         </Heading>
-        <div>
+        <ContentFormater>
           <ReactMarkdown>{solution}</ReactMarkdown>
-        </div>
+        </ContentFormater>
       </Wrapper>
 
       <Wrapper paddedContent="sm">
         <div className="grid gap-10 sm:grid-cols-2">
-          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl bg-gray-700">
+          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl">
             <Image
               src={solutionImageLeftUrl}
               alt="obrazek"
               width={1920}
               height="1080"
-              className="aspect-[9/16] w-full object-cover"
+              className="aspect-[9/16] w-full bg-gray-700 object-cover"
             />
           </div>
-          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl bg-gray-700 sm:mt-52">
+          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl sm:mt-52">
             <Image
               src={solutionImageRightUrl}
               alt="obrazek"
               width={1920}
               height="1080"
-              className="aspect-[9/16] w-full object-cover"
+              className="aspect-[9/16] w-full bg-gray-700 object-cover"
             />
           </div>
         </div>
@@ -144,38 +145,38 @@ const PageTemplate: NextPage<ThisProps> = ({
         <Heading as="h2" size="lg" color="primary" hasMarginBottom>
           Technické parametry
         </Heading>
-        <div>
+        <ContentFormater>
           <ReactMarkdown>{parameters}</ReactMarkdown>
-        </div>
+        </ContentFormater>
       </Wrapper>
 
       <Wrapper paddedContent="sm">
         <div className="grid gap-10 pt-10 md:grid-cols-2">
-          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl bg-gray-700 md:col-span-2">
+          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl md:col-span-2">
             <Image
               src={parametersImageBigUrl}
               alt="obrazek"
               width={1920}
               height="1080"
-              className="aspect-video w-full object-cover"
+              className="aspect-video w-full bg-gray-700 object-cover"
             />
           </div>
-          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl bg-gray-700">
+          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl">
             <Image
               src={parametersImageLeftUrl}
               alt="obrazek"
               width={1920}
               height="1080"
-              className="aspect-video w-full object-cover"
+              className="aspect-video w-full bg-gray-700 object-cover"
             />
           </div>
-          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl bg-gray-700">
+          <div className="grayscale-toned-image col-span-1 w-full overflow-hidden rounded-xl">
             <Image
               src={parametersImageRightUrl}
               alt="obrazek"
               width={1920}
               height="1080"
-              className="aspect-video w-full object-cover"
+              className="aspect-video w-full bg-gray-700 object-cover"
             />
           </div>
         </div>

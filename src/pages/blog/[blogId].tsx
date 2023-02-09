@@ -34,10 +34,12 @@ const BlogDetail: NextPage<ThisProps> = ({ name, perex, body, imageUrl }) => {
         </div>
       </Wrapper>
 
-      <ContentFormater id="vice">
-        {/* CMS Content goes here */}
-        <ReactMarkdown>{body}</ReactMarkdown>
-      </ContentFormater>
+      <Wrapper size="sm" className="pb-40">
+        <ContentFormater id="vice">
+          {/* CMS Content goes here */}
+          <ReactMarkdown>{body}</ReactMarkdown>
+        </ContentFormater>
+      </Wrapper>
 
       <Wrapper size="lg" paddedContentTop="md" paddedContentBottom="lg">
         <CallToActionWide />

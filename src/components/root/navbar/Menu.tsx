@@ -5,6 +5,9 @@ import BurgerMenu from "./BurgerMenu";
 import MenuCta from "./MenuCta";
 import MenuLinks from "./MenuLinks";
 import MenuSecondaryLinks from "./MenuSecondaryLinks";
+import Button from "@ui/Button";
+import { shop } from "@configs/routes";
+import { HiShoppingCart } from "react-icons/hi2";
 
 type MenuProps = {
   className?: string;
@@ -84,12 +87,34 @@ export default function Menu({ className = "" }: MenuProps) {
           />
 
           <MenuCta
-            className={`my-auto transform-gpu pb-36 transition-[transform,opacity] ease-out ${
+            className={`my-auto transform-gpu pb-8 transition-[transform,opacity] ease-out ${
               isOpen
                 ? "translate-y-0 opacity-100 delay-[600ms] duration-500"
                 : "duration-0 -translate-y-12 opacity-0 delay-150"
             }`}
           />
+
+          <div
+            className={`my-auto transform-gpu pb-36 transition-[transform,opacity] ease-out xs:hidden ${
+              isOpen
+                ? "translate-y-0 opacity-100 delay-[750ms] duration-500"
+                : "duration-0 -translate-y-12 opacity-0 delay-150"
+            }`}
+          >
+            <Button
+              as={"a"}
+              target={"_blank"}
+              rel="noopenner noreferrer"
+              variant="outlined"
+              leftIcon={<HiShoppingCart />}
+              href={shop.href}
+              color="primary"
+              size="sm"
+              className="w-full"
+            >
+              {shop.label}
+            </Button>
+          </div>
         </Wrapper>
       </div>
     </div>
