@@ -124,18 +124,18 @@ const PageTemplate: NextPage<ThisProps> = ({
             <Image
               src={solutionImageLeftUrl}
               alt="obrazek"
-              width={1920}
-              height="1080"
-              className="aspect-[9/16] w-full bg-gray-700 object-cover"
+              width={1080}
+              height={1920}
+              className="aspect-video w-full bg-gray-700 object-cover"
             />
           </div>
-          <div className="col-span-1 w-full overflow-hidden rounded-xl sm:mt-52">
+          <div className="col-span-1 w-full overflow-hidden rounded-xl">
             <Image
               src={solutionImageRightUrl}
               alt="obrazek"
-              width={1920}
-              height="1080"
-              className="aspect-[9/16] w-full bg-gray-700 object-cover"
+              width={1080}
+              height={1920}
+              className="aspect-video w-full bg-gray-700 object-cover"
             />
           </div>
         </div>
