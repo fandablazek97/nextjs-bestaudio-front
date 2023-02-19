@@ -6,7 +6,7 @@ import Seo from "@ui/Seo";
 import Wrapper from "@ui/Wrapper";
 import type { NextPage } from "next";
 import { team } from "@configs/team";
-import Image from "next/image";
+// import Image from "next/image";
 
 const ONas: NextPage = () => {
   return (
@@ -45,7 +45,7 @@ const ONas: NextPage = () => {
         </div>
       </Wrapper>
 
-      <Wrapper size="lg">
+      {/* <Wrapper size="lg">
         <div className="grayscale-toned-image aspect-video w-full overflow-hidden rounded-md bg-gray-700">
           <Image
             src={"/images/team/team-group-photo.jpg"}
@@ -55,7 +55,7 @@ const ONas: NextPage = () => {
             className="w-full bg-body-200 object-contain object-center"
           />
         </div>
-      </Wrapper>
+      </Wrapper> */}
 
       <Wrapper paddedContent="lg">
         <Heading as={"h2"} size="xl" color="primary">

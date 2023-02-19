@@ -23,7 +23,7 @@ const BlogDetail: NextPage<ThisProps> = ({ name, perex, body, imageUrl }) => {
       <HeroGlobal title={name} perex={perex} cta="Přečíst více" />
 
       <Wrapper size="lg" paddedContent="md">
-        <div className="grayscale-toned-image w-full overflow-hidden rounded-xl bg-gray-700">
+        <div className="w-full overflow-hidden rounded-xl bg-gray-700">
           <Image
             src={imageUrl}
             alt="obrazek"

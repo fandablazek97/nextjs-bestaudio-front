@@ -97,7 +97,7 @@ const PageTemplate: NextPage<ThisProps> = ({
         </ContentFormater>
       </Wrapper>
 
-      <Wrapper paddedContent="sm">
+      <Wrapper size="sm" paddedContent="sm">
         <div className="w-full overflow-hidden rounded-xl ">
           <Image
             src={assigmentImageUrl}
@@ -118,24 +118,24 @@ const PageTemplate: NextPage<ThisProps> = ({
         </ContentFormater>
       </Wrapper>
 
-      <Wrapper paddedContent="sm">
+      <Wrapper size="sm" paddedContent="sm">
         <div className="grid gap-10 sm:grid-cols-2">
           <div className="col-span-1 w-full overflow-hidden rounded-xl">
             <Image
               src={solutionImageLeftUrl}
               alt="obrazek"
-              width={1080}
-              height={1920}
-              className="aspect-video w-full bg-gray-700 object-cover"
+              width={1920}
+              height={1080}
+              className="aspect-[9/16] w-full bg-gray-700 object-cover"
             />
           </div>
           <div className="col-span-1 w-full overflow-hidden rounded-xl">
             <Image
               src={solutionImageRightUrl}
               alt="obrazek"
-              width={1080}
-              height={1920}
-              className="aspect-video w-full bg-gray-700 object-cover"
+              width={1920}
+              height={1080}
+              className="aspect-[9/16] w-full bg-gray-700 object-cover"
             />
           </div>
         </div>
@@ -150,7 +150,7 @@ const PageTemplate: NextPage<ThisProps> = ({
         </ContentFormater>
       </Wrapper>
 
-      <Wrapper paddedContent="sm">
+      <Wrapper size="sm" paddedContent="sm">
         <div className="grid gap-10 pt-10 md:grid-cols-2">
           <div className="col-span-1 w-full overflow-hidden rounded-xl md:col-span-2">
             <Image
