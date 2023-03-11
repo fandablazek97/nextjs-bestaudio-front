@@ -5,8 +5,9 @@ import HeroGlobal from "@components/HeroGlobal";
 import Seo from "@ui/Seo";
 import Wrapper from "@ui/Wrapper";
 import type { NextPage } from "next";
+import { config } from "@configs/site-config";
 
-const Blog: NextPage = () => {
+const Blog: NextPage<{data:any}> = ({data}) => {
   return (
     <>
       <Seo
@@ -28,7 +29,7 @@ const Blog: NextPage = () => {
         paddedContentTop="lg"
         paddedContentBottom="md"
       >
-        <BlogPosts />
+        <BlogPosts data={data}/>
       </Wrapper>
 
       {/* Call to action -> Kontakt */}
@@ -40,3 +41,28 @@ const Blog: NextPage = () => {
 };
 
 export default Blog;
+
+
+
+export async function getStaticProps() {
+  const populateQuery = "?populate[mainImage][fields][0]=url"
+  const fieldsQuery = "&fields[0]=name&fields[1]=length&fields[2]=date&fields[3]=perex";
+  const sortQuery = "&sort[0]=id%3Adesc"
+
+  const blogData = (
+    await (
+      await fetch(
+        config.ipToFetch +
+          "/api/blogs" +
+          populateQuery +
+          fieldsQuery +
+          sortQuery
+      )
+    ).json()
+  ).data;
+  return {
+    props: {
+      data: blogData
+    },
+  };
+}
