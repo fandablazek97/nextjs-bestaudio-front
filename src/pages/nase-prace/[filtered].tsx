@@ -6,9 +6,11 @@ import Testimonials from "@components/Testimonials";
 import CaseStudies from "@components/our-work/CaseStudies";
 import Wrapper from "@ui/Wrapper";
 import type { NextPage } from "next";
+import { carBrandsForNavigation, carPacksForNavigation } from "@configs/brands-packs";
 import { config } from "@configs/site-config";
 
-const FilteredPage: NextPage<{data:any}> = ({data}) => {
+const FilteredPage: NextPage<{data:any, pack:string, brand: string}> = ({data, pack, brand}) => {
+  const correctPack = pack.replace("_", " ");
   return (
     <>
       <Seo
@@ -36,7 +38,7 @@ const FilteredPage: NextPage<{data:any}> = ({data}) => {
         paddedContentTop="lg"
         paddedContentBottom="md"
       >
-        <CaseStudies data={data} brand={""} pack={""}/>
+        <CaseStudies data={data} pack={correctPack} brand={brand}/>
       </Wrapper>
 
       {/* Reference */}
@@ -63,12 +65,17 @@ const FilteredPage: NextPage<{data:any}> = ({data}) => {
 
 export default FilteredPage;
 
-export async function getStaticProps() {
+export async function getStaticProps({ params }: any) {
+  const separated = params.filtered.split("&");
+  const brand = separated[0].split("=")[1];
+  const pack = separated[1].split("=")[1];
  
   const populateQuery = "?populate[0]=mainImage";
   const fieldsQuery =
     "&fields[0]=name&fields[1]=brand&fields[2]=model&fields[3]=perex&model&fields[4]=pack";
   const sortQuery = "&sort[0]=id%3Adesc";
+  let brandQuery = brand === "" ? "" : "&filters[brand][$containsi]=" + brand;
+  let packQuery = pack === "" ? "" : "&filters[pack][$containsi]=" + pack;
 
   const data = (
     await (
@@ -76,6 +83,8 @@ export async function getStaticProps() {
         config.ipToFetch +
           "/api/jobs/" +
           populateQuery +
+          brandQuery +
+          packQuery +
           fieldsQuery +
           sortQuery
       )
@@ -83,7 +92,27 @@ export async function getStaticProps() {
   ).data;
   return {
     props: {
-      data: data
+      data: data,
+      pack: pack,
+      brand: brand
     },
+  };
+}
+
+export async function getStaticPaths() {
+  let pathsToMake:any = [];
+  carBrandsForNavigation.map((brand: string) => {
+    carPacksForNavigation.map((pack: string) => (
+      pathsToMake.push("znacka=" + brand + "&balicek=" + pack)
+    ))
+  })
+  const paths = pathsToMake.map((path: any) => {
+    return {
+      params: { filtered: path },
+    };
+  });
+  return {
+    paths,
+    fallback: false,
   };
 }

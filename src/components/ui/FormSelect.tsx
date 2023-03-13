@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Listbox } from "@headlessui/react";
 import { HiChevronUpDown, HiCheck } from "react-icons/hi2";
+import Link from "next/link";
 
 type FormSelectProps = {
+  brand: string;
+  preselected?: string;
   options: string[];
   label: string;
   name: string;
@@ -12,7 +15,6 @@ type FormSelectProps = {
   radius?: "none" | "sm" | "md" | "lg" | "xl" | "full";
   isLabelHidden?: boolean;
   className?: string;
-  setOutsideFunction?: any;
 };
 
 const cvs = {
@@ -46,6 +48,8 @@ const cvs = {
 };
 
 export default function FormSelect({
+  brand,
+  preselected,
   options = [
     "Fanda",
     "Libor",
@@ -64,25 +68,16 @@ export default function FormSelect({
   radius = "md",
   isLabelHidden = false,
   className = "",
-  setOutsideFunction,
 }: FormSelectProps) {
-  const [selectedOption, setSelectedOption] = useState(options[0]);
-
-  function setStateOutsideAndInside(option: string){
-    setSelectedOption(option);
-    setOutsideFunction(option);
-  }
+  const [selectedOption, setSelectedOption] = useState(preselected ? preselected : options[0]);
+  
+  const ref:any = useRef();
 
   return (
     <Listbox
       as={"div"}
       value={selectedOption}
-      onChange={(val: string) => 
-        setOutsideFunction ?
-          setStateOutsideAndInside(val)
-        :
-          setSelectedOption(val)
-      }
+      onChange={(val: string) => setSelectedOption(val)}
       className={`w-full ${className}`}
     >
       <Listbox.Label
@@ -116,9 +111,12 @@ export default function FormSelect({
           className={`absolute left-0 right-0 top-14 max-h-96 w-full overflow-y-scroll bg-body-100 py-1 outline-none ${cvs.radius[radius]}`}
         >
           {options.map((option, i) => (
-            <Listbox.Option key={i} value={option} className={`py-2`}>
+            <Listbox.Option key={i} value={option} className={`py-2`} ref={ref}>
               {({ active, selected }) => (
-                <li
+                <Link
+                  onClick={() => {ref.current.click(); setSelectedOption(option)}}
+                  href={`/nase-prace/znacka=${brand}&balicek=${option === "Všechny balíčky" ? "" : option.replace(" ","_")}`} 
+                  scroll={false}
                   className={`flex items-center justify-start gap-2 py-2 px-3 ${
                     active ? cvs.options[color] : ""
                   }`}
@@ -127,7 +125,7 @@ export default function FormSelect({
                   <span className={`block ${!selected ? "pl-7" : ""}`}>
                     {option}
                   </span>
-                </li>
+                </Link>
               )}
             </Listbox.Option>
           ))}

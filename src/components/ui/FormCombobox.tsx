@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Combobox } from "@headlessui/react";
 import { HiChevronUpDown, HiCheck } from "react-icons/hi2";
+import Link from "next/link";
 
 type FormComboboxProps = {
+  pack: string;
+  preselected?: string;
   options: string[];
   label: string;
   name: string;
@@ -46,6 +49,8 @@ const cvs = {
 };
 
 export default function FormCombobox({
+  pack,
+  preselected,
   options = [
     "Fanda",
     "Libor",
@@ -66,7 +71,7 @@ export default function FormCombobox({
   className = "",
   setOutsideFunction,
 }: FormComboboxProps) {
-  const [selectedOption, setSelectedOption] = useState(options[0]);
+  const [selectedOption, setSelectedOption] = useState(preselected ? preselected : options[0]);
   const [query, setQuery] = useState("");
 
   const filteredOptions =
@@ -80,6 +85,10 @@ export default function FormCombobox({
     setSelectedOption(option);
     setOutsideFunction(option);
   }
+  
+  console.log(pack);
+
+  const ref:any = useRef();
 
   return (
     <Combobox
@@ -106,7 +115,7 @@ export default function FormCombobox({
       </Combobox.Label>
       <div className="relative z-10 w-full">
         <Combobox.Input
-          onChange={(event) => setQuery(event.target.value)}
+          onChange={(e) => setQuery(e.target.value)}
           className={`
             ${cvs.base}
             ${cvs.variant[variant]} 
@@ -123,18 +132,18 @@ export default function FormCombobox({
           className={`absolute left-0 right-0 top-14 max-h-96 w-full overflow-y-scroll bg-body-100 py-1 ${cvs.radius[radius]}`}
         >
           {filteredOptions.map((option, i) => (
-            <Combobox.Option key={i} value={option} className={`py-2`}>
+            <Combobox.Option key={i} value={option} className={`py-2`} ref={ref}>
               {({ active, selected }) => (
-                <li
-                  className={`flex items-center justify-start gap-2 py-2 px-3 ${
-                    active ? cvs.options[color] : ""
-                  }`}
-                >
+                <Link 
+                  href={`/nase-prace/znacka=${option === "Všechny značky" ? "" : option.normalize('NFKD').replace(" ","_").replace(/[^\w]/g, '')}&balicek=${pack.replace(" ","_")}`}
+                  scroll={false}
+                  onClick={() => {ref.current.click(); setSelectedOption(option)}}
+                  className={`flex items-center justify-start gap-2 py-2 px-3 ${active ? cvs.options[color] : ""}`}>
                   {selected && <HiCheck className="h-5 w-5 text-lg" />}
                   <span className={`block ${!selected ? "pl-7" : ""}`}>
                     {option}
                   </span>
-                </li>
+                </Link>
               )}
             </Combobox.Option>
           ))}

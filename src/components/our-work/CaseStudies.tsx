@@ -4,137 +4,18 @@ import FormSelect from "@ui/FormSelect";
 import CaseStudyCard from "./CaseStudyCard";
 import { useState, useEffect } from "react";
 import { config } from "@configs/site-config";
+import { carBrands, carBrandsForNavigation, carPacks, carPacksForNavigation } from "@configs/brands-packs";
 
 type CaseStudiesProps = {
   className?: string;
+  data: any;
+  pack: string;
+  brand: string;
 };
 
-export const carBrands = [
-  "Všechny značky",
-  "Alfa Romeo",
-  "Audi",
-  "BMW",
-  "Citroen",
-  "Dacia",
-  "Dodge",
-  "Fiat",
-  "Ford",
-  "Honda",
-  "Hyundai",
-  "Chevrolet",
-  "Iveco",
-  "Jaguar",
-  "Jeep",
-  "Kia",
-  "Lancia",
-  "Land Rover",
-  "Lamborghini",
-  "Lexus",
-  "Mazda",
-  "Mercedes",
-  "Mini",
-  "Mitsubishi",
-  "Nissan",
-  "Opel",
-  "Peugeot",
-  "Renault",
-  "Saab",
-  "Seat",
-  "Subaru",
-  "Suzuki",
-  "Škoda",
-  "Tesla",
-  "Toyota",
-  "Volkswagen",
-  "Volvo",
-];
-
-const carPacks = [
-  "Všechny balíčky",
-  "Stage 1",
-  "Stage 2",
-  "Premium",
-  "High-End",
-];
-
-let data: any[] = [];
-
-export default function CaseStudies({ className = "" }: CaseStudiesProps) {
-  const [refresh, setRefresh] = useState<boolean>(false);
-  const [brand, setBrand] = useState<string>(carBrands[0]);
-  const [pack, setPack] = useState<string>(carPacks[0]);
-  const [hasItemsLeft, setHasItemsLeft] = useState<boolean>(true);
-  const itemsAtStart = 6;
+export default function CaseStudies({ className = "", data, pack, brand }: CaseStudiesProps) {
   const addItems = 3;
-  const populateQuery = "?populate[0]=mainImage";
-  const fieldsQuery =
-    "&fields[0]=name&fields[1]=brand&fields[2]=model&fields[3]=perex&model&fields[4]=pack";
-  const sortQuery = "&sort[0]=id%3Adesc";
-  let brandQuery =
-    brand === carBrands[0] ? "" : "&filters[brand][$containsi]=" + brand;
-  let packQuery =
-    pack === carPacks[0] ? "" : "&filters[pack][$containsi]=" + pack;
-
-  useEffect(() => {
-    console.log(data);
-    setHasItemsLeft(true);
-    getData(0, itemsAtStart, true);
-  }, [brand, pack]);
-
-  async function getData(
-    currentAmount: number,
-    addXItems: number,
-    filterChanged: boolean
-  ) {
-    let paginationQuery =
-      "&pagination[start]=" + currentAmount + "&pagination[limit]=" + addXItems;
-    await fetch(
-      config.ipToFetch +
-        "/api/jobs" +
-        populateQuery +
-        brandQuery +
-        packQuery +
-        paginationQuery +
-        fieldsQuery +
-        sortQuery
-    )
-      .then((response) => response.json())
-      .then((all) => {
-        /* Pokud se to úspěšně připojilo */
-        if (all.data !== undefined && all.data !== null) {
-          /* Pokud zatím nejsou žádný data nebo se změnil filtr */
-          if (data.length === 0 || filterChanged) {
-            /* Pokud se v databázi nenašla žádná data podle parametrů */
-            if (all.data.length === 0) {
-              data = [];
-              setRefresh(!refresh);
-              setHasItemsLeft(false);
-            } else {
-              /* Pokud se našli data */
-              data = all.data;
-              setRefresh(!refresh);
-              /* Pokud je stažených dat míň než bylo požádáno -> skryje tlačítko */
-              if (all.data.length < currentAmount + addXItems) {
-                setHasItemsLeft(false);
-              }
-            }
-          } else {
-            /* Pokud už existujou nějaký data */
-            data.push(...all.data);
-            setRefresh(!refresh);
-
-            /* Pokud je dat míň než bylo požádáno -> skryje tlačítko */
-            if (data.length < currentAmount + addXItems) {
-              setHasItemsLeft(false);
-            }
-          }
-        } else {
-          /* Špatný připojení/požadavek */
-          data = [];
-          setRefresh(!refresh);
-        }
-      });
-  }
+  const [showedItems, setShowedItems] = useState<number>(12);
 
   return (
     <div className={`w-full ${className}`}>
@@ -145,7 +26,8 @@ export default function CaseStudies({ className = "" }: CaseStudiesProps) {
           color="primary"
           options={carBrands}
           className="z-20"
-          setOutsideFunction={setBrand}
+          preselected={brand}
+          pack={pack}
         />
         <FormSelect
           label="Vyberte balíček:"
@@ -153,14 +35,15 @@ export default function CaseStudies({ className = "" }: CaseStudiesProps) {
           color="primary"
           options={carPacks}
           className="z-10"
-          setOutsideFunction={setPack}
+          preselected={pack}
+          brand={brand}
         />
       </div>
       <div className="grid w-full grid-cols-1 gap-x-10 gap-y-12 sm:grid-cols-2 lg:gap-y-24 xl:grid-cols-3 xl:gap-x-14">
-        {data.map((item, i) => (
-          <CaseStudyCard
+        {data.map((item:any, i:number) => (
+          i < showedItems && <CaseStudyCard
             key={i}
-            href={"nase-prace/" + item.id}
+            href={"/nase-prace/detail/" + item.id}
             imageSrc={item.attributes.mainImage.data.attributes.url}
             title={item.attributes.name}
             carBrand={item.attributes.brand}
@@ -172,10 +55,10 @@ export default function CaseStudies({ className = "" }: CaseStudiesProps) {
         ))}
       </div>
       <div className="mt-16 flex items-center justify-center lg:mt-28">
-        {hasItemsLeft && (
+        {data.length > showedItems && (
           <Button
             size="lg"
-            onClick={() => getData(data.length, addItems, false)}
+            onClick={() => setShowedItems(showedItems + addItems)}
           >
             Načíst další
           </Button>

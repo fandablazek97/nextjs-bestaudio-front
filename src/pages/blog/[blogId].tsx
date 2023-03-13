@@ -42,7 +42,7 @@ const BlogDetail: NextPage<ThisProps> = ({ name, perex, body, imageUrl }) => {
       </Wrapper>
 
       <Wrapper size="lg" paddedContentTop="md" paddedContentBottom="lg">
-        <CallToActionWide />
+        <CallToActionWide content="Naši technici vám zodpoví všechny otázky ohledně vylepšení zvuku a tlumení ve vašem voze. Společně najdeme nejlepší cenové řešení a v případě zájmu vybereme termín realizace."/>
       </Wrapper>
     </>
   );
