@@ -301,10 +301,8 @@ export default function Testimonials({ className = "" }: TestimonialsProps) {
       const isHalfWay = window.scrollY > middle;
       if (isCollapseButtonVisible && !isHalfWay) {
         setIsCollapseButtonVisible(false);
-        console.log(isCollapseButtonVisible);
       } else if (!isCollapseButtonVisible && isHalfWay) {
         setIsCollapseButtonVisible(true);
-        console.log(isCollapseButtonVisible);
       }
     }
     window.addEventListener("scroll", onScroll);
