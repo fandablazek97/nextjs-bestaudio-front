@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import RootLayout from "@layouts/RootLayout";
 import { ToastContainer } from "react-toastify";
+import GoogleAnalytics from "@components/GoogleAnalytics";
 // import { Transition } from "@headlessui/react";
 
 // Global stylesheet: https://tailwindcss.com/docs/guides/nextjs
@@ -28,6 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
   });
   return (
     <RootLayout>
+      <GoogleAnalytics measurementId="G-T18SGH03XV" />
       <Component {...pageProps} />
       <ToastContainer
         position="top-center"
