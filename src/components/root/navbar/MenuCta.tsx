@@ -13,7 +13,6 @@ export default function MenuCta({ className = "" }: MenuCtaProps) {
       <li>
         <AppLink
           href={contacts.main.phone.href}
-          isExternal
           hoverEffect="underline-slide"
           className="text-lg font-medium text-primary"
         >
@@ -23,7 +22,6 @@ export default function MenuCta({ className = "" }: MenuCtaProps) {
       <li>
         <AppLink
           href={contacts.main.email.href}
-          isExternal
           hoverEffect="underline-slide"
           className="text-lg font-medium text-primary"
         >

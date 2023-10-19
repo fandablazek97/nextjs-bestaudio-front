@@ -2,7 +2,6 @@ import Button from "@ui/Button";
 import Heading from "@ui/Heading";
 import ScrollReveal from "@ui/ScrollReveal";
 import { team } from "@configs/team";
-import AppLink from "@ui/AppLink";
 import Image from "next/image";
 
 type TeamMemberCardProps = {
@@ -71,9 +70,9 @@ export default function Team({ className = "" }: TeamProps) {
           výsledků a realizujeme prvotřídní montáže na světové úrovni.
         </p>
         <div className="mt-5">
-          <AppLink href="/o-nas" passHref>
-            <Button size="lg">Více o nás</Button>
-          </AppLink>
+          <Button href="/o-nas" size="lg">
+            Více o nás
+          </Button>
         </div>
       </ScrollReveal>
       <div className="col-span-1 grid grid-cols-1 gap-6 xs:grid-cols-2 sm:gap-16">

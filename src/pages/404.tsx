@@ -5,7 +5,6 @@ import Wrapper from "@ui/Wrapper";
 import type { NextPage } from "next";
 import { HiHome } from "react-icons/hi2";
 import Button from "@ui/Button";
-import AppLink from "@ui/AppLink";
 import Image from "next/image";
 
 const Page404: NextPage = () => {
@@ -41,11 +40,9 @@ const Page404: NextPage = () => {
             přesunuta. Kliknutím na následující tlačítko se dostanete na hlavní
             stránku webu.
           </p>
-          <AppLink href="/" passHref>
-            <Button as="a" size="lg" leftIcon={<HiHome />} className="mt-16">
-              Hlavní strana
-            </Button>
-          </AppLink>
+          <Button href="/" size="lg" leftIcon={<HiHome />} className="mt-16">
+            Hlavní strana
+          </Button>
         </Wrapper>
       </div>
     </>

@@ -5,7 +5,6 @@ import ScrollReveal from "@ui/ScrollReveal";
 import Wrapper from "@ui/Wrapper";
 import Marquee from "react-fast-marquee";
 import { cars } from "@configs/car-brands";
-import AppLink from "@ui/AppLink";
 import Image from "next/image";
 
 export default function CarBrandsMarquee() {
@@ -19,7 +18,7 @@ export default function CarBrandsMarquee() {
           height={1793}
           aria-hidden={true}
           loading={"eager"}
-          className="pointer-events-none absolute left-0 top-0 -z-10 aspect-square h-auto w-screen origin-center translate-y-1/3 scale-[2.25] opacity-20 sm:translate-y-0 sm:scale-150 sm:opacity-15 md:translate-y-[-10%] md:scale-110 xl:left-1/2 xl:max-w-[1920px] xl:translate-y-[-15%] xl:-translate-x-1/2 xl:scale-110"
+          className="scale-[2.25] md:translate-y-[-10%] xl:max-w-[1920px] xl:translate-y-[-15%] pointer-events-none absolute left-0 top-0 -z-10 aspect-square h-auto w-screen origin-center translate-y-1/3 opacity-20 sm:translate-y-0 sm:scale-150 sm:opacity-15 md:scale-110 xl:left-1/2 xl:-translate-x-1/2 xl:scale-110"
         />
         <ScrollReveal>
           <Heading
@@ -36,11 +35,10 @@ export default function CarBrandsMarquee() {
           delay="200"
           className="mx-auto mt-8 flex max-w-sm flex-col items-center justify-center gap-5 sm:max-w-xl sm:flex-row sm:gap-10 lg:mt-12"
         >
-          <AppLink href="/sluzby" passHref>
-            <Button className="w-full">Zobrazit služby</Button>
-          </AppLink>
+          <Button href="/sluzby" className="w-full">
+            Zobrazit služby
+          </Button>
           <Button
-            as={"a"}
             href="#reference"
             variant="outlined"
             color="light"

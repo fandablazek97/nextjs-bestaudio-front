@@ -7,16 +7,22 @@ import FormTextArea from "@ui/FormTextArea";
 import FormTextInput from "@ui/FormTextInput";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
+import { useRouter } from "next/router";
 
 type Props = {
   className?: string;
 };
 
 export default function ContactForm({ className = "" }: Props) {
-  const [isMailSent, setIsMailSent] = useState(false);
+  // router
+  const router = useRouter();
+
+  // states
+  const [isMailSentHoney, setIsMailSentHoney] = useState(false);
   const [formError, setFormError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
+  // refs
   const formRef = useRef<HTMLFormElement>(null);
 
   // Honeypot refs
@@ -43,15 +49,15 @@ export default function ContactForm({ className = "" }: Props) {
     ) {
       emailjs
         .sendForm(
-          "YOUR_SERVICE_ID",
-          "YOUR_TEMPLATE_ID",
+          "service_mstrrtr",
+          "template_3lg57m5",
           formRef.current!,
-          "YOUR_PUBLIC_KEY"
+          "user_2tNsUaIQSULo6wFXKZVCs"
         )
         .then(
           // Success
           () => {
-            setIsMailSent(true);
+            router.push("/odeslany-formular");
             e.target.reset();
             setIsLoading(false);
           },
@@ -62,7 +68,7 @@ export default function ContactForm({ className = "" }: Props) {
           }
         );
     } else {
-      setIsMailSent(true);
+      setIsMailSentHoney(true);
       e.target.reset();
       setIsLoading(false);
     }
@@ -133,8 +139,7 @@ export default function ContactForm({ className = "" }: Props) {
           isRequired
           label={
             <span>
-              Pro odeslání formuláře musíte souhlasit se zpracováním osobních
-              údajů{" "}
+              Souhlasím se zpracováním osobních údajů {" "}
               <AppLink
                 href="/gdpr"
                 hoverEffect="underline"
@@ -148,7 +153,7 @@ export default function ContactForm({ className = "" }: Props) {
         <Button type="submit" isLoading={isLoading}>
           Odeslat
         </Button>
-        {isMailSent && (
+        {isMailSentHoney && (
           <Alert
             status="success"
             variant="tinted"

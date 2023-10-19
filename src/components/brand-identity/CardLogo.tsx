@@ -66,10 +66,10 @@ export default function CardLogo({
       </Heading>
       {caption !== null && <p>{caption}</p>}
       <div className="flex justify-start gap-5">
-        <Button as="a" href={srcSvg} download leftIcon={<HiCloudArrowDown />}>
+        <Button href={srcSvg} download leftIcon={<HiCloudArrowDown />}>
           SVG
         </Button>
-        <Button as="a" href={srcPng} download leftIcon={<HiCloudArrowDown />}>
+        <Button href={srcPng} download leftIcon={<HiCloudArrowDown />}>
           PNG
         </Button>
       </div>

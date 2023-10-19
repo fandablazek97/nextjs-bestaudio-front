@@ -46,7 +46,6 @@ export function TeamMemberCard({
         <div className="mt-6 flex flex-col gap-2">
           <AppLink
             href={phoneLink}
-            isExternal
             hoverEffect="underline-slide"
             className="font-display text-lg font-bold text-white md:text-2xl lg:text-xl"
           >
@@ -54,7 +53,6 @@ export function TeamMemberCard({
           </AppLink>
           <AppLink
             href={emailLink}
-            isExternal
             hoverEffect="underline-slide"
             className="font-display text-lg font-bold text-white md:text-2xl lg:text-xl"
           >

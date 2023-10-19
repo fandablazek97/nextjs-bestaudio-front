@@ -1,9 +1,11 @@
 import { forwardRef, useState } from "react";
 import { CgSpinner } from "react-icons/cg";
+import SmartLink from "./SmartLink";
 
 type ButtonProps = {
-  children: string;
   as?: React.ElementType;
+  href?: string;
+  children: string;
   variant?: "filled" | "outlined" | "tinted" | "plain";
   color?: "primary" | "secondary" | "accent" | "neutral" | "light" | "error";
   radius?: "none" | "sm" | "md" | "lg" | "xl" | "full";
@@ -119,7 +121,8 @@ const cvs = {
 const Button = forwardRef<Ref, ButtonProps>(
   (
     {
-      as: Tag = "button",
+      as = "button",
+      href,
       variant = "filled",
       color = "primary",
       radius = "full",
@@ -140,7 +143,9 @@ const Button = forwardRef<Ref, ButtonProps>(
     // Affects `will change` property
     const [hover, setHover] = useState(false);
     return (
-      <Tag
+      <SmartLink
+        as={as}
+        href={href}
         ref={ref}
         className={`
           ${cvs.base}
@@ -227,13 +232,13 @@ const Button = forwardRef<Ref, ButtonProps>(
         {isLoading && (
           <CgSpinner className="z-1 absolute inset-0 m-auto h-[1.8em] w-[1.8em] animate-spinner" />
         )}
-      </Tag>
+      </SmartLink>
     );
   }
 );
 
 // forwardRef
-export type Ref = HTMLElement;
+export type Ref = HTMLButtonElement | HTMLAnchorElement;
 
 Button.displayName = "Button"; // viz: https://stackoverflow.com/questions/52992932/component-definition-is-missing-display-name-react-display-name
 

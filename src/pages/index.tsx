@@ -11,7 +11,6 @@ import ScrollReveal from "@ui/ScrollReveal";
 import Testimonials from "@components/Testimonials";
 import Team from "@components/home/Team";
 import CallToActionWide from "@ui/CallToActionWide";
-import Head from "next/head";
 
 // To Do
 // Animace úvodní stránky při prvním loadu (Animace textu a kamery v partiklech)

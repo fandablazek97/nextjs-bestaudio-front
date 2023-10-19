@@ -1,7 +1,7 @@
 import LogoBrandFull from "@ui/LogoBrandFull";
 import Wrapper from "@ui/Wrapper";
 import { useScrollPosition } from "@hooks/useScrollPosition";
-import AppLink from "@ui/AppLink";
+import SmartLink from "@ui/SmartLink";
 import { useState } from "react";
 import Menu from "./Menu";
 import NavbarLinks from "./NavbarLinks";
@@ -32,7 +32,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed isolate z-40 h-16 w-screen transition-[background,transform,opacity,box-shadow] duration-500 sm:h-20 2xl:h-24 
+      className={`transition-[background,transform,opacity,box-shadow] fixed isolate z-40 h-16 w-screen duration-500 sm:h-20 2xl:h-24 
         ${isVisible ? "translate-y-0" : "-translate-y-full"}
         ${
           isScrolled
@@ -46,11 +46,12 @@ export default function Navbar() {
         className="flex h-full items-center justify-end sm:gap-8 md:gap-10"
       >
         {/* Logo */}
-        <AppLink href="/" passHref>
-          <a className="z-10 mr-auto origin-left scale-[0.7] outline-none focus-visible:ring-4 focus-visible:ring-copy-rich/70 sm:scale-100">
-            <LogoBrandFull variant="white" />
-          </a>
-        </AppLink>
+        <SmartLink
+          href="/"
+          className="scale-[0.7] z-10 mr-auto origin-left cursor-pointer outline-none focus-visible:ring-4 focus-visible:ring-copy-rich/70 sm:scale-100"
+        >
+          <LogoBrandFull variant="white" />
+        </SmartLink>
 
         {/* Links */}
         <NavbarLinks className="absolute top-1/2 left-1/2 hidden -translate-x-1/2 -translate-y-1/2 xl:block" />
@@ -59,12 +60,9 @@ export default function Navbar() {
         <NavbarSecondaryLinks className="hidden xl:block" />
 
         <Button
-          as={"a"}
-          target={"_blank"}
-          rel="noopenner noreferrer"
+          href={shop.href}
           variant="outlined"
           leftIcon={<HiShoppingCart />}
-          href={shop.href}
           color="primary"
           size="sm"
           className="z-10 mr-2 hidden shrink-0 xs:inline-flex sm:mr-0"

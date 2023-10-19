@@ -20,7 +20,6 @@ export default function SocialLinks({
         <li>
           <AppLink
             href={socials.facebook.href}
-            isExternal
             aria-label={socials.facebook.aria}
             className="text-xl text-copy outline-none transition-colors duration-150 ease-in-out hover:text-primary focus-visible:ring-2 focus-visible:ring-copy/70"
           >
@@ -30,7 +29,6 @@ export default function SocialLinks({
         <li>
           <AppLink
             href={socials.instagram.href}
-            isExternal
             aria-label={socials.instagram.aria}
             className="text-xl text-copy outline-none transition-colors duration-150 ease-in-out hover:text-primary focus-visible:ring-2 focus-visible:ring-copy/70"
           >
@@ -40,7 +38,6 @@ export default function SocialLinks({
         <li>
           <AppLink
             href={socials.youtube.href}
-            isExternal
             aria-label={socials.youtube.aria}
             className="text-xl text-copy outline-none transition-colors duration-150 ease-in-out hover:text-primary focus-visible:ring-2 focus-visible:ring-copy/70"
           >

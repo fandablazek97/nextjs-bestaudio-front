@@ -1,10 +1,9 @@
-import NextLink from "next/link";
+import SmartLink from "./SmartLink";
 
 type AppLinkProps = {
-  href: string;
+  as?: React.ElementType;
+  href?: string;
   children: React.ReactNode;
-  passHref?: boolean;
-  isExternal?: boolean;
   hoverEffect?:
     | "none"
     | "opacity"
@@ -36,17 +35,17 @@ const cvs = {
 };
 
 export default function AppLink({
-  href = "",
+  as,
+  href,
   children,
-  passHref = false,
-  isExternal = false,
   hoverEffect = "none",
   onClick,
   className = "",
   ...rest
 }: AppLinkProps) {
-  return !isExternal ? (
-    <NextLink
+  return (
+    <SmartLink
+      as={as}
       href={href}
       className={`
       ${className} 
@@ -55,28 +54,9 @@ export default function AppLink({
       outline-none focus-visible:ring-2 focus-visible:ring-copy/70
       `}
       onClick={onClick}
-      passHref={passHref}
-      legacyBehavior={passHref}
       {...rest}
     >
       {children}
-    </NextLink>
-  ) : (
-    <a
-      href={href}
-      target={"_blank"}
-      rel="noopenner noreferrer"
-      className={`
-      ${className} 
-      ${hoverEffect !== "none" ? cvs.base : ""} 
-      ${cvs.hover[hoverEffect]} 
-      outline-none focus-visible:ring-2 focus-visible:ring-copy/70
-      `}
-      onClick={onClick}
-      tabIndex={0}
-      {...rest}
-    >
-      {children}
-    </a>
+    </SmartLink>
   );
 }

@@ -36,7 +36,6 @@ export default function HeroContact() {
             </span>
             <AppLink
               href={contacts.main.phone.href}
-              isExternal
               hoverEffect="underline-slide"
               className="font-display text-xl font-bold text-primary sm:text-2xl md:text-3xl lg:text-white xl:text-4xl"
             >
@@ -49,7 +48,6 @@ export default function HeroContact() {
             </span>
             <AppLink
               href={contacts.main.email.href}
-              isExternal
               hoverEffect="underline-slide"
               className="font-display text-xl font-bold text-primary sm:text-2xl md:text-3xl lg:text-white xl:text-4xl"
             >

@@ -1,0 +1,3 @@
+module.exports = {
+  cbid: "xxx",
+};

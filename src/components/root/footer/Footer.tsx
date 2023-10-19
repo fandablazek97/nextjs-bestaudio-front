@@ -48,7 +48,6 @@ export default function Footer() {
               <AppLink
                 href={shop.href}
                 hoverEffect="underline-slide"
-                isExternal
                 className="text-primary"
               >
                 {shop.label}

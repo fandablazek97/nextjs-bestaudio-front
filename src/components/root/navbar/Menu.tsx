@@ -52,19 +52,19 @@ export default function Menu({ className = "" }: MenuProps) {
         className={`relative z-10`}
       />
       <div
-        className={`fixed inset-0 z-0 h-screen w-screen overflow-y-auto bg-body-100 transition-[opacity,visibility] ease-out ${
+        className={`transition-[opacity,visibility] fixed inset-0 z-0 h-screen w-screen overflow-y-auto bg-body-100 ease-out ${
           isOpen
-            ? "visible opacity-100 duration-[400ms]"
+            ? "duration-[400ms] visible opacity-100"
             : "invisible opacity-0 duration-150"
         }`}
       >
         <Wrapper
           size="lg"
-          className="flex h-full flex-col justify-between pt-20 pl-0 xs:pt-24 md:pt-36 lg:pl-[50%]"
+          className="lg:pl-[50%] flex h-full flex-col justify-between pt-20 pl-0 xs:pt-24 md:pt-36"
         >
           <MenuLinks
             onEachLinkClick={closeMenu}
-            className={`transform-gpu transition-[transform,opacity] ease-out ${
+            className={`transition-[transform,opacity] transform-gpu ease-out ${
               isOpen
                 ? "translate-y-0 opacity-100 delay-150 duration-500"
                 : "duration-0 -translate-y-12 opacity-0 delay-150"
@@ -72,42 +72,39 @@ export default function Menu({ className = "" }: MenuProps) {
           />
           <MenuSecondaryLinks
             onEachLinkClick={closeMenu}
-            className={`my-8 transform-gpu transition-[transform,opacity] ease-out ${
+            className={`transition-[transform,opacity] my-8 transform-gpu ease-out ${
               isOpen
                 ? "translate-y-0 opacity-100 delay-300 duration-500"
                 : "duration-0 -translate-y-12 opacity-0 delay-150"
             }`}
           />
           <SocialLinks
-            className={`my-auto transform-gpu pb-8 transition-[transform,opacity] ease-out ${
+            className={`transition-[transform,opacity] my-auto transform-gpu pb-8 ease-out ${
               isOpen
-                ? "translate-y-0 opacity-100 delay-[450ms] duration-500"
+                ? "delay-[450ms] translate-y-0 opacity-100 duration-500"
                 : "duration-0 -translate-y-12 opacity-0 delay-150"
             }`}
           />
 
           <MenuCta
-            className={`my-auto transform-gpu pb-8 transition-[transform,opacity] ease-out ${
+            className={`transition-[transform,opacity] my-auto transform-gpu pb-8 ease-out ${
               isOpen
-                ? "translate-y-0 opacity-100 delay-[600ms] duration-500"
+                ? "delay-[600ms] translate-y-0 opacity-100 duration-500"
                 : "duration-0 -translate-y-12 opacity-0 delay-150"
             }`}
           />
 
           <div
-            className={`my-auto transform-gpu pb-36 transition-[transform,opacity] ease-out xs:hidden ${
+            className={`transition-[transform,opacity] my-auto transform-gpu pb-36 ease-out xs:hidden ${
               isOpen
-                ? "translate-y-0 opacity-100 delay-[750ms] duration-500"
+                ? "delay-[750ms] translate-y-0 opacity-100 duration-500"
                 : "duration-0 -translate-y-12 opacity-0 delay-150"
             }`}
           >
             <Button
-              as={"a"}
-              target={"_blank"}
-              rel="noopenner noreferrer"
+              href={shop.href}
               variant="outlined"
               leftIcon={<HiShoppingCart />}
-              href={shop.href}
               color="primary"
               size="sm"
               className="w-full"

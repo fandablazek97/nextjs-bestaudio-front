@@ -1,7 +1,6 @@
 import Button from "@ui/Button";
 import Heading from "@ui/Heading";
 import ScrollReveal from "@ui/ScrollReveal";
-import AppLink from "@ui/AppLink";
 
 export default function Services() {
   return (
@@ -27,11 +26,9 @@ export default function Services() {
             bez nadsázky tvrdit, že bez výměny reproduktorů a osazení výkonného
             zesilovače s DSP procesorem se neobejdete.
           </p>
-          <AppLink href="/kontakt" passHref>
-            <Button as={"a"} variant="outlined" className="mt-5">
-              Objednat
-            </Button>
-          </AppLink>
+          <Button href="/kontakt" as={"a"} variant="outlined" className="mt-5">
+            Objednat
+          </Button>
         </ScrollReveal>
         <ScrollReveal
           smDelay="200"
@@ -48,11 +45,9 @@ export default function Services() {
             něj odrážejí do prostoru, místo aby byly pohlceny a materiál
             rezonoval.
           </p>
-          <AppLink href="/kontakt" passHref>
-            <Button as={"a"} variant="outlined" className="mt-5">
-              Objednat
-            </Button>
-          </AppLink>
+          <Button href="/kontakt" variant="outlined" className="mt-5">
+            Objednat
+          </Button>
         </ScrollReveal>
         <ScrollReveal
           lgDelay="400"
@@ -70,11 +65,9 @@ export default function Services() {
             kontroly tohoto nastavení a při zjištění chyb jeho následné
             přeladění.
           </p>
-          <AppLink href="/kontakt" passHref>
-            <Button as={"a"} variant="outlined" className="mt-5">
-              Objednat
-            </Button>
-          </AppLink>
+          <Button href="/kontakt" variant="outlined" className="mt-5">
+            Objednat
+          </Button>
         </ScrollReveal>
       </div>
     </>
