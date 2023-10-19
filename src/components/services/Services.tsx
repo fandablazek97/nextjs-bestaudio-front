@@ -26,7 +26,7 @@ export default function Services() {
             bez nadsázky tvrdit, že bez výměny reproduktorů a osazení výkonného
             zesilovače s DSP procesorem se neobejdete.
           </p>
-          <Button href="/kontakt" as={"a"} variant="outlined" className="mt-5">
+          <Button href="/kontakt" variant="outlined" className="mt-5">
             Objednat
           </Button>
         </ScrollReveal>

@@ -121,7 +121,7 @@ const cvs = {
 const Button = forwardRef<Ref, ButtonProps>(
   (
     {
-      as = "button",
+      as,
       href,
       variant = "filled",
       color = "primary",
