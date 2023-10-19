@@ -17,7 +17,7 @@ const BrandIdentityPage: NextPage = () => {
         noFollow={false}
       />
       {/* Page Content... */}
-      <HeroGlobal title="Firemní identita" variant="brand-identity" />
+      <HeroGlobal title="Firemní identita" perex="" variant="brand-identity" />
 
       <Wrapper
         as={"section"}
@@ -28,11 +28,6 @@ const BrandIdentityPage: NextPage = () => {
         <Heading as={"h2"} size="xl" hasMarginBottom>
           Barvy
         </Heading>
-        <p className="max-w-prose">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-          ipsam similique et unde possimus in nam, sequi explicabo excepturi
-          sunt.
-        </p>
         <div className="grid grid-cols-1 gap-10 py-16 xs:grid-cols-2 md:grid-cols-3">
           <CardColor hex="#FFA200" variant="primary" />
           <CardColor hex="#BD6705" variant="secondary" />
@@ -49,11 +44,6 @@ const BrandIdentityPage: NextPage = () => {
         <Heading as={"h2"} size="xl" hasMarginBottom>
           Loga
         </Heading>
-        <p className="max-w-prose">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-          ipsam similique et unde possimus in nam, sequi explicabo excepturi
-          sunt.
-        </p>
         <div className="grid grid-cols-1 gap-x-10 gap-y-20 py-16 md:grid-cols-2 md:gap-y-32">
           <CardLogo
             className="col-span-1"
@@ -62,7 +52,6 @@ const BrandIdentityPage: NextPage = () => {
             width={190}
             height={51}
             title="Logo Bestaudio - pro tmavé pozadí"
-            caption="Lorem ipsum dolor sit amet"
             isUpScaled
             background="black"
           />
@@ -73,7 +62,6 @@ const BrandIdentityPage: NextPage = () => {
             width={190}
             height={51}
             title="Logo Bestaudio - pro světlé pozadí"
-            caption="Lorem ipsum dolor sit amet"
             isUpScaled
             background="white"
           />
@@ -84,7 +72,6 @@ const BrandIdentityPage: NextPage = () => {
             width={140}
             height={218}
             title="Symbol Bestaudio"
-            caption="Lorem ipsum dolor sit amet"
             isUpScaled
             background="black"
           />

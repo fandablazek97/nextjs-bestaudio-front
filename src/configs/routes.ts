@@ -43,16 +43,12 @@ export const other = [
     label: "Firemní údaje",
   },
   {
-    href: "/obchodni-podminky",
+    href: "https://www.bestaudio.cz/obchodni-podminky/",
     label: "Obchodní podmínky",
   },
   {
     href: "/gdpr",
     label: "Zpracování osobních údajů",
-  },
-  {
-    href: "/cookies",
-    label: "Cookies",
   },
   {
     href: "/firemni-identita",

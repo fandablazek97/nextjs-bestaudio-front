@@ -37,11 +37,11 @@ const Page404: NextPage = () => {
           </Heading>
           <p className="max-w-prose text-center text-lg">
             Stránka, kterou se pokoušíte nalézt již neexistuje, nebo byla
-            přesunuta. Kliknutím na následující tlačítko se dostanete na hlavní
-            stránku webu.
+            přesunuta na jinou URL adresu. Kliknutím na následující tlačítko se
+            dostanete na hlavní stránku našeho webu.
           </p>
           <Button href="/" size="lg" leftIcon={<HiHome />} className="mt-16">
-            Hlavní strana
+            Hlavní stránka
           </Button>
         </Wrapper>
       </div>
