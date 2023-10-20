@@ -1,6 +1,7 @@
 import { Head, Html, Main, NextScript } from "next/document";
 import Script from "next/script";
 import { cbid } from "../../cookiebot.config.js";
+import CookieBotDeclaration from "@components/CookieBotDeclaration.jsx";
 
 export default function Document() {
   return (
@@ -17,6 +18,7 @@ export default function Document() {
       </Head>
       <body className="overflow-x-hidden bg-body font-sans text-base font-normal text-copy antialiased transition-colors duration-150 selection:bg-primary/80 selection:text-white">
         <Main />
+        <CookieBotDeclaration />
         <NextScript />
       </body>
     </Html>
