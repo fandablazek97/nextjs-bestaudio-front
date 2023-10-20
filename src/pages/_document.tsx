@@ -16,8 +16,8 @@ export default function Document() {
           type="text/javascript"
         /> */}
         <Script
-          strategy="afterInteractive"
-          id="CookieDeclaration"
+          strategy="beforeInteractive"
+          id="Cookiebot"
           src="/api/cookiebot-proxy"
           data-cbid={cbid}
           data-blockingmode="auto"  
