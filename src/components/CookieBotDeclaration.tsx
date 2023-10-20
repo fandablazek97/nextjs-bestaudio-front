@@ -6,7 +6,7 @@ export default function CookieBotDeclaration() {
     <Script
       strategy="afterInteractive"
       id="CookieDeclaration"
-      src={`"https://consent.cookiebot.com/${cbid}/cd.js"`}
+      src={`https://consent.cookiebot.com/${cbid}/cd.js`}
       type="text/javascript"
       async
     />
