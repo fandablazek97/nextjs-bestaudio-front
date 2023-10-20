@@ -1,7 +1,7 @@
 import { Head, Html, Main, NextScript } from "next/document";
 import Script from "next/script";
 import { cbid } from "../../cookiebot.config.js";
-import CookieBotDeclaration from "@components/CookieBotDeclaration.jsx";
+import CookieBotDeclaration from "../components/CookieBotDeclaration";
 
 export default function Document() {
   return (
