@@ -9,7 +9,26 @@ const nextConfig = {
     domains:[
       "bestaudio-bucket.s3.eu-west-2.amazonaws.com"
     ]
-  }
+  },
+
+  // Enable CORS for cookiebot URL
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: 'https://consent.cookiebot.com',
+          },
+          {
+            key: 'Access-Control-Allow-Credentials',
+            value: 'true',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
