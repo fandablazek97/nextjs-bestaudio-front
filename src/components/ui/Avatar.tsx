@@ -1,7 +1,7 @@
 // Radix UI component docs: https://www.radix-ui.com/docs/primitives/components/avatar
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 import clsx from "clsx";
-import { useMemo } from "react";
+import { useMemo, useEffect, useState } from "react";
 
 //
 // Avatar component
@@ -91,6 +91,13 @@ export function Avatar({
   className = "",
   ...rest
 }: AvatarProps) {
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   // Get initials from the first and the last name and save them in a variable
   const initials = name
     .split(" ")
@@ -104,6 +111,17 @@ export function Avatar({
         Math.floor(Math.random() * randomBackgroundClasses.length)
       ];
     }, [randomFallbackColor]);
+
+  
+  if (!isMounted) return (
+    <div className={clsx(
+      componentVariants.root,
+      componentVariants.size[size],
+      componentVariants.radius[radius],
+      className
+    )} />
+  );
+
 
   return (
     <AvatarPrimitive.Root
