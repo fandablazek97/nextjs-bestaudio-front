@@ -52,7 +52,7 @@ export default function ContactForm({ className = "" }: Props) {
           "service_mstrrtr",
           "template_3lg57m5",
           formRef.current!,
-          "user_2tNsUaIQSULo6wFXKZVCs"
+          "peXEQ-b1oFp3uAQvI"
         )
         .then(
           // Success
@@ -139,7 +139,7 @@ export default function ContactForm({ className = "" }: Props) {
           isRequired
           label={
             <span>
-              Souhlasím se zpracováním osobních údajů {" "}
+              Souhlasím se zpracováním osobních údajů{" "}
               <AppLink
                 href="/gdpr"
                 hoverEffect="underline"
