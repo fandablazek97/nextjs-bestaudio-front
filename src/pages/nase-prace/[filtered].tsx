@@ -11,6 +11,8 @@ import { config } from "@configs/site-config";
 
 const FilteredPage: NextPage<{data:any, pack:string, brand: string}> = ({data, pack, brand}) => {
   const correctPack = pack.replace("_", " ");
+  const correctBrand = brand.replace("_", " ");
+  
   return (
     <>
       <Seo
@@ -38,7 +40,7 @@ const FilteredPage: NextPage<{data:any, pack:string, brand: string}> = ({data, p
         paddedContentTop="lg"
         paddedContentBottom="md"
       >
-        <CaseStudies data={data} pack={correctPack} brand={brand}/>
+        <CaseStudies data={data} pack={correctPack} brand={correctBrand}/>
       </Wrapper>
 
       {/* Reference */}
