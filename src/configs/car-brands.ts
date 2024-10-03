@@ -25,6 +25,11 @@ export const cars = [
     href: "https://www.bestaudio.cz/audio-pro-auta-citroen/",
   },
   {
+    name: "Cupra",
+    src: "/images/car-brands/cupra.png",
+    href: "https://www.bestaudio.cz/audio-pro-auta-cupra/",
+  },
+  {
     name: "Dacia",
     src: "/images/car-brands/dacia.png",
     href: "https://www.bestaudio.cz/audio-pro-auta-dacia/",
@@ -135,6 +140,11 @@ export const cars = [
     href: "https://www.bestaudio.cz/audio-pro-auta-peugeot/",
   },
   {
+    name: "Porsche",
+    src: "/images/car-brands/porsche.png",
+    href: "",
+  },
+  {
     name: "Renault",
     src: "/images/car-brands/renault.png",
     href: "https://www.bestaudio.cz/audio-pro-auta-renault/",
@@ -183,5 +193,21 @@ export const cars = [
     name: "Volvo",
     src: "/images/car-brands/volvo.png",
     href: "https://www.bestaudio.cz/audio-pro-auta-volvo/",
+  },
+  // New
+  {
+    name: "Hymer",
+    src: "/images/car-brands/hymer.png",
+    href: "",
+  },
+  {
+    name: "Ineos Grenadier",
+    src: "/images/car-brands/ineos-grenadier.png",
+    href: "",
+  },
+  {
+    name: "Ssangyong",
+    src: "/images/car-brands/ssangyong.png",
+    href: "",
   },
 ];

@@ -34,8 +34,8 @@ export default function CarBrandsEshop() {
         {cars.map((car) => (
           <CarBrand
             key={car.name}
-            isLink
-            href={car.href}
+            isLink={car.href !== ""}
+            href={car?.href}
             src={car.src}
             name={car.name}
             className="col-span-1"

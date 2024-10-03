@@ -60,6 +60,11 @@ export default function CaseStudies({
               />
             )
         )}
+        {!data.length && (
+          <div className="w-full col-span-3 px-4 py-8 bg-error/10 border border-error rounded-2xl flex items-center justify-center">
+            <p className="text-lg sm:text-xl text-center font-semibold text-error">Bohužel, zvoleným parametrům neodpovídají žádné příspěvky</p>
+          </div>
+        )}
       </div>
       <div className="mt-16 flex items-center justify-center lg:mt-28">
         {data.length > showedItems && (
