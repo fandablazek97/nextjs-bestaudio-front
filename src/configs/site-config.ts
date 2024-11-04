@@ -20,7 +20,7 @@ export const config = {
     company: {
       name: "Bestaudio s.r.o.",
       declaration: "Společnost zapsaná u Krajského soudu v Plzni, spisová značka C 31660/KSPL.",
-      adress: "Lábkova 841/51, Skvrňany, 318 00 Plzeň",
+      adress: "Pařížská 10, 301 00 Plzeň 3",
       ic: "04146107",
       dic: "CZ04146107",
       phone: "+420 123 456 789",
