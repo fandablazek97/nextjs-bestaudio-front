@@ -9,10 +9,13 @@ import NavbarSecondaryLinks from "./NavbarSecondaryLinks";
 import Button from "@ui/Button";
 import { HiShoppingCart } from "react-icons/hi2";
 import { shop } from "@configs/routes";
+import { routes } from "@configs/routes";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+
+  const contactRoute = routes.find((route) => route.href === "/kontakt");
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
@@ -33,7 +36,7 @@ export default function Navbar() {
   return (
     <nav
       className={`transition-[background,transform,opacity,box-shadow] fixed isolate z-40 h-16 w-screen duration-500 sm:h-20 2xl:h-24 
-        ${isVisible ? "translate-y-0" : "-translate-y-full"}
+        ${isVisible ? "xl:translate-y-0" : "xl:-translate-y-full"}
         ${
           isScrolled
             ? "bg-body/80 backdrop-blur-lg"
@@ -59,16 +62,30 @@ export default function Navbar() {
         {/* Secondary links */}
         <NavbarSecondaryLinks className="hidden xl:block" />
 
-        <Button
-          href={shop.href}
-          variant="outlined"
-          leftIcon={<HiShoppingCart />}
-          color="primary"
-          size="sm"
-          className="z-10 mr-2 hidden shrink-0 xs:inline-flex sm:mr-0"
-        >
-          {shop.label}
-        </Button>
+        <div className="mr-2 hidden shrink-0 xl:block sm:mr-0">
+          <Button
+            href={shop.href}
+            variant="outlined"
+            leftIcon={<HiShoppingCart />}
+            color="primary"
+            size="sm"
+            className="z-10"
+          >
+            {shop.label}
+          </Button>
+        </div>
+
+        <div className="block xl:hidden mr-2 shrink-0 sm:mr-0">
+          <Button
+            href={contactRoute?.href}
+            variant="outlined"
+            color="primary"
+            size="sm"
+            className="z-10"
+          >
+            {contactRoute?.label}
+          </Button>
+        </div>
 
         <Menu className="block xl:hidden" />
       </Wrapper>
