@@ -10,6 +10,7 @@ import Button from "@ui/Button";
 import { HiShoppingCart } from "react-icons/hi2";
 import { shop } from "@configs/routes";
 import { routes } from "@configs/routes";
+import clsx from "clsx";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,14 +36,12 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`transition-[background,transform,opacity,box-shadow] fixed isolate z-40 h-16 w-screen duration-500 sm:h-20 2xl:h-24 
-        ${isVisible ? "xl:translate-y-0" : "xl:-translate-y-full"}
-        ${
+      className={clsx("transition fixed isolate z-40 h-16 w-screen duration-500 sm:h-20 2xl:h-24", 
+        // isVisible ? "xl:translate-y-0" : "xl:-translate-y-full",
           isScrolled
             ? "bg-body/80 backdrop-blur-lg"
             : "bg-gradient-to-b from-body/80 to-transparent"
-        } 
-      `}
+      )}
     >
       <Wrapper
         size="lg"
