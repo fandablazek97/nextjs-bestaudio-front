@@ -5,7 +5,6 @@ import FormCheckbox from "@ui/FormCheckbox";
 import FormHnypot from "@ui/FormHnypot";
 import FormTextArea from "@ui/FormTextArea";
 import FormTextInput from "@ui/FormTextInput";
-import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { useRouter } from "next/router";
 
@@ -14,15 +13,9 @@ type Props = {
 };
 
 export default function ContactForm({ className = "" }: Props) {
-  // router
   const router = useRouter();
-
-  // states
-  const [isMailSentHoney, setIsMailSentHoney] = useState(false);
   const [formError, setFormError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-  // refs
   const formRef = useRef<HTMLFormElement>(null);
 
   // Honeypot refs
@@ -31,48 +24,52 @@ export default function ContactForm({ className = "" }: Props) {
   const hnyTelRef = useRef<HTMLInputElement>(null);
   const hnyEmailRef = useRef<HTMLInputElement>(null);
 
-  // Submit handler
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
 
-    const hnyName = hnyNameRef.current!.value;
-    const hnySurname = hnySurnameRef.current!.value;
-    const hnyTel = hnyTelRef.current!.value;
-    const hnyEmail = hnyEmailRef.current!.value;
+    const hnyName = hnyNameRef.current?.value;
+    const hnySurname = hnySurnameRef.current?.value;
+    const hnyTel = hnyTelRef.current?.value;
+    const hnyEmail = hnyEmailRef.current?.value;
 
-    if (
-      (hnyName === "" || hnyName === undefined) &&
-      (hnySurname === "" || hnySurname === undefined) &&
-      (hnyTel === "" || hnyTel === undefined) &&
-      (hnyEmail === "" || hnyEmail === undefined)
-    ) {
-      emailjs
-        .sendForm(
-          "service_mstrrtr",
-          "template_3lg57m5",
-          formRef.current!,
-          "peXEQ-b1oFp3uAQvI"
-        )
-        .then(
-          // Success
-          () => {
-            router.push("/odeslany-formular");
-            e.target.reset();
-            setIsLoading(false);
-          },
-          // Error
-          () => {
-            setFormError(true);
-            setIsLoading(false);
-          }
-        );
-    } else {
-      setIsMailSentHoney(true);
-      e.target.reset();
+    // Check honeypot fields
+    if (hnyName || hnySurname || hnyTel || hnyEmail) {
+      e.currentTarget.reset();
+      setIsLoading(false);
+      return;
+    }
+
+    try {
+      const formData = new FormData(e.currentTarget);
+
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.get("name-surname")?.toString(),
+          email: formData.get("email")?.toString(),
+          tel: formData.get("tel")?.toString(),
+          message: formData.get("message")?.toString(),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send email");
+      }
+
+      router.push("/odeslany-formular");
+      e.currentTarget.reset();
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setFormError(true);
+    } finally {
       setIsLoading(false);
     }
   };
+
   return (
     <div className={`${className}`}>
       <form
@@ -81,7 +78,7 @@ export default function ContactForm({ className = "" }: Props) {
         className={`space-y-8`}
         aria-label="Kontaktní formulář"
       >
-        {/* ---- Honey start - antispam ochrana ---- */}
+        {/* Honeypot fields */}
         <FormHnypot ref={hnyNameRef} type="text" id="hny-name" label="Jméno" />
         <FormHnypot
           ref={hnySurnameRef}
@@ -96,7 +93,6 @@ export default function ContactForm({ className = "" }: Props) {
           id="hny-email"
           label="E-main"
         />
-        {/* ---- Honey end - antispam ochrana ---- */}
 
         <FormTextInput
           type="text"
@@ -153,14 +149,6 @@ export default function ContactForm({ className = "" }: Props) {
         <Button type="submit" isLoading={isLoading}>
           Odeslat
         </Button>
-        {isMailSentHoney && (
-          <Alert
-            status="success"
-            variant="tinted"
-            title="Váš e-mail byl úspěšně odeslán"
-            text="Děkujeme! Váš e-mail byl úspěšně odeslán. Hned jak to bude možné, ozveme se vám zpět."
-          />
-        )}
         {formError && (
           <Alert
             status="error"
