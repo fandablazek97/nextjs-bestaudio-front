@@ -21,7 +21,7 @@ export default function BlogPosts({ data, className = "" }: BlogPostsProps) {
               <BlogPostCard
                 key={i}
                 href={"/blog/" + post.id}
-                imageSrc={post.attributes.mainImage.data.attributes.url}
+                imageSrc={post.attributes.mainImage?.data?.attributes?.url}
                 title={post.attributes.name}
                 length={post.attributes.length}
                 date={post.attributes.date}

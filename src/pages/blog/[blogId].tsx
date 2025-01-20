@@ -22,17 +22,19 @@ const BlogDetail: NextPage<ThisProps> = ({ name, perex, body, imageUrl }) => {
       {/* Page Content... */}
       <HeroGlobal title={name} perex={perex} cta="Přečíst více" />
 
-      <Wrapper size="lg" paddedContent="md">
-        <div className="w-full overflow-hidden rounded-xl bg-gray-700">
-          <Image
-            src={imageUrl}
-            alt="obrazek"
-            width={1920}
-            height={1080}
-            className="aspect-video w-full object-cover"
-          />
-        </div>
-      </Wrapper>
+      {imageUrl && (
+        <Wrapper size="lg" paddedContent="md">
+          <div className="w-full overflow-hidden rounded-xl bg-gray-700">
+            <Image
+              src={imageUrl}
+              alt="obrazek"
+              width={1920}
+              height={1080}
+              className="aspect-video w-full object-cover"
+            />
+          </div>
+        </Wrapper>
+      )}
 
       <Wrapper size="sm" className="pb-40">
         <ContentFormater id="vice">
@@ -68,7 +70,7 @@ export async function getStaticProps({ params }: any) {
       date: blogData.attributes.date,
       perex: blogData.attributes.perex,
       body: blogData.attributes.body,
-      imageUrl: blogData.attributes.mainImage.data.attributes.url,
+      imageUrl: blogData.attributes.mainImage?.data?.attributes?.url || null,
     },
   };
 }

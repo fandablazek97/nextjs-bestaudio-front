@@ -14,7 +14,7 @@ type BlogPostCardProps = {
 
 export default function BlogPostCard({
   href = "/",
-  imageSrc = "/images/team/member.jpg",
+  imageSrc,
   title = "Název příspěvku",
   length = 5,
   date = "1.11. 2022",
@@ -31,15 +31,17 @@ export default function BlogPostCard({
       href={href}
       className={`group isolate scale-100 outline-none transition duration-300 ease-out hover:scale-95 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-copy-rich/70 ${className}`}
     >
-      <div className="aspect-[16/10] w-full overflow-hidden bg-gray-700 object-cover object-center">
-        <Image
-          src={imageSrc}
-          alt={title}
-          width="1920"
-          height="1200"
-          className="transition duration-300 ease-out group-hover:scale-110"
-        />
-      </div>
+      {imageSrc && (
+        <div className="aspect-[16/10] w-full overflow-hidden bg-gray-700 object-cover object-center">
+          <Image
+            src={imageSrc}
+            alt={title}
+            width="1920"
+            height="1200"
+            className="transition duration-300 ease-out group-hover:scale-110"
+          />
+        </div>
+      )}
       <div className="flex flex-col items-start justify-start gap-3 py-8">
         <Heading as={"span"} size="md" color="primary" className="block">
           {title}

@@ -85,8 +85,6 @@ export default function FormCombobox({
     setSelectedOption(option);
     setOutsideFunction(option);
   }
-  
-  console.log(pack);
 
   const ref:any = useRef();
 
