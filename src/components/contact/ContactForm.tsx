@@ -1,103 +1,92 @@
+// components/ContactForm.tsx
+
 import Alert from "@ui/Alert";
 import AppLink from "@ui/AppLink";
 import Button from "@ui/Button";
 import FormCheckbox from "@ui/FormCheckbox";
-import FormHnypot from "@ui/FormHnypot";
 import FormTextArea from "@ui/FormTextArea";
 import FormTextInput from "@ui/FormTextInput";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { useRouter } from "next/router";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 type Props = {
   className?: string;
 };
 
 export default function ContactForm({ className = "" }: Props) {
-  // router
-  const router = useRouter();
-
   // states
-  const [isMailSentHoney, setIsMailSentHoney] = useState(false);
   const [formError, setFormError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  // Store turnstile token
+  const [turnstileToken, setTurnstileToken] = useState<string>("");
 
   // refs
   const formRef = useRef<HTMLFormElement>(null);
 
-  // Honeypot refs
-  const hnyNameRef = useRef<HTMLInputElement>(null);
-  const hnySurnameRef = useRef<HTMLInputElement>(null);
-  const hnyTelRef = useRef<HTMLInputElement>(null);
-  const hnyEmailRef = useRef<HTMLInputElement>(null);
+  // router
+  const router = useRouter();
 
   // Submit handler
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setFormError(false);
 
-    const hnyName = hnyNameRef.current!.value;
-    const hnySurname = hnySurnameRef.current!.value;
-    const hnyTel = hnyTelRef.current!.value;
-    const hnyEmail = hnyEmailRef.current!.value;
+    // 1) Ensure we have a turnstile token
+    if (!turnstileToken) {
+      setFormError(true);
+      setIsLoading(false);
+      return;
+    }
 
-    if (
-      (hnyName === "" || hnyName === undefined) &&
-      (hnySurname === "" || hnySurname === undefined) &&
-      (hnyTel === "" || hnyTel === undefined) &&
-      (hnyEmail === "" || hnyEmail === undefined)
-    ) {
+    // 2) Verify token with our API route:
+    try {
+      const verifyRes = await fetch("/api/verify-turnstile", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ token: turnstileToken }),
+      });
+
+      if (!verifyRes.ok) {
+        // If Turnstile verification fails
+        setFormError(true);
+        setIsLoading(false);
+        return;
+      }
+
+      // 3) If Turnstile verification succeeded, send the email via EmailJS
       emailjs
         .sendForm(
-          "service_mstrrtr",
-          "template_3lg57m5",
+          "service_mstrrtr",    // your EmailJS service ID
+          "template_3lg57m5",   // your EmailJS template ID
           formRef.current!,
-          "peXEQ-b1oFp3uAQvI"
+          "peXEQ-b1oFp3uAQvI"   // your EmailJS public key
         )
         .then(
-          // Success
+          // Success:
           () => {
             router.push("/odeslany-formular");
-            e.target.reset();
+            formRef.current?.reset();
             setIsLoading(false);
           },
-          // Error
+          // Error:
           () => {
             setFormError(true);
             setIsLoading(false);
           }
         );
-    } else {
-      setIsMailSentHoney(true);
-      e.target.reset();
+    } catch (error) {
+      setFormError(true);
       setIsLoading(false);
     }
   };
-  return (
-    <div className={`${className}`}>
-      <form
-        ref={formRef}
-        onSubmit={handleSubmit}
-        className={`space-y-8`}
-        aria-label="Kontaktní formulář"
-      >
-        {/* ---- Honey start - antispam ochrana ---- */}
-        <FormHnypot ref={hnyNameRef} type="text" id="hny-name" label="Jméno" />
-        <FormHnypot
-          ref={hnySurnameRef}
-          type="text"
-          id="hny-surname"
-          label="Příjmení"
-        />
-        <FormHnypot ref={hnyTelRef} type="tel" id="hny-phone" label="Telefon" />
-        <FormHnypot
-          ref={hnyEmailRef}
-          type="email"
-          id="hny-email"
-          label="E-main"
-        />
-        {/* ---- Honey end - antispam ochrana ---- */}
 
+  return (
+    <div className={className}>
+      <form ref={formRef} onSubmit={handleSubmit} className="space-y-8" aria-label="Kontaktní formulář">
         <FormTextInput
           type="text"
           id="name-surname"
@@ -106,6 +95,7 @@ export default function ContactForm({ className = "" }: Props) {
           placeholder="Jan Novák"
           isRequired
         />
+
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <FormTextInput
             type="email"
@@ -126,13 +116,15 @@ export default function ContactForm({ className = "" }: Props) {
             className="col-span-1"
           />
         </div>
+
         <FormTextArea
           id="message"
           name="message"
           label="S čím vám můžeme pomoci?"
-          placeholder="Popiště Váš problém..."
+          placeholder="Popište Váš problém..."
           isRequired
         />
+
         <FormCheckbox
           id="gdpr"
           name="gdpr"
@@ -140,27 +132,27 @@ export default function ContactForm({ className = "" }: Props) {
           label={
             <span>
               Souhlasím se zpracováním osobních údajů{" "}
-              <AppLink
-                href="/gdpr"
-                hoverEffect="underline"
-                className="text-copy-rich"
-              >
+              <AppLink href="/gdpr" hoverEffect="underline" className="text-copy-rich">
                 (více informací).
               </AppLink>
             </span>
           }
         />
+
+        <div>
+          <Turnstile
+            siteKey="0x4AAAAAAA5zlZzERcslRsx3"
+            onSuccess={(token) => setTurnstileToken(token)}
+            onError={() => {
+              setFormError(true);
+            }}
+          />
+        </div>
+
         <Button type="submit" isLoading={isLoading}>
           Odeslat
         </Button>
-        {isMailSentHoney && (
-          <Alert
-            status="success"
-            variant="tinted"
-            title="Váš e-mail byl úspěšně odeslán"
-            text="Děkujeme! Váš e-mail byl úspěšně odeslán. Hned jak to bude možné, ozveme se vám zpět."
-          />
-        )}
+
         {formError && (
           <Alert
             status="error"
