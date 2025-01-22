@@ -184,7 +184,7 @@ const PageTemplate: NextPage<ThisProps> = ({
 
       <Wrapper size="sm" paddedContent="md">
         <Heading as="h2" size="lg" color="primary" hasMarginBottom>
-          Použité komponenty
+          Instalované komponenty
         </Heading>
         <div className="grid gap-10 pt-10 prose-a:text-primary prose-a:underline prose-a:underline-offset-2">
           <ul className="col-span-1 ml-3 flex list-disc flex-col gap-3">
