@@ -72,12 +72,12 @@ export default function Footer() {
       </Wrapper>
       <Wrapper
         size="lg"
-        className="flex justify-center border-t border-solid border-body-100 py-12 text-center md:block"
+        className="flex flex-col justify-center border-t border-solid border-body-100 py-12 text-center md:flex-row md:justify-between"
       >
-        <span className="block justify-between md:flex ">
+        <span className="block ">
           Copyright © {new Date().getFullYear()} {config.seo.shortUrl}
-          <AgencyCredit className="mt-4" />
         </span>
+        <AgencyCredit className="mt-4 md:mt-0" />
       </Wrapper>
     </footer>
   );
