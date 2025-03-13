@@ -6,6 +6,7 @@ import { routes, secondary, other, shop } from "@configs/routes";
 import AppLink from "@ui/AppLink";
 import Heading from "@ui/Heading";
 import SocialLinks from "@ui/SocialLinks";
+import { AgencyCredit } from "./AgencyCredit";
 
 export default function Footer() {
   return (
@@ -71,10 +72,11 @@ export default function Footer() {
       </Wrapper>
       <Wrapper
         size="lg"
-        className="flex items-center justify-center border-t border-solid border-body-100 py-12"
+        className="flex justify-center border-t border-solid border-body-100 py-12 text-center md:block"
       >
-        <span className="block">
+        <span className="block justify-between md:flex ">
           Copyright © {new Date().getFullYear()} {config.seo.shortUrl}
+          <AgencyCredit className="mt-4" />
         </span>
       </Wrapper>
     </footer>
